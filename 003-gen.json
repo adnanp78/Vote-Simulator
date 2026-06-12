@@ -1,0 +1,158 @@
+{
+  "izbornaJedinica": {
+    "kod": "003",
+    "naziv": "Republika Srpska — opšti izbori",
+    "tip": "opsti"
+  },
+  "trke": [
+    {
+      "id": "predsjednistvo",
+      "naslov": "Predsjedništvo Bosne i Hercegovine",
+      "podnaslov": "Srpski član — RS izborna jedinica",
+      "tip": "predsjednistvo",
+      "kolone": [
+        {
+          "id": "srp",
+          "naslov": "Srpski član",
+          "kandidati": [
+            { "redni": 1, "ime": "Željka Cvijanović",    "stranka": "Savez nezavisnih socijaldemokrata" },
+            { "redni": 2, "ime": "Mirko Šarović",        "stranka": "Srpska demokratska stranka" },
+            { "redni": 3, "ime": "Mladen Ivanić",        "stranka": "Partija demokratskog progresa" },
+            { "redni": 4, "ime": "Slobodan Pavlović",    "stranka": "Demokratski narodni savez" },
+            { "redni": 5, "ime": "Branko Ristić",        "stranka": "Socijalisti" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-bih",
+      "naslov": "Zastupnički dom Parlamentarne skupštine BiH",
+      "podnaslov": "Republika Srpska — Izborna jedinica 3",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "Savez nezavisnih socijaldemokrata",
+          "kandidati": [
+            { "redni": 1, "ime": "Igor Crnadak" },
+            { "redni": 2, "ime": "Staša Košarac" },
+            { "redni": 3, "ime": "Vesna Đurić" }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "Srpska demokratska stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Milica Đurđević Stamenkovski" },
+            { "redni": 2, "ime": "Goran Kovačević" },
+            { "redni": 3, "ime": "Svetlana Cenić" }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "Partija demokratskog progresa",
+          "kandidati": [
+            { "redni": 1, "ime": "Branislav Borenović" },
+            { "redni": 2, "ime": "Aleksandra Panić" }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "Demokratski narodni savez",
+          "kandidati": [
+            { "redni": 1, "ime": "Nenad Nešić" },
+            { "redni": 2, "ime": "Marija Čolić" }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "Socijalisti",
+          "kandidati": [
+            { "redni": 1, "ime": "Petar Đokić" },
+            { "redni": 2, "ime": "Sanja Radović" }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "Narodna demokratska partija",
+          "kandidati": [
+            { "redni": 1, "ime": "Dragan Lukač" },
+            { "redni": 2, "ime": "Nataša Trivić" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "predsjednik-rs",
+      "naslov": "Predsjednik Republike Srpske",
+      "podnaslov": "Direktno glasanje — jedan kandidat",
+      "tip": "vecinski",
+      "kandidati": [
+        { "redni": 1, "ime": "Milorad Dodik",           "stranka": "Savez nezavisnih socijaldemokrata" },
+        { "redni": 2, "ime": "Nataša Trivić",            "stranka": "Srpska demokratska stranka" },
+        { "redni": 3, "ime": "Draško Stanivuković",      "stranka": "Partija demokratskog progresa" },
+        { "redni": 4, "ime": "Slobodan Popović",         "stranka": "Demokratski narodni savez" }
+      ]
+    },
+    {
+      "id": "skupstina-rs",
+      "naslov": "Narodna skupština Republike Srpske",
+      "podnaslov": "Proporcionalni izborni sistem",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "Savez nezavisnih socijaldemokrata",
+          "kandidati": [
+            { "redni": 1, "ime": "Radovan Višković" },
+            { "redni": 2, "ime": "Gordana Tadić" },
+            { "redni": 3, "ime": "Srđan Todorović" },
+            { "redni": 4, "ime": "Vesna Balaban" }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "Srpska demokratska stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Vukota Govedarica" },
+            { "redni": 2, "ime": "Dragana Malešević" },
+            { "redni": 3, "ime": "Dejan Kovačević" }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "Partija demokratskog progresa",
+          "kandidati": [
+            { "redni": 1, "ime": "Igor Žunić" },
+            { "redni": 2, "ime": "Sanja Filipović" },
+            { "redni": 3, "ime": "Marko Vasić" }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "Demokratski narodni savez",
+          "kandidati": [
+            { "redni": 1, "ime": "Dragan Bogdanović" },
+            { "redni": 2, "ime": "Milena Jović" }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "Socijalisti",
+          "kandidati": [
+            { "redni": 1, "ime": "Vojin Mijatović" },
+            { "redni": 2, "ime": "Nikolina Perić" }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "Narodna demokratska partija",
+          "kandidati": [
+            { "redni": 1, "ime": "Dejan Šuković" },
+            { "redni": 2, "ime": "Branka Ostojić" }
+          ]
+        }
+      ]
+    }
+  ]
+}

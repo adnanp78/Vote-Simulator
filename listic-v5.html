@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<title>Glasački listić - A3 portrait (varijanta 5 - ručna distribucija)</title>
+<style>
+  :root {
+    /* GLOBALNI ZOOM — skalira kockice, fontove i razmake (NE i širinu lista).
+       List ostaje 210mm; pri visokom zoom-u stranke se prelome u manje kolona.
+       Primjeri: 0.9 = 90%, 1.0 = original, 1.1 = 110%, 1.2 = 120% */
+    --zoom: 1;
+
+    /* Osnovne vrijednosti (na 1.0x) — ne dirati */
+    --base-box-party-size: 4.5mm;
+    --base-box-party-border: 1.4px;
+    --base-box-cand-size: 3.2mm;
+    --base-box-cand-border: 1px;
+    --base-font-party-name: 7pt;
+    --base-font-party-num: 8.5pt;
+    --base-font-cand-num: 7pt;
+    --base-party-padding: 1.8mm;
+    --base-party-gap: 2mm;
+    --base-cand-gap-y: 1mm;
+    --base-cand-gap-x: 1.5mm;
+
+    /* Skalirane vrijednosti — ovo se koristi u stilu */
+    --box-party-size:    calc(var(--base-box-party-size)    * var(--zoom));
+    --box-party-border:  calc(var(--base-box-party-border)  * var(--zoom));
+    --box-cand-size:     calc(var(--base-box-cand-size)     * var(--zoom));
+    --box-cand-border:   calc(var(--base-box-cand-border)   * var(--zoom));
+    --font-party-name:   calc(var(--base-font-party-name)   * var(--zoom));
+    --font-party-num:    calc(var(--base-font-party-num)    * var(--zoom));
+    --font-cand-num:     calc(var(--base-font-cand-num)     * var(--zoom));
+    --party-padding:     calc(var(--base-party-padding)     * var(--zoom));
+    --party-gap:         calc(var(--base-party-gap)         * var(--zoom));
+    --cand-gap-y:        calc(var(--base-cand-gap-y)        * var(--zoom));
+    --cand-gap-x:        calc(var(--base-cand-gap-x)        * var(--zoom));
+
+    --party-columns: 4;
+  }
+
+  @page { size: A3 portrait; margin: 0; }
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0; padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000; background: #fff;
+  }
+
+  .sheet {
+    width: 210mm;
+    margin: 0 auto;
+    padding: 10mm 8mm;
+  }
+
+  .main-header {
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: center; gap: 5mm;
+    border-bottom: 2.5px solid #000;
+    padding-bottom: 3mm; margin-bottom: 4mm;
+  }
+
+  .header-text { text-align: center; }
+  .main-header h1 { font-size: 16pt; margin: 0 0 1mm 0; text-transform: uppercase; letter-spacing: 0.5px; }
+  .main-header .sub { font-size: 8pt; margin: 0; }
+
+  .qr-box { text-align: center; border: 1px solid #000; padding: 1.5mm; width: 28mm; }
+  .qr-box img { display: block; width: 24mm; height: 24mm; margin: 0 auto; }
+  .qr-box .qr-label { font-size: 6pt; line-height: 1.15; margin-top: 1mm; font-weight: bold; text-transform: uppercase; }
+
+  .instructions {
+    font-size: 7.5pt; border: 1px solid #000;
+    padding: 2mm 3mm; margin-bottom: 5mm; line-height: 1.3;
+  }
+  .instructions strong { text-transform: uppercase; }
+
+  .race { margin-bottom: 6mm; }
+
+  .race-header {
+    background: #000; color: #fff;
+    font-weight: bold; font-size: 10pt;
+    text-transform: uppercase; padding: 2mm 3mm;
+    text-align: center; letter-spacing: 0.3px;
+    margin-bottom: 2.5mm;
+    break-after: avoid; page-break-after: avoid;
+  }
+
+  /* PREDSJEDNIŠTVO */
+  .presidency { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; }
+  .pres-col h3 {
+    font-size: 9pt; font-weight: bold; text-transform: uppercase;
+    margin: 0 0 2mm 0; text-align: center;
+    border-bottom: 1px solid #000; padding-bottom: 1mm;
+  }
+  /* 2 sub-kolone po članu da bi se uštedjelo na visini */
+  .pres-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 3mm;
+  }
+  .pres-candidate {
+    display: flex; align-items: flex-start; gap: 1.5mm;
+    padding: 1mm 0; border-bottom: 0.5px dotted #888;
+    font-size: 7pt;
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .pres-candidate:last-child { border-bottom: none; }
+  .pres-name { font-weight: bold; text-transform: uppercase; font-size: 7pt; }
+  .pres-party { font-size: 6pt; margin-top: 0.2mm; line-height: 1.1; }
+
+  /* ===== NOVI GRID — CSS Grid sa eksplicitnim kolonama, ne multi-column ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(var(--party-columns), 1fr);
+    gap: 0 2mm;
+    align-items: start;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--party-gap);
+  }
+
+  .party {
+    border: 1.2px solid #000;
+    padding: var(--party-padding);
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .party-header {
+    display: flex; align-items: flex-start; gap: 1.5mm;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1.2mm; margin-bottom: 1.5mm;
+  }
+  .party-num { font-weight: bold; font-size: var(--font-party-num); min-width: 4.5mm; }
+  .box-party {
+    width: var(--box-party-size); height: var(--box-party-size);
+    border: var(--box-party-border) solid #000;
+    flex-shrink: 0; background: #fff; display: inline-block;
+  }
+  .box {
+    display: inline-block; width: 3mm; height: 3mm;
+    border: 1px solid #000; vertical-align: middle;
+  }
+  .party-name {
+    font-size: var(--font-party-name); font-weight: bold;
+    line-height: 1.15; flex: 1; text-transform: uppercase;
+  }
+  .candidates { display: grid; gap: var(--cand-gap-y) var(--cand-gap-x); }
+  .cand { display: flex; align-items: center; gap: 1mm; font-size: var(--font-cand-num); }
+  .box-cand {
+    width: var(--box-cand-size); height: var(--box-cand-size);
+    border: var(--box-cand-border) solid #000;
+    flex-shrink: 0; background: #fff; display: inline-block;
+  }
+  .cand-num { font-size: var(--font-cand-num); min-width: 4.5mm; }
+
+  .footer {
+    margin-top: 5mm; text-align: center; font-size: 6.5pt;
+    border-top: 1px solid #000; padding-top: 2mm;
+  }
+
+  @media screen {
+    body { background: #888; padding: 20px 0; }
+    .a3-frame {
+      width: 297mm; margin: 0 auto;
+      background: #ddd; padding: 10mm 0;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      min-height: 420mm;
+    }
+    .sheet { background: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.4); }
+  }
+  @media print {
+    body { background: #fff; padding: 0; }
+    .a3-frame { background: #fff; padding: 0; box-shadow: none; width: auto; }
+    .sheet { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="a3-frame">
+<div class="sheet">
+
+<div class="main-header">
+  <div class="header-text">
+    <h1>Glasački listić — Opći izbori</h1>
+    <p class="sub">Izborna jedinica br. ___ &nbsp;|&nbsp; ___.___.20__ &nbsp;|&nbsp; <em>varijanta 5 — ručna distribucija</em></p>
+  </div>
+  <div class="qr-box">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=0&data=https%3A%2F%2Fstripovi-online.info%2Fstatic%2Flista.html"
+         alt="QR kod za listu kandidata">
+    <div class="qr-label">Skenirajte za<br>imena kandidata</div>
+  </div>
+</div>
+
+<div class="instructions">
+  <strong>Uputstvo:</strong> U svakoj trci možete: (1) zaokružiti <span class="box"></span> ispred <strong>samo jedne stranke</strong>,
+  i/ili (2) zaokružiti kvadratiće ispred <strong>brojeva kandidata</strong> iste te stranke.
+  Za Predsjedništvo zaokružite samo jednog kandidata po koloni. Imena kandidata — vidi plakat ili skenirajte QR kod.
+</div>
+
+<div class="race">
+  <div class="race-header">1. Predsjedništvo Bosne i Hercegovine</div>
+  <div class="presidency">
+    <div class="pres-col"><h3>Bošnjački član</h3><div class="pres-list" id="pres-bos"></div></div>
+    <div class="pres-col"><h3>Hrvatski član</h3><div class="pres-list" id="pres-hrv"></div></div>
+  </div>
+</div>
+
+<div class="race">
+  <div class="race-header">2. Zastupnički dom Parlamentarne skupštine BiH</div>
+  <div class="grid" id="grid-bih"></div>
+</div>
+
+<div class="race">
+  <div class="race-header">3. Zastupnički dom Parlamenta Federacije BiH</div>
+  <div class="grid" id="grid-fbih"></div>
+</div>
+
+<div class="race">
+  <div class="race-header">4. Kantonalna skupština</div>
+  <div class="grid" id="grid-kanton"></div>
+</div>
+
+<div class="footer">
+  Pečat izborne komisije: ______________________ &nbsp;&nbsp;|&nbsp;&nbsp; Listić nevažeći ako se prekrše pravila glasanja navedena u uputstvu.
+</div>
+
+</div>
+</div>
+
+<script>
+  const CONFIG = {
+    parlamentBih:  { brojStranaka: 17, kandidatiMin: 1,  kandidatiMax: 8,  kolonaKandidata: 3 },
+    parlamentFbih: { brojStranaka: 17, kandidatiMin: 8,  kandidatiMax: 14, kolonaKandidata: 3 },
+    kanton:        { brojStranaka: 18, kandidatiMin: 30, kandidatiMax: 40, kolonaKandidata: 4 }
+  };
+
+  const NUM_COLS = 4;
+
+  const presBos = [
+    { ime: "Mirsad Hadžikadić",  stranka: "Mirsad Hadžikadić-Platforma za progres" },
+    { ime: "Fahrudin Radončić",   stranka: "SBB - Fahrudin Radončić" },
+    { ime: "Senad Šepić",         stranka: "Nezavisni blok" },
+    { ime: "Šefik Džaferović",    stranka: "SDA - Stranka demokratske akcije" },
+    { ime: "Denis Bećirović",     stranka: "SDP - Socijaldemokratska partija Bosne i Hercegovine" },
+    { ime: "Amer Jerlagić",       stranka: "Stranka za Bosnu i Hercegovinu" }
+  ];
+
+  const presHrv = [
+    { ime: "Jerko Ivanković-Lijanović", stranka: "Narodna stranka Radom za boljitak" },
+    { ime: "Dragan Čović",              stranka: "HDZ BiH - Hrvatska demokratska zajednica Bosne i Hercegovine" },
+    { ime: "Boriša Falatar",            stranka: "Naša stranka" },
+    { ime: "Diana Zelenika",            stranka: "Hrvatska demokratska zajednica 1990 - HDZ 1990" },
+    { ime: "Željko Komšić",             stranka: "Demokratska fronta" }
+  ];
+
+  const strankePool = [
+    "Stranka demokratske akcije",
+    "Savez nezavisnih socijaldemokrata",
+    "Hrvatska demokratska zajednica Bosne i Hercegovine",
+    "Socijaldemokratska partija Bosne i Hercegovine",
+    "Narod i Pravda",
+    "Naša stranka",
+    "Partija demokratskog progresa",
+    "Demokratska fronta",
+    "Savez za bolju budućnost Bosne i Hercegovine",
+    "Ujedinjena Srpska",
+    "Hrvatska republikanska stranka",
+    "Pokret demokratske akcije",
+    "Za nove generacije",
+    "Nezavisni blok",
+    "Socijalistička partija",
+    "Liberalna stranka Bosne i Hercegovine",
+    "Bosanskohercegovačka inicijativa – Kasumović Fuad",
+    "Narodni evropski savez",
+    "Srpska demokratska stranka",
+    "Hrvatska seljačka stranka Bosne i Hercegovine"
+  ];
+
+  function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+  function renderPresidency(list, containerId) {
+    const c = document.getElementById(containerId);
+    list.forEach((kand, i) => {
+      const el = document.createElement('div');
+      el.className = 'pres-candidate';
+      el.innerHTML = `
+        <span class="party-num">${i + 1}.</span>
+        <span class="box-party"></span>
+        <div style="flex:1">
+          <div class="pres-name">${kand.ime}</div>
+          <div class="pres-party">${kand.stranka}</div>
+        </div>
+      `;
+      c.appendChild(el);
+    });
+  }
+
+  function partyHTML(idx, naziv, brojKandidata, kolonaKandidata) {
+    let candHTML = '';
+    for (let k = 1; k <= brojKandidata; k++) {
+      candHTML += `<div class="cand"><span class="box-cand"></span><span class="cand-num">${k}.</span></div>`;
+    }
+    return `
+      <div class="party">
+        <div class="party-header">
+          <span class="party-num">${idx}.</span>
+          <span class="box-party"></span>
+          <span class="party-name">${naziv}</span>
+        </div>
+        <div class="candidates" style="grid-template-columns: repeat(${kolonaKandidata}, 1fr);">
+          ${candHTML}
+        </div>
+      </div>
+    `;
+  }
+
+  /* Optimalna podjela uzastopnih elemenata u K grupa
+     tako da se minimizuje maksimalna suma grupe.
+     Klasični algoritam "linear partition" sa dinamičkim programiranjem. */
+  function optimalSplit(weights, k) {
+    const n = weights.length;
+    if (k >= n) return weights.map((_, i) => [i]);
+
+    const pref = [0];
+    for (let i = 0; i < n; i++) pref.push(pref[i] + weights[i]);
+
+    // dp[i][j] = min mogući max suma pri podjeli prvih i elemenata u j grupa
+    const dp = Array.from({ length: n + 1 }, () => Array(k + 1).fill(Infinity));
+    const back = Array.from({ length: n + 1 }, () => Array(k + 1).fill(0));
+    dp[0][0] = 0;
+
+    for (let i = 1; i <= n; i++) {
+      for (let j = 1; j <= Math.min(i, k); j++) {
+        for (let s = j - 1; s < i; s++) {
+          const lastGroupSum = pref[i] - pref[s];
+          const cost = Math.max(dp[s][j - 1], lastGroupSum);
+          if (cost < dp[i][j]) {
+            dp[i][j] = cost;
+            back[i][j] = s;
+          }
+        }
+      }
+    }
+
+    // Rekonstrukcija granica
+    const cuts = [];
+    let i = n, j = k;
+    while (j > 0) {
+      cuts.unshift(back[i][j]);
+      i = back[i][j];
+      j--;
+    }
+    cuts.push(n);
+
+    // Pretvori u grupe indeksa
+    const groups = [];
+    let start = 0;
+    for (let s = 1; s < cuts.length; s++) {
+      const g = [];
+      for (let idx = cuts[s - 1]; idx < cuts[s]; idx++) g.push(idx);
+      groups.push(g);
+    }
+    return groups;
+  }
+
+  function renderParliament(gridId, cfg) {
+    const grid = document.getElementById(gridId);
+    const naziviSlice = strankePool.slice(0, cfg.brojStranaka);
+
+    const stranke = naziviSlice.map((naziv, i) => ({
+      idx: i + 1,
+      naziv,
+      brojKand: randInt(cfg.kandidatiMin, cfg.kandidatiMax)
+    }));
+
+    // PASS 1: napravi 4 prazne kolone i sve stranke ubaci u prvu kolonu da se izmjere stvarne visine.
+    const cols = [];
+    for (let c = 0; c < NUM_COLS; c++) {
+      const colEl = document.createElement('div');
+      colEl.className = 'col';
+      grid.appendChild(colEl);
+      cols.push(colEl);
+    }
+
+    const partyEls = stranke.map(s => {
+      const wrap = document.createElement('div');
+      wrap.innerHTML = partyHTML(s.idx, s.naziv, s.brojKand, cfg.kolonaKandidata).trim();
+      return wrap.firstChild;
+    });
+
+    // Privremeno ih sve dodaj u kolonu 0 da bi se layout izračunao na pravoj širini kolone
+    partyEls.forEach(el => cols[0].appendChild(el));
+
+    // Izmjeri stvarne visine (forsiraj reflow)
+    const heights = partyEls.map(el => el.getBoundingClientRect().height);
+
+    // PASS 2: izračunaj optimalnu podjelu
+    const groups = optimalSplit(heights, NUM_COLS);
+
+    // Premjesti stranke u odgovarajuće kolone
+    cols.forEach(c => { while (c.firstChild) c.removeChild(c.firstChild); });
+    groups.forEach((indeksi, colIdx) => {
+      indeksi.forEach(i => cols[colIdx].appendChild(partyEls[i]));
+    });
+  }
+
+  renderPresidency(presBos, 'pres-bos');
+  renderPresidency(presHrv, 'pres-hrv');
+  renderParliament('grid-bih',    CONFIG.parlamentBih);
+  renderParliament('grid-fbih',   CONFIG.parlamentFbih);
+  renderParliament('grid-kanton', CONFIG.kanton);
+</script>
+
+</body>
+</html>

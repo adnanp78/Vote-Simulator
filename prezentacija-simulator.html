@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulator glasačkog listića</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+  }
+
+  .slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 100px;
+    border-bottom: 6px solid #e0e0e0;
+    background: white;
+  }
+
+  /* ---- COVER ---- */
+  .cover {
+    background: linear-gradient(150deg, #0d3b1b 0%, #1a7a3c 55%, #27ae60 100%) !important;
+    color: white; align-items: center; text-align: center;
+  }
+  .cover .logo { font-size: 5rem; margin-bottom: 24px; }
+  .cover h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
+  .cover .lead { font-size: 1.35rem; opacity: 0.88; max-width: 680px; line-height: 1.7; }
+  .cover .org { margin-top: 40px; opacity: 0.7; font-size: 0.95rem; letter-spacing: 2px; text-transform: uppercase; }
+
+  /* ---- GENERIC ---- */
+  h2 { font-size: 2rem; font-weight: 800; color: #0d3b1b; margin-bottom: 12px; }
+  .lead-text { font-size: 1.15rem; color: #555; line-height: 1.75; max-width: 820px; margin-bottom: 36px; }
+  .section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #1a7a3c; margin-bottom: 10px; }
+
+  /* ---- CARDS ---- */
+  .cards { display: grid; gap: 24px; }
+  .cards-2 { grid-template-columns: 1fr 1fr; }
+  .cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .card { border-radius: 16px; padding: 28px; background: #f0fff5; border-left: 5px solid #1a7a3c; }
+  .card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+  .card h3 { font-size: 1.1rem; color: #0d3b1b; margin-bottom: 8px; }
+  .card p { font-size: 0.95rem; color: #555; line-height: 1.6; }
+
+  /* ---- STATS ---- */
+  .stats { display: grid; gap: 20px; margin: 20px 0 0; }
+  .stats-3 { grid-template-columns: repeat(3, 1fr); }
+  .stat { background: linear-gradient(135deg, #0d3b1b, #1a7a3c); color: white; border-radius: 16px; padding: 28px 20px; text-align: center; }
+  .stat .num { font-size: 2.4rem; font-weight: 800; }
+  .stat .lbl { font-size: 0.85rem; opacity: 0.82; margin-top: 6px; line-height: 1.4; }
+
+  /* ---- STEPS ---- */
+  .steps { display: flex; flex-direction: column; }
+  .step { display: flex; gap: 20px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid #e8e8e8; }
+  .step:last-child { border-bottom: none; }
+  .step .circle { width: 44px; height: 44px; border-radius: 50%; background: #1a7a3c; color: white; font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step .txt h3 { font-size: 1.05rem; color: #0d3b1b; margin-bottom: 4px; }
+  .step .txt p { font-size: 0.92rem; color: #555; line-height: 1.6; }
+
+  /* ---- HIGHLIGHT & QUOTE ---- */
+  .highlight { background: #e8fdf0; border-left: 6px solid #1a7a3c; border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 20px 0; font-size: 1.05rem; line-height: 1.7; color: #0d2b15; }
+  .highlight strong { color: #0d3b1b; }
+  .quote { border-left: 6px solid #f9a825; padding: 20px 28px; background: #fffde7; border-radius: 0 12px 12px 0; font-size: 1.1rem; line-height: 1.8; color: #4a3800; margin: 24px 0; }
+
+  /* ---- TWO COL ---- */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+
+  /* ---- SLIDE ALT BG ---- */
+  .slide-gray { background: #f8f9fa !important; }
+  .slide-dark { background: #0d3b1b !important; color: white; }
+  .slide-dark h2 { color: white; }
+  .slide-dark .lead-text { color: rgba(255,255,255,0.8); }
+  .slide-dark .card { background: rgba(255,255,255,0.08); border-color: #27ae60; }
+  .slide-dark .card h3 { color: white; }
+  .slide-dark .card p { color: rgba(255,255,255,0.7); }
+  .slide-dark .step .circle { background: #27ae60; }
+  .slide-dark .step .txt h3 { color: #aaffcc; }
+  .slide-dark .step .txt p { color: rgba(255,255,255,0.65); }
+  .slide-dark .step { border-color: rgba(255,255,255,0.12); }
+
+  /* ---- FINAL ---- */
+  .final { background: linear-gradient(150deg, #0d3b1b, #1a7a3c) !important; color: white; text-align: center; align-items: center; }
+  .final h2 { color: white; font-size: 2.4rem; }
+  .final .lead-text { color: rgba(255,255,255,0.85); max-width: 700px; margin-bottom: 48px; }
+  .final-icons { display: flex; gap: 48px; margin-top: 8px; flex-wrap: wrap; justify-content: center; }
+  .final-icons div { text-align: center; }
+  .final-icons .ico { font-size: 2.8rem; }
+  .final-icons .lbl { font-size: 0.9rem; opacity: 0.8; margin-top: 8px; line-height: 1.4; }
+
+  /* ---- PHONE MOCKUP ---- */
+  .phone {
+    width: 300px;
+    background: #111;
+    border-radius: 40px;
+    padding: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    margin: 0 auto;
+  }
+  .phone-screen {
+    background: #f4f5f7;
+    border-radius: 28px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  .phone-header {
+    background: linear-gradient(135deg, #1f6feb, #2d7ff9);
+    color: white; padding: 10px 12px;
+    font-size: 11px; font-weight: 600;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .phone-race {
+    background: white; margin: 6px; border-radius: 10px;
+    border: 1px solid #d8dade;
+    overflow: hidden;
+  }
+  .phone-race-head {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 10px; background: #e7f0ff;
+  }
+  .phone-num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: #1f6feb; color: white;
+    font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .phone-race-title { font-size: 11px; font-weight: 600; flex: 1; line-height: 1.3; }
+  .phone-race-sub { font-size: 9px; color: #888; }
+  .phone-body { padding: 6px 8px 8px; border-top: 1px solid #d8dade; }
+  .phone-cand {
+    display: flex; align-items: center; gap: 7px;
+    padding: 5px 4px; border-bottom: 1px solid #f0f0f0; font-size: 10px;
+  }
+  .phone-cand:last-child { border-bottom: none; }
+  .chk {
+    width: 15px; height: 15px; border: 2px solid #ccc;
+    border-radius: 3px; background: white; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px;
+  }
+  .chk.on { background: #1f6feb; border-color: #1f6feb; color: white; }
+
+  /* ---- RULE CARD ---- */
+  .rule-card {
+    border-radius: 16px; padding: 28px 32px;
+    border: 2px solid #e0e0e0;
+    position: relative;
+    background: white;
+  }
+  .rule-card .badge {
+    position: absolute; top: -14px; left: 28px;
+    background: #1a7a3c; color: white;
+    font-size: 0.8rem; font-weight: 700;
+    padding: 4px 14px; border-radius: 30px;
+    letter-spacing: 0.5px;
+  }
+  .rule-card h3 { font-size: 1.15rem; color: #0d3b1b; margin-bottom: 10px; margin-top: 6px; }
+  .rule-card p { font-size: 0.95rem; color: #555; line-height: 1.65; }
+  .rule-card .primjer { font-size: 0.88rem; color: #1a7a3c; margin-top: 12px; font-style: italic; background: #f0fff5; padding: 8px 12px; border-radius: 8px; }
+
+  /* ---- SUMMARY MOCK ---- */
+  .sum-mock { background: white; border: 1px solid #d8dade; border-radius: 12px; overflow: hidden; font-family: -apple-system, sans-serif; }
+  .sum-bar { background: linear-gradient(135deg, #1f6feb, #2d7ff9); color: white; padding: 10px 14px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .sum-row { padding: 10px 14px; border-bottom: 1px solid #eef0f3; font-size: 12.5px; }
+  .sum-row:last-of-type { border-bottom: none; }
+  .sum-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; font-weight: 600; margin-bottom: 5px; }
+  .scr { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border: 2px solid #bbb; border-radius: 3px; background: white; position: relative; vertical-align: middle; flex-shrink: 0; margin-top: 1px; }
+  .scr.on { background: #8a8a8a; border-color: #8a8a8a; }
+  .scr.on::after { content: ""; position: absolute; width: 3px; height: 6px; border-right: 2px solid white; border-bottom: 2px solid white; transform: rotate(45deg) translate(-1px,-1px); }
+  .sr { display: flex; align-items: flex-start; gap: 7px; margin-bottom: 4px; }
+  .sr:last-child { margin-bottom: 0; }
+  .sr-in { padding-left: 21px; }
+  .ac { color: #1f6feb; font-weight: 600; }
+  .em { color: #bbb; font-style: italic; font-size: 11.5px; }
+</style>
+</head>
+<body>
+
+
+<!-- ════════════════════════════════════════
+     SLAJD 1 — NASLOVNICA
+════════════════════════════════════════ -->
+<div class="slide cover">
+  <div class="logo">🗳️</div>
+  <h1>Upoznajte listić<br>prije izbornog dana</h1>
+  <p class="lead">
+    Simulator koji svakom birača omogućava da na svom telefonu
+    proba kako se glasa — vidi kandidate, razumije pravila
+    i sačuva izbor kao podsjetnik za biralište.
+  </p>
+  <p class="org">CIK BiH &nbsp;·&nbsp; 2026</p>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SLAJD 2 — PROBLEM
+════════════════════════════════════════ -->
+<div class="slide slide-gray">
+  <div class="section-label">Situacija danas</div>
+  <h2>Birač glasački listić<br>prvi put vidi na dan izbora</h2>
+  <p class="lead-text">
+    Niko ne zna unaprijed kako će listić izgledati, koliko ima kandidata
+    niti koja su pravila — što stvara stres, greške i nevažeće glasove.
+  </p>
+
+  <div class="cards cards-3">
+    <div class="card">
+      <div class="icon">😰</div>
+      <h3>Stres na biračkom mjestu</h3>
+      <p>Red čeka, a birač po prvi put vidi deset stranaka i trideset kandidata. Nema vremena za razmišljanje.</p>
+    </div>
+    <div class="card">
+      <div class="icon">✖️</div>
+      <h3>Nevažeći glasovi</h3>
+      <p>Birači koji ne znaju pravila — npr. da se može glasati i za stranku i za kandidata — ponekad naprave grešku koja poništi glas.</p>
+    </div>
+    <div class="card">
+      <div class="icon">❓</div>
+      <h3>Nejasna pravila</h3>
+      <p>Svaki nivo vlasti ima drugačija pravila glasanja. Birač koji glasa prvi put ne zna koja su za koji listić.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SLAJD 3 — RJEŠENJE
+════════════════════════════════════════ -->
+<div class="slide">
+  <div class="section-label">Naše rješenje</div>
+  <h2>Isproba na telefonu —<br>pa dođi spreman</h2>
+  <p class="lead-text">
+    Svaki birač dobije link vezan za njegovo biračko mjesto.
+    Otvori ga na telefonu, vidi tačan prikaz svog listića i proba
+    glasanje — u miru, kod kuće, bez žurbe.
+  </p>
+
+  <div class="two-col">
+    <div class="steps">
+      <div class="step">
+        <div class="circle">1</div>
+        <div class="txt">
+          <h3>Birač otvori link ili skenira QR kod</h3>
+          <p>Na letku, plakatu ili web stranici — jedan link za svako biračko mjesto</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <div class="txt">
+          <h3>Vidi sve stranke i kandidate</h3>
+          <p>Sve trke, sve stranke, svi kandidati — tačno onako kako će izgledati pravi listić. Otvorena je uvijek samo jedna trka, postavljena na vrh ekrana, da birač ostane fokusiran.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <div class="txt">
+          <h3>Proba označiti kandidate</h3>
+          <p>Tapne na kandidata, označi ga — sistem automatski primijeni prava pravila glasanja</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="circle">4</div>
+        <div class="txt">
+          <h3>U realnom vremenu vidi "Moj izbor"</h3>
+          <p>Pregled "Moj izbor" pokazuje sve što je označio — priprema ga da na pravom listiću glasa sigurno i brzo</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="circle">💾</div>
+        <div class="txt">
+          <h3>Izbor ostaje zapamćen kao podsjetnik</h3>
+          <p>Simulator automatski pamti odabir na telefonu. Birač dođe na biralište, otvori simulator i vidi šta je planirao — pa glasa sigurno</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="phone-screen">
+        <div style="background:#1a7a3c;color:white;padding:10px 12px;font-size:11px;font-weight:700;text-align:center">
+          Glasanje — Velika Kladuša
+        </div>
+        <!-- summary bar -->
+        <div class="phone-header">
+          <span style="width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-size:10px">✓</span>
+          <span style="flex:1">Moj izbor</span>
+          <span style="background:rgba(255,255,255,0.25);padding:2px 7px;border-radius:999px;font-size:10px;font-weight:700">3</span>
+        </div>
+        <!-- race 1 -->
+        <div class="phone-race">
+          <div class="phone-race-head">
+            <div class="phone-num">1</div>
+            <div>
+              <div class="phone-race-title">Predsjedništvo BiH</div>
+              <div class="phone-race-sub">Bošnjački i Hrvatski član</div>
+            </div>
+          </div>
+          <div class="phone-body">
+            <div style="font-size:9px;color:#888;margin-bottom:3px;font-weight:600">BOŠNJAČKI ČLAN</div>
+            <div class="phone-cand"><div class="chk"></div> <span>1. Mirsad Hadžikadić</span></div>
+            <div class="phone-cand"><div class="chk on">✓</div> <span style="font-weight:600">5. Denis Bećirović</span></div>
+          </div>
+        </div>
+        <!-- race 2 -->
+        <div class="phone-race">
+          <div class="phone-race-head">
+            <div class="phone-num">2</div>
+            <div>
+              <div class="phone-race-title">Zastupnički dom PS BiH</div>
+              <div class="phone-race-sub">17 stranaka</div>
+            </div>
+          </div>
+          <div class="phone-body">
+            <div class="phone-cand">
+              <div class="chk"></div>
+              <span style="font-weight:600">1. Stranka demokratske akcije</span>
+            </div>
+            <div style="padding-left:12px">
+              <div class="phone-cand"><div class="chk on">✓</div> <span>2. Semir Efendić</span></div>
+              <div class="phone-cand"><div class="chk on">✓</div> <span>3. Amela Čengić</span></div>
+            </div>
+          </div>
+        </div>
+        <div style="height:6px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SLAJD 4 — PRAVILA GLASANJA
+════════════════════════════════════════ -->
+<div class="slide slide-gray">
+  <div class="section-label">Kako se glasa</div>
+  <h2>Simulator uči birača<br>pravilima — automatski</h2>
+  <p class="lead-text">
+    Simulator zna pravila za svaki tip glasanja i primijeni ih sam. Birač ne mora
+    ništa čitati — sistem ga vodi i ispravlja dok proba.
+  </p>
+
+  <div class="cards cards-3" style="margin-top:8px">
+    <div class="rule-card">
+      <div class="badge">NAČELNIK</div>
+      <h3>Možeš izabrati<br>samo jednog</h3>
+      <p>Za načelnika se glasa za jednog kandidata. Čim označiš drugog, prethodni se automatski odznači.</p>
+      <div class="primjer">→ Birač odmah vidi da ne može zaokružiti dvojicu</div>
+    </div>
+    <div class="rule-card">
+      <div class="badge">OTVORENA LISTA</div>
+      <h3>Stranka, kandidati,<br>ili oboje — max 3</h3>
+      <p>Možeš glasati za stranku, za do <strong>3 kandidata</strong> unutar nje, ili oboje. Ako pokušaš označiti 4. kandidata — svi kandidatski glasovi se poništavaju, a simulator prikaže obavijest: <em>"Maksimalno 3 kandidata — odabir više od 3 poništava sve kandidatske glasove. Glas za stranku ostaje nepromijenjen."</em></p>
+      <div class="primjer">→ Birač odmah razumije granicu i ne može napraviti nevažeći glas</div>
+    </div>
+    <div class="rule-card">
+      <div class="badge">PREDSJEDNIŠTVO</div>
+      <h3>Samo jedan ukupno</h3>
+      <p>Na listiću su Bošnjački i Hrvatski član — ali možeš označiti <strong>samo jednog</strong> od oba. Ako se predomisliš i tapneš drugog, prethodni se automatski odznači.</p>
+      <div class="primjer">→ Birač vidi da je predsjednički glas jedan, bez obzira na kolone</div>
+    </div>
+  </div>
+
+  <div class="highlight" style="margin-top:32px">
+    <strong>Ključna vrijednost:</strong> Birač koji je jednom probao simulator zna tačno šta smije a šta ne — i na pravom listiću neće pogriješiti.
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SLAJD 5 — MOJ IZBOR
+════════════════════════════════════════ -->
+<div class="slide">
+  <div class="section-label">Pregled odabira</div>
+  <h2>Sve što si označio —<br>na jednom mjestu</h2>
+
+  <div class="two-col" style="gap:56px">
+    <div>
+      <p class="lead-text" style="margin-bottom:24px">
+        Pregled "Moj izbor" prikazuje sve odabire u realnom vremenu.
+        Birač u svakom trenutku zna gdje stoji i šta još nije izabrao —
+        a klikom na naziv trke odmah skoči na nju.
+      </p>
+
+      <div class="cards" style="grid-template-columns:1fr; gap:16px">
+        <div class="card" style="padding:18px 22px">
+          <h3>☑ Siva kvačica = glas dat</h3>
+          <p>Označena kvačica pored stranke znači da je stranka direktno glasana. Isto za kandidata.</p>
+        </div>
+        <div class="card" style="padding:18px 22px">
+          <h3>☐ Prazan okvir = stranka nije glasana</h3>
+          <p>Ako si glasao samo za kandidata a ne i za stranku — stranka ima prazan okvir. Vizualno je odmah jasno.</p>
+        </div>
+        <div class="card" style="padding:18px 22px">
+          <h3>— Ništa nije izabrano</h3>
+          <p>Trke u kojima još nisi ništa odabrao su jasno označene — ne možeš zaboraviti na neku.</p>
+        </div>
+        <div class="card" style="padding:18px 22px">
+          <h3>↗ Klik na trku — skok na nju</h3>
+          <p>Klikom na naziv trke u pregledu simulator odmah otvori tu trku i postavi je na vrh ekrana — bez traženja i skrolanja kroz duge liste kandidata.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sum-mock">
+        <div class="sum-bar">
+          <span style="width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font-size:11px">✓</span>
+          <span style="flex:1">Moj izbor</span>
+          <span style="background:rgba(255,255,255,0.22);padding:2px 9px;border-radius:999px;font-size:11px;font-weight:600">4</span>
+        </div>
+
+        <div class="sum-row">
+          <div class="sum-lbl">Predsjedništvo BiH</div>
+          <div style="font-size:10px;color:#aaa;margin-bottom:3px;font-weight:600;text-transform:uppercase;letter-spacing:.4px">Bošnjački član</div>
+          <div class="sr"><span class="scr on"></span><span>5. Denis Bećirović <span style="color:#999">(SDP BiH)</span></span></div>
+          <div style="font-size:10px;color:#aaa;margin:6px 0 3px;font-weight:600;text-transform:uppercase;letter-spacing:.4px">Hrvatski član</div>
+          <div class="em">— nije izabrano —</div>
+        </div>
+
+        <div class="sum-row">
+          <div class="sum-lbl">Zastupnički dom PS BiH</div>
+          <div class="sr"><span class="scr"></span><span><span class="ac">Stranka 1.</span> Stranka demokratske akcije</span></div>
+          <div class="sr-in">
+            <div class="sr"><span class="scr on"></span><span>2. Semir Efendić</span></div>
+            <div class="sr"><span class="scr on"></span><span>3. Amela Čengić</span></div>
+          </div>
+        </div>
+
+        <div class="sum-row">
+          <div class="sum-lbl">Zastupnički dom Parlamenta FBiH</div>
+          <div class="sr"><span class="scr on"></span><span><span class="ac">Stranka 3.</span> Narod i Pravda</span></div>
+        </div>
+
+        <div class="sum-row">
+          <div class="sum-lbl">Kantonalna skupština</div>
+          <div class="em">— ništa nije izabrano —</div>
+        </div>
+
+        <div style="padding:10px 14px;background:#f5f6f8;border-top:1px solid #eef0f3">
+          <div style="width:100%;padding:8px;border:1px solid #f0c4be;background:#fff;border-radius:8px;color:#c0392b;font-size:12px;font-weight:600;text-align:center">Poništi sve</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SLAJD 6 — LOKALNI VS OPSTI
+════════════════════════════════════════ -->
+<div class="slide slide-dark">
+  <div class="section-label" style="color:#6ee89a">Pokrivenost</div>
+  <h2>Opšti i lokalni izbori —<br>isti alat, drugačiji listić</h2>
+  <p class="lead-text">Simulator podržava oba tipa izbora. Svako biračko mjesto ima vlastiti listić — samo se promijeni link.</p>
+
+  <div class="cards cards-3">
+    <div class="card">
+      <div class="icon">🏛️</div>
+      <h3>Opšti izbori — FBiH</h3>
+      <p>
+        Birač u Federaciji glasa na četiri listića:<br><br>
+        ▸ Predsjedništvo BiH — Bošnjački član<br>
+        ▸ Predsjedništvo BiH — Hrvatski član<br>
+        ▸ Zastupnički dom Parlamentarne skupštine BiH<br>
+        ▸ Zastupnički dom Parlamenta Federacije BiH<br>
+        ▸ Skupština kantona
+      </p>
+    </div>
+    <div class="card">
+      <div class="icon">🏛️</div>
+      <h3>Opšti izbori — RS</h3>
+      <p>
+        Birač u Republici Srpskoj glasa drugačije:<br><br>
+        ▸ Predsjedništvo BiH — <strong>samo Srpski član</strong><br>
+        ▸ Zastupnički dom Parlamentarne skupštine BiH<br>
+        ▸ <strong>Predsjednik RS</strong> — jedan kandidat<br>
+        ▸ <strong>Narodna skupština RS</strong><br>
+        ▸ Nema kantonalne skupštine
+      </p>
+    </div>
+    <div class="card">
+      <div class="icon">🏘️</div>
+      <h3>Lokalni izbori</h3>
+      <p>
+        Listić sadrži dvije trke:<br><br>
+        ▸ Načelnik / gradonačelnik — jedan kandidat, većinskim glasanjem<br><br>
+        ▸ Općinsko / gradsko vijeće — otvorena lista, birač bira stranku ili kandidate
+      </p>
+    </div>
+  </div>
+
+  <div class="highlight" style="background:rgba(255,255,255,0.08);border-color:#27ae60;color:rgba(255,255,255,0.85);margin-top:28px">
+    <strong style="color:white">Simulator automatski prikazuje pravi listić za entitet i nivo vlasti.</strong>
+    Birač iz Banje Luke i birač iz Sarajeva vide potpuno različite listiće — a koriste isti alat.
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SLAJD 7 — DOSTUPNOST
+════════════════════════════════════════ -->
+<div class="slide slide-gray">
+  <div class="section-label">Kako birač dolazi do simulatora</div>
+  <h2>Jedan link ili QR kod —<br>radi na svakom telefonu</h2>
+
+  <div class="two-col">
+    <div>
+      <p class="lead-text" style="margin-bottom:24px">
+        Simulator ne treba instalirati. Radi direktno u browseru —
+        na Android i iPhone telefonu jednako dobro.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="circle">📋</div>
+          <div class="txt">
+            <h3>Letak ili plakat</h3>
+            <p>QR kod na izbornom materijalu — birač ga skenira i odmah otvori simulator za svoje biralište</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">🌐</div>
+          <div class="txt">
+            <h3>Web stranica CIK-a</h3>
+            <p>Početna stranica nudi pregledan meni svih biračkih mjesta — birač odabere svoje i otvori listić jednim dodirom</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">📱</div>
+          <div class="txt">
+            <h3>Direktna poruka ili email</h3>
+            <p>Link se može proslijediti u bilo kojoj formi — radi bez instalacije</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="circle">⬇️</div>
+          <div class="txt">
+            <h3>Dodaj na početni ekran kao aplikaciju</h3>
+            <p>Jednim dodirom birač doda ikonicu na telefon. Otvara se preko cijelog ekrana, kao prava aplikacija — i pamti baš njegovo biralište. Ništa se zaista ne instalira iz prodavnice.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="text-align:center; margin-bottom:20px;">
+        <div style="display:inline-block; background:white; padding:16px; border-radius:16px; box-shadow: 0 6px 24px rgba(0,0,0,0.12);">
+          <div id="prez-qr"></div>
+        </div>
+        <div style="font-size:12px; color:#888; margin-top:10px; line-height:1.5;">
+          Skenirajte za demo simulatora<br>
+          <span id="prez-qr-url" style="font-family:monospace;font-size:11px;color:#bbb"></span>
+        </div>
+      </div>
+
+      <div class="cards" style="grid-template-columns:1fr; gap:14px;">
+        <div class="card" style="padding:18px 22px">
+          <h3>📵 Radi i bez interneta</h3>
+          <p>Nakon prvog učitavanja listić se prikazuje čak i bez signala — korisno na biralištima sa slabom vezom</p>
+        </div>
+        <div class="card" style="padding:18px 22px">
+          <h3>💾 Podsjetnik za biralište</h3>
+          <p>Simulator pamti izbor na telefonu birača. Može obilježiti kandidate kod kuće — pa ih pogleda čim stane pred glasačku kutiju. Ništa se ne šalje nikome.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     SLAJD 8 — KRAJ
+════════════════════════════════════════ -->
+<div class="slide final">
+  <h2>Birač koji zna — glasa ispravno</h2>
+  <p class="lead-text">
+    Simulator glasačkog listića daje svakom građaninu priliku da unaprijed
+    upozna listić, razumije pravila i dođe na biralište spreman —
+    bez stresa, bez greški.
+  </p>
+
+  <div class="final-icons">
+    <div>
+      <div class="ico">📱</div>
+      <div class="lbl">Radi na svakom<br>telefonu</div>
+    </div>
+    <div>
+      <div class="ico">🗳️</div>
+      <div class="lbl">Pravi prikaz<br>listića</div>
+    </div>
+    <div>
+      <div class="ico">⚖️</div>
+      <div class="lbl">Pravila glasanja<br>automatski</div>
+    </div>
+    <div>
+      <div class="ico">👁️</div>
+      <div class="lbl">Sve stranke<br>i kandidati</div>
+    </div>
+    <div>
+      <div class="ico">💾</div>
+      <div class="lbl">Podsjetnik<br>na biralište</div>
+    </div>
+    <div>
+      <div class="ico">⬇️</div>
+      <div class="lbl">Ikonica kao<br>aplikacija</div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  window.addEventListener("load", function() {
+    const base = window.location.href.replace(/[^/]*$/, "");
+    const url  = base + "lista.html?kod=001-gen";
+    document.getElementById("prez-qr-url").textContent = url.replace(/^https?:\/\//, "");
+    try {
+      new QRCode(document.getElementById("prez-qr"), {
+        text: url, width: 180, height: 180,
+        colorDark: "#000000", colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    } catch(e) {
+      document.getElementById("prez-qr").innerHTML =
+        '<div style="width:180px;height:180px;background:#f0f0f0;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#999;text-align:center;padding:16px">QR kod<br>(internet nedostupan)</div>';
+    }
+  });
+</script>
+</body>
+</html>

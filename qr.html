@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Generator — Simulator glasačkog listića</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1a1a1a;
+    min-height: 100vh;
+  }
+
+  .page { max-width: 560px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  .tool-header { margin-bottom: 32px; }
+  .tool-header h1 { font-size: 22px; font-weight: 800; color: #0d3b1b; margin-bottom: 4px; }
+  .tool-header p  { font-size: 14px; color: #666; line-height: 1.6; }
+
+  .card { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 24px; }
+
+  .field { margin-bottom: 18px; }
+  .field:last-of-type { margin-bottom: 0; }
+  label { font-size: 13px; font-weight: 600; color: #444; display: block; margin-bottom: 6px; }
+  .hint { font-size: 12px; color: #999; margin-top: 4px; }
+  input[type="text"] {
+    width: 100%; padding: 11px 14px;
+    border: 1.5px solid #d8dade; border-radius: 8px;
+    font-size: 14px; font-family: inherit; outline: none;
+    transition: border-color 0.2s;
+  }
+  input[type="text"]:focus { border-color: #1a7a3c; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border: none; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit; transition: opacity 0.15s; }
+  .btn:active { opacity: 0.8; }
+  .btn-green  { background: #1a7a3c; color: white; }
+  .btn-blue   { background: #1f6feb; color: white; }
+  .btn-gray   { background: #eee; color: #333; }
+
+  #result { display: none; }
+
+  /* -------- PLAKAT -------- */
+  .poster {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .poster-top {
+    background: linear-gradient(135deg, #0d3b1b 0%, #1a7a3c 100%);
+    color: white; border-radius: 12px;
+    padding: 20px 24px 18px;
+    margin-bottom: 28px;
+  }
+  .poster-top .icon { font-size: 36px; margin-bottom: 10px; }
+  .poster-top h2 { font-size: 20px; font-weight: 800; line-height: 1.25; margin-bottom: 6px; }
+  .poster-top .subtitle { font-size: 13.5px; opacity: 0.85; line-height: 1.5; }
+
+  #qr-box { display: flex; justify-content: center; align-items: center; margin: 4px 0 8px; min-height: 228px; }
+  #qr-box canvas, #qr-box img { border-radius: 6px; box-shadow: 0 0 0 3px #eee; }
+
+  .poster-url { font-size: 11px; color: #aaa; word-break: break-all; margin-bottom: 24px; }
+
+  .poster-steps { border-top: 1px solid #eef0f3; padding-top: 20px; text-align: left; }
+  .poster-steps h3 { font-size: 13px; font-weight: 700; color: #0d3b1b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .poster-steps ol { padding-left: 18px; color: #555; font-size: 13.5px; line-height: 1.9; }
+  .poster-steps ol li strong { color: #0d3b1b; }
+
+  .poster-footer { margin-top: 20px; border-top: 1px solid #eef0f3; padding-top: 16px; font-size: 12px; color: #bbb; }
+
+  .actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+
+  /* -------- ERROR -------- */
+  .err { background: #fff5f5; border: 1.5px solid #f5c6c6; border-radius: 10px; padding: 14px 18px; color: #b00; font-size: 13.5px; margin-top: 8px; display: none; }
+
+  /* -------- PRINT -------- */
+  @media print {
+    body, .page { background: white; padding: 0; max-width: 100%; }
+    .tool-header, .card:not(.poster-card), .actions, .err { display: none !important; }
+    #result { display: block !important; }
+    .poster { box-shadow: none; border-radius: 0; padding: 24px; page-break-inside: avoid; }
+    .poster-top { border-radius: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="tool-header">
+    <h1>🔳 QR kod za biralište</h1>
+    <p>Generiši QR kod koji birači skeniraju da odmah otvore simulator glasačkog listića na svom telefonu.</p>
+  </div>
+
+  <!-- Form -->
+  <div class="card">
+    <div class="field">
+      <label for="inp-kod">Šifra biračkog mjesta</label>
+      <input type="text" id="inp-kod" placeholder="npr. 001-gen ili 001-mun" autocomplete="off" />
+      <div class="hint">Ovo je isti kod koji se koristi u URL-u simulatora</div>
+    </div>
+    <div class="field">
+      <label for="inp-naziv">Naziv za naslov plakata</label>
+      <input type="text" id="inp-naziv" placeholder="npr. Velika Kladuša — opšti izbori 2026" autocomplete="off" />
+    </div>
+    <div class="field">
+      <label for="inp-url">Adresa simulatora (automatski)</label>
+      <input type="text" id="inp-url" placeholder="https://..." readonly style="color:#888;background:#fafafa" />
+      <div class="hint">Možeš promijeniti ako simulator nije na istom serveru</div>
+    </div>
+    <div id="gen-err" class="err">Unesite šifru biračkog mjesta da bi generisali QR kod.</div>
+    <br>
+    <button class="btn btn-green" onclick="generate()">🔳 Generiši QR kod</button>
+  </div>
+
+  <!-- Result -->
+  <div id="result">
+    <div class="poster poster-card" id="poster">
+      <div class="poster-top">
+        <div class="icon">🗳️</div>
+        <h2 id="poster-naziv">Simulator glasačkog listića</h2>
+        <div class="subtitle" id="poster-sub">Skenirajte i isprobajte glasanje na svom telefonu</div>
+      </div>
+
+      <div id="qr-box"></div>
+      <div class="poster-url" id="poster-url-label"></div>
+
+      <div class="poster-steps">
+        <h3>Kako koristiti simulator</h3>
+        <ol>
+          <li><strong>Skenirajte QR kod</strong> kamerom telefona</li>
+          <li>Pregledajte <strong>sve stranke i kandidate</strong></li>
+          <li>Isprobajte označiti svoje kandidate</li>
+          <li>Vaš izbor <strong>ostaje zapamćen</strong> kao podsjetnik</li>
+          <li>Na biralište dođite <strong>sigurni i pripremljeni</strong></li>
+        </ol>
+      </div>
+
+      <div class="poster-footer" id="poster-footer">Simulator glasačkog listića · <span id="poster-kod-label"></span></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-blue" onclick="window.print()">🖨️ Štampaj plakat</button>
+      <button class="btn btn-gray" onclick="resetForm()">← Novi QR kod</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+        onerror="handleLibError()"></script>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const initKod   = params.get("kod")   || "";
+  const initNaziv = params.get("naziv") || "";
+
+  const inpKod   = document.getElementById("inp-kod");
+  const inpNaziv = document.getElementById("inp-naziv");
+  const inpUrl   = document.getElementById("inp-url");
+
+  if (initKod)   inpKod.value   = initKod;
+  if (initNaziv) inpNaziv.value = initNaziv;
+
+  function buildSimUrl(kod) {
+    const base = window.location.href.replace(/[^/]*$/, "");
+    return base + "lista.html?kod=" + encodeURIComponent(kod);
+  }
+
+  inpKod.addEventListener("input", () => {
+    const k = inpKod.value.trim();
+    inpUrl.value = k ? buildSimUrl(k) : "";
+    document.getElementById("gen-err").style.display = "none";
+  });
+  inpUrl.value = initKod ? buildSimUrl(initKod) : "";
+
+  function generate() {
+    const kod   = inpKod.value.trim();
+    const naziv = inpNaziv.value.trim() || ("Biralište: " + kod);
+    const url   = inpUrl.value.trim() || buildSimUrl(kod);
+
+    if (!kod) {
+      document.getElementById("gen-err").style.display = "block";
+      return;
+    }
+
+    if (typeof QRCode === "undefined") {
+      alert("QR biblioteka nije dostupna. Provjerite internet vezu.");
+      return;
+    }
+
+    document.getElementById("poster-naziv").textContent = naziv;
+    document.getElementById("poster-url-label").textContent = url;
+    document.getElementById("poster-kod-label").textContent = kod;
+
+    const box = document.getElementById("qr-box");
+    box.innerHTML = "";
+    new QRCode(box, {
+      text: url,
+      width: 220,
+      height: 220,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+      correctLevel: QRCode.CorrectLevel.M
+    });
+
+    document.getElementById("result").style.display = "block";
+    setTimeout(() => document.getElementById("result").scrollIntoView({behavior:"smooth"}), 80);
+  }
+
+  function resetForm() {
+    document.getElementById("result").style.display = "none";
+    document.getElementById("qr-box").innerHTML = "";
+    window.scrollTo({top: 0, behavior: "smooth"});
+  }
+
+  function handleLibError() {
+    document.querySelector(".tool-header p").insertAdjacentHTML("afterend",
+      `<div class="err" style="display:block;margin-top:12px">⚠️ QR biblioteka nije učitana. Potrebna je internet veza za generisanje QR kodova.</div>`);
+  }
+
+  if (initKod) setTimeout(generate, 200);
+</script>
+</body>
+</html>

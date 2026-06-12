@@ -1,0 +1,461 @@
+{
+  "izbornaJedinica": {
+    "kod": "demo",
+    "naziv": "Demo — pregled trka",
+    "tip": "opsti"
+  },
+  "trke": [
+    {
+      "id": "predsjednistvo",
+      "naslov": "Predsjedništvo Bosne i Hercegovine",
+      "podnaslov": "Bošnjački i Hrvatski član",
+      "tip": "predsjednistvo",
+      "kolone": [
+        {
+          "id": "bos",
+          "naslov": "Bošnjački član",
+          "kandidati": [
+            { "redni": 1, "ime": "Mirsad Hadžikadić",  "stranka": "Platforma za progres" },
+            { "redni": 2, "ime": "Fahrudin Radončić",   "stranka": "SBB" },
+            { "redni": 3, "ime": "Senad Šepić",         "stranka": "Nezavisni blok" },
+            { "redni": 4, "ime": "Šefik Džaferović",    "stranka": "SDA" },
+            { "redni": 5, "ime": "Denis Bećirović",     "stranka": "SDP BiH" },
+            { "redni": 6, "ime": "Amer Jerlagić",       "stranka": "Stranka za BiH" }
+          ]
+        },
+        {
+          "id": "hrv",
+          "naslov": "Hrvatski član",
+          "kandidati": [
+            { "redni": 1, "ime": "Jerko Ivanković-Lijanović", "stranka": "Narodna stranka Radom za boljitak" },
+            { "redni": 2, "ime": "Dragan Čović",              "stranka": "HDZ BiH" },
+            { "redni": 3, "ime": "Boriša Falatar",            "stranka": "Naša stranka" },
+            { "redni": 4, "ime": "Diana Zelenika",            "stranka": "HDZ 1990" },
+            { "redni": 5, "ime": "Željko Komšić",             "stranka": "Demokratska fronta" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-bih",
+      "naslov": "Zastupnički dom Parlamentarne skupštine BiH",
+      "podnaslov": "17 stranaka",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1, "naziv": "Stranka demokratske akcije",
+          "kandidati": [
+            { "redni": 1, "ime": "Adnan Hodžić" }, { "redni": 2, "ime": "Amra Begić" },
+            { "redni": 3, "ime": "Edin Halilović" }
+          ]
+        },
+        {
+          "redni": 2, "naziv": "Savez nezavisnih socijaldemokrata",
+          "kandidati": [
+            { "redni": 1, "ime": "Goran Marković" }, { "redni": 2, "ime": "Bojana Petrović" }
+          ]
+        },
+        {
+          "redni": 3, "naziv": "Hrvatska demokratska zajednica BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Ivan Tomić" }, { "redni": 2, "ime": "Ivana Babić" },
+            { "redni": 3, "ime": "Petar Lukić" }
+          ]
+        },
+        {
+          "redni": 4, "naziv": "Socijaldemokratska partija BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Damir Selimović" }, { "redni": 2, "ime": "Dženana Ahmetović" },
+            { "redni": 3, "ime": "Emir Kurtović" }, { "redni": 4, "ime": "Emina Bašić" }
+          ]
+        },
+        {
+          "redni": 5, "naziv": "Narod i Pravda",
+          "kandidati": [
+            { "redni": 1, "ime": "Haris Mušić" }, { "redni": 2, "ime": "Hana Pašić" }
+          ]
+        },
+        {
+          "redni": 6, "naziv": "Naša stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Jasmin Begović" }, { "redni": 2, "ime": "Jasmina Karić" },
+            { "redni": 3, "ime": "Kenan Šarić" }
+          ]
+        },
+        {
+          "redni": 7, "naziv": "Partija demokratskog progresa",
+          "kandidati": [
+            { "redni": 1, "ime": "Rade Stanišić" }, { "redni": 2, "ime": "Olivera Vuković" }
+          ]
+        },
+        {
+          "redni": 8, "naziv": "Demokratska fronta",
+          "kandidati": [
+            { "redni": 1, "ime": "Edin Delić" }, { "redni": 2, "ime": "Elma Hasanović" },
+            { "redni": 3, "ime": "Amir Tadić" }
+          ]
+        },
+        {
+          "redni": 9, "naziv": "Savez za bolju budućnost BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Faruk Mujić" }, { "redni": 2, "ime": "Fatima Đikić" }
+          ]
+        },
+        {
+          "redni": 10, "naziv": "Ujedinjena Srpska",
+          "kandidati": [
+            { "redni": 1, "ime": "Stefan Jovanović" }, { "redni": 2, "ime": "Tanja Knežević" },
+            { "redni": 3, "ime": "Pavle Lalić" }
+          ]
+        },
+        {
+          "redni": 11, "naziv": "Hrvatska republikanska stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Boris Galić" }, { "redni": 2, "ime": "Vedrana Vasilj" }
+          ]
+        },
+        {
+          "redni": 12, "naziv": "Pokret demokratske akcije",
+          "kandidati": [
+            { "redni": 1, "ime": "Kemal Mujanović" }, { "redni": 2, "ime": "Lejla Softić" },
+            { "redni": 3, "ime": "Bekir Pejić" }
+          ]
+        },
+        {
+          "redni": 13, "naziv": "Za nove generacije",
+          "kandidati": [
+            { "redni": 1, "ime": "Sanela Sarajlić" }, { "redni": 2, "ime": "Tarik Topčić" }
+          ]
+        },
+        {
+          "redni": 14, "naziv": "Nezavisni blok",
+          "kandidati": [
+            { "redni": 1, "ime": "Nedim Lijanović" }, { "redni": 2, "ime": "Nermina Filipović" },
+            { "redni": 3, "ime": "Rifet Radić" }
+          ]
+        },
+        {
+          "redni": 15, "naziv": "Socijalistička partija",
+          "kandidati": [
+            { "redni": 1, "ime": "Vlado Grbavac" }, { "redni": 2, "ime": "Gordana Vukosav" }
+          ]
+        },
+        {
+          "redni": 16, "naziv": "Liberalna stranka BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Alma Mihajlović" }, { "redni": 2, "ime": "Ahmed Bjelica" }
+          ]
+        },
+        {
+          "redni": 17, "naziv": "BH inicijativa – Kasumović Fuad",
+          "kandidati": [
+            { "redni": 1, "ime": "Aida Crnogorac" }, { "redni": 2, "ime": "Adis Pranjić" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-fbih",
+      "naslov": "Zastupnički dom Parlamenta Federacije BiH",
+      "podnaslov": "17 stranaka",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1, "naziv": "Stranka demokratske akcije",
+          "kandidati": [
+            { "redni": 1, "ime": "Mirsad Halilović" }, { "redni": 2, "ime": "Mirela Ibrahimović" },
+            { "redni": 3, "ime": "Sanjin Selimović" }, { "redni": 4, "ime": "Sanela Ahmetović" },
+            { "redni": 5, "ime": "Zlatan Kurtović" }, { "redni": 6, "ime": "Zerina Bašić" },
+            { "redni": 7, "ime": "Adis Delić" }, { "redni": 8, "ime": "Amra Hasanović" }
+          ]
+        },
+        {
+          "redni": 2, "naziv": "Savez nezavisnih socijaldemokrata",
+          "kandidati": [
+            { "redni": 1, "ime": "Ognjen Tomić" }, { "redni": 2, "ime": "Pavle Marković" },
+            { "redni": 3, "ime": "Tanja Petrović" }, { "redni": 4, "ime": "Stefan Jovanović" },
+            { "redni": 5, "ime": "Bojana Knežević" }, { "redni": 6, "ime": "Boris Babić" },
+            { "redni": 7, "ime": "Vlado Lukić" }, { "redni": 8, "ime": "Gordana Stanišić" },
+            { "redni": 9, "ime": "Rade Lalić" }
+          ]
+        },
+        {
+          "redni": 3, "naziv": "Hrvatska demokratska zajednica BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Ivan Galić" }, { "redni": 2, "ime": "Ivana Vasilj" },
+            { "redni": 3, "ime": "Petar Vidović" }, { "redni": 4, "ime": "Vedrana Soldo" },
+            { "redni": 5, "ime": "Goran Boras" }, { "redni": 6, "ime": "Boris Kordić" },
+            { "redni": 7, "ime": "Bojana Sarajlić" }, { "redni": 8, "ime": "Olivera Topčić" }
+          ]
+        },
+        {
+          "redni": 4, "naziv": "Socijaldemokratska partija BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Edin Hodžić" }, { "redni": 2, "ime": "Elma Begić" },
+            { "redni": 3, "ime": "Emir Mehmedović" }, { "redni": 4, "ime": "Emina Kovačević" },
+            { "redni": 5, "ime": "Faruk Selimović" }, { "redni": 6, "ime": "Fatima Ahmetović" },
+            { "redni": 7, "ime": "Haris Đikić" }, { "redni": 8, "ime": "Hana Tomić" }
+          ]
+        },
+        {
+          "redni": 5, "naziv": "Narod i Pravda",
+          "kandidati": [
+            { "redni": 1, "ime": "Amir Mušić" }, { "redni": 2, "ime": "Aida Pašić" },
+            { "redni": 3, "ime": "Amer Šarić" }, { "redni": 4, "ime": "Alma Begović" },
+            { "redni": 5, "ime": "Adnan Karić" }, { "redni": 6, "ime": "Amra Mujić" },
+            { "redni": 7, "ime": "Ahmed Tadić" }, { "redni": 8, "ime": "Amra Đikić" }
+          ]
+        },
+        {
+          "redni": 6, "naziv": "Naša stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Jasmin Pejić" }, { "redni": 2, "ime": "Jasmina Vuković" },
+            { "redni": 3, "ime": "Kenal Stanišić" }, { "redni": 4, "ime": "Kenan Lalić" },
+            { "redni": 5, "ime": "Lejla Vukosav" }, { "redni": 6, "ime": "Maja Mihajlović" }
+          ]
+        },
+        {
+          "redni": 7, "naziv": "Partija demokratskog progresa",
+          "kandidati": [
+            { "redni": 1, "ime": "Rade Bjelica" }, { "redni": 2, "ime": "Stefan Crnogorac" },
+            { "redni": 3, "ime": "Tanja Šainović" }, { "redni": 4, "ime": "Pavle Maleš" },
+            { "redni": 5, "ime": "Ognjen Pranjić" }, { "redni": 6, "ime": "Olivera Lijanović" },
+            { "redni": 7, "ime": "Gordana Filipović" }, { "redni": 8, "ime": "Vlado Radić" }
+          ]
+        },
+        {
+          "redni": 8, "naziv": "Demokratska fronta",
+          "kandidati": [
+            { "redni": 1, "ime": "Damir Hodžić" }, { "redni": 2, "ime": "Dženana Begić" },
+            { "redni": 3, "ime": "Bekir Mehmedović" }, { "redni": 4, "ime": "Belma Kovačević" },
+            { "redni": 5, "ime": "Adnan Halilović" }, { "redni": 6, "ime": "Adis Ibrahimović" }
+          ]
+        },
+        {
+          "redni": 9, "naziv": "Savez za bolju budućnost BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Mirsad Selimović" }, { "redni": 2, "ime": "Mirela Ahmetović" },
+            { "redni": 3, "ime": "Nedim Đikić" }, { "redni": 4, "ime": "Nermina Tomić" },
+            { "redni": 5, "ime": "Rifet Marković" }, { "redni": 6, "ime": "Sanela Petrović" },
+            { "redni": 7, "ime": "Sanjin Jovanović" }, { "redni": 8, "ime": "Tarik Knežević" }
+          ]
+        },
+        {
+          "redni": 10, "naziv": "Ujedinjena Srpska",
+          "kandidati": [
+            { "redni": 1, "ime": "Goran Babić" }, { "redni": 2, "ime": "Gordana Lukić" },
+            { "redni": 3, "ime": "Boris Kurtović" }, { "redni": 4, "ime": "Bojana Bašić" },
+            { "redni": 5, "ime": "Ivan Delić" }, { "redni": 6, "ime": "Ivana Hasanović" }
+          ]
+        },
+        {
+          "redni": 11, "naziv": "Hrvatska republikanska stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Petar Mušić" }, { "redni": 2, "ime": "Vedrana Pašić" },
+            { "redni": 3, "ime": "Vlado Šarić" }, { "redni": 4, "ime": "Olivera Begović" },
+            { "redni": 5, "ime": "Rade Karić" }, { "redni": 6, "ime": "Tanja Mujić" }
+          ]
+        },
+        {
+          "redni": 12, "naziv": "Pokret demokratske akcije",
+          "kandidati": [
+            { "redni": 1, "ime": "Kemal Tadić" }, { "redni": 2, "ime": "Lejla Pejić" },
+            { "redni": 3, "ime": "Zlatan Vuković" }, { "redni": 4, "ime": "Zerina Stanišić" }
+          ]
+        },
+        {
+          "redni": 13, "naziv": "Za nove generacije",
+          "kandidati": [
+            { "redni": 1, "ime": "Ahmed Lalić" }, { "redni": 2, "ime": "Aida Vukosav" },
+            { "redni": 3, "ime": "Amir Mihajlović" }, { "redni": 4, "ime": "Alma Bjelica" },
+            { "redni": 5, "ime": "Amer Crnogorac" }, { "redni": 6, "ime": "Amra Šainović" }
+          ]
+        },
+        {
+          "redni": 14, "naziv": "Nezavisni blok",
+          "kandidati": [
+            { "redni": 1, "ime": "Haris Maleš" }, { "redni": 2, "ime": "Hana Pranjić" },
+            { "redni": 3, "ime": "Faruk Lijanović" }, { "redni": 4, "ime": "Fatima Filipović" }
+          ]
+        },
+        {
+          "redni": 15, "naziv": "Socijalistička partija",
+          "kandidati": [
+            { "redni": 1, "ime": "Stefan Radić" }, { "redni": 2, "ime": "Tanja Grbavac" },
+            { "redni": 3, "ime": "Pavle Galić" }, { "redni": 4, "ime": "Ognjen Vasilj" }
+          ]
+        },
+        {
+          "redni": 16, "naziv": "Liberalna stranka BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Edin Vidović" }, { "redni": 2, "ime": "Emina Soldo" },
+            { "redni": 3, "ime": "Emir Boras" }, { "redni": 4, "ime": "Elma Kordić" },
+            { "redni": 5, "ime": "Damir Sarajlić" }, { "redni": 6, "ime": "Dženana Topčić" }
+          ]
+        },
+        {
+          "redni": 17, "naziv": "BH inicijativa – Kasumović Fuad",
+          "kandidati": [
+            { "redni": 1, "ime": "Bekir Hodžić" }, { "redni": 2, "ime": "Belma Begić" },
+            { "redni": 3, "ime": "Adnan Kovačević" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-fbih",
+      "naslov": "Zastupnički dom Parlamenta Federacije BiH",
+      "podnaslov": "17 stranaka",
+      "tip": "otvorena-lista",
+      "stranke": [
+        { "redni": 1, "naziv": "Stranka demokratske akcije", "kandidati": [
+            {"redni":1,"ime":"Edin Mujanović"},{"redni":2,"ime":"Alma Softić"},{"redni":3,"ime":"Haris Bajrić"},
+            {"redni":4,"ime":"Sanela Čengić"},{"redni":5,"ime":"Kemal Ibrahimović"},{"redni":6,"ime":"Lejla Mehić"},
+            {"redni":7,"ime":"Adnan Šabić"},{"redni":8,"ime":"Zerina Terzić"}]},
+        { "redni": 2, "naziv": "Savez nezavisnih socijaldemokrata", "kandidati": [
+            {"redni":1,"ime":"Boris Vidović"},{"redni":2,"ime":"Gordana Soldo"},{"redni":3,"ime":"Rade Boras"},
+            {"redni":4,"ime":"Tanja Kordić"},{"redni":5,"ime":"Stefan Sarajlić"},{"redni":6,"ime":"Olivera Topčić"},
+            {"redni":7,"ime":"Vlado Mihajlović"},{"redni":8,"ime":"Bojana Bjelica"},{"redni":9,"ime":"Ivan Crnogorac"}]},
+        { "redni": 3, "naziv": "Hrvatska demokratska zajednica BiH", "kandidati": [
+            {"redni":1,"ime":"Petar Maleš"},{"redni":2,"ime":"Vedrana Pranjić"},{"redni":3,"ime":"Goran Lijanović"},
+            {"redni":4,"ime":"Ivana Filipović"},{"redni":5,"ime":"Pavle Radić"},{"redni":6,"ime":"Ognjen Grbavac"},
+            {"redni":7,"ime":"Tanja Galić"},{"redni":8,"ime":"Boris Vasilj"}]},
+        { "redni": 4, "naziv": "Socijaldemokratska partija BiH", "kandidati": [
+            {"redni":1,"ime":"Damir Karić"},{"redni":2,"ime":"Dženana Mujić"},{"redni":3,"ime":"Bekir Tadić"},
+            {"redni":4,"ime":"Belma Pejić"},{"redni":5,"ime":"Amir Vuković"},{"redni":6,"ime":"Aida Stanišić"},
+            {"redni":7,"ime":"Adis Lalić"},{"redni":8,"ime":"Amra Vukosav"}]},
+        { "redni": 5, "naziv": "Narod i Pravda", "kandidati": [
+            {"redni":1,"ime":"Mirsad Mihajlović"},{"redni":2,"ime":"Mirela Bjelica"},{"redni":3,"ime":"Nedim Crnogorac"},
+            {"redni":4,"ime":"Nermina Šainović"},{"redni":5,"ime":"Rifet Maleš"},{"redni":6,"ime":"Sanela Pranjić"},
+            {"redni":7,"ime":"Sanjin Lijanović"},{"redni":8,"ime":"Tarik Filipović"}]},
+        { "redni": 6, "naziv": "Naša stranka", "kandidati": [
+            {"redni":1,"ime":"Kenal Radić"},{"redni":2,"ime":"Lejla Grbavac"},{"redni":3,"ime":"Zlatan Galić"},
+            {"redni":4,"ime":"Zerina Vasilj"},{"redni":5,"ime":"Adnan Vidović"},{"redni":6,"ime":"Amra Soldo"}]},
+        { "redni": 7, "naziv": "Partija demokratskog progresa", "kandidati": [
+            {"redni":1,"ime":"Pavle Boras"},{"redni":2,"ime":"Olivera Kordić"},{"redni":3,"ime":"Ognjen Sarajlić"},
+            {"redni":4,"ime":"Gordana Topčić"},{"redni":5,"ime":"Stefan Hodžić"},{"redni":6,"ime":"Tanja Begić"},
+            {"redni":7,"ime":"Ivan Mehmedović"},{"redni":8,"ime":"Ivana Kovačević"}]},
+        { "redni": 8, "naziv": "Demokratska fronta", "kandidati": [
+            {"redni":1,"ime":"Emir Halilović"},{"redni":2,"ime":"Emina Ibrahimović"},{"redni":3,"ime":"Faruk Selimović"},
+            {"redni":4,"ime":"Fatima Ahmetović"},{"redni":5,"ime":"Haris Đikić"},{"redni":6,"ime":"Hana Tomić"}]},
+        { "redni": 9, "naziv": "Savez za bolju budućnost BiH", "kandidati": [
+            {"redni":1,"ime":"Adnan Marković"},{"redni":2,"ime":"Alma Petrović"},{"redni":3,"ime":"Amir Jovanović"},
+            {"redni":4,"ime":"Aida Knežević"},{"redni":5,"ime":"Ahmed Babić"},{"redni":6,"ime":"Amra Lukić"},
+            {"redni":7,"ime":"Adis Kurtović"},{"redni":8,"ime":"Zerina Bašić"}]},
+        { "redni": 10, "naziv": "Ujedinjena Srpska", "kandidati": [
+            {"redni":1,"ime":"Rade Hodžić"},{"redni":2,"ime":"Stefan Begić"},{"redni":3,"ime":"Tanja Kovačević"},
+            {"redni":4,"ime":"Boris Halilović"},{"redni":5,"ime":"Gordana Ibrahimović"},{"redni":6,"ime":"Vlado Selimović"}]},
+        { "redni": 11, "naziv": "Hrvatska republikanska stranka", "kandidati": [
+            {"redni":1,"ime":"Goran Ahmetović"},{"redni":2,"ime":"Ivana Đikić"},{"redni":3,"ime":"Petar Tomić"},
+            {"redni":4,"ime":"Vedrana Marković"},{"redni":5,"ime":"Ivan Petrović"},{"redni":6,"ime":"Bojana Jovanović"}]},
+        { "redni": 12, "naziv": "Pokret demokratske akcije", "kandidati": [
+            {"redni":1,"ime":"Kemal Babić"},{"redni":2,"ime":"Lejla Lukić"},{"redni":3,"ime":"Maja Kurtović"},
+            {"redni":4,"ime":"Mirsad Bašić"}]},
+        { "redni": 13, "naziv": "Za nove generacije", "kandidati": [
+            {"redni":1,"ime":"Sanela Delić"},{"redni":2,"ime":"Sanjin Hasanović"},{"redni":3,"ime":"Tarik Mušić"},
+            {"redni":4,"ime":"Zerina Pašić"},{"redni":5,"ime":"Adnan Šarić"},{"redni":6,"ime":"Amra Begović"}]},
+        { "redni": 14, "naziv": "Nezavisni blok", "kandidati": [
+            {"redni":1,"ime":"Haris Karić"},{"redni":2,"ime":"Hana Mujić"},{"redni":3,"ime":"Faruk Tadić"},
+            {"redni":4,"ime":"Fatima Pejić"}]},
+        { "redni": 15, "naziv": "Socijalistička partija", "kandidati": [
+            {"redni":1,"ime":"Ognjen Vuković"},{"redni":2,"ime":"Olivera Stanišić"},{"redni":3,"ime":"Pavle Lalić"},
+            {"redni":4,"ime":"Rade Vukosav"}]},
+        { "redni": 16, "naziv": "Liberalna stranka BiH", "kandidati": [
+            {"redni":1,"ime":"Edin Mihajlović"},{"redni":2,"ime":"Elma Bjelica"},{"redni":3,"ime":"Emir Crnogorac"},
+            {"redni":4,"ime":"Emina Šainović"},{"redni":5,"ime":"Damir Maleš"},{"redni":6,"ime":"Dženana Pranjić"}]},
+        { "redni": 17, "naziv": "BH inicijativa – Kasumović Fuad", "kandidati": [
+            {"redni":1,"ime":"Bekir Lijanović"},{"redni":2,"ime":"Belma Filipović"},{"redni":3,"ime":"Adnan Radić"}]}
+      ]
+    },
+    {
+      "id": "kanton",
+      "naslov": "Kantonalna skupština",
+      "podnaslov": "18 stranaka",
+      "tip": "otvorena-lista",
+      "stranke": [
+        { "redni": 1, "naziv": "Stranka demokratske akcije", "kandidati": [
+            {"redni":1,"ime":"Husein Softić"},{"redni":2,"ime":"Sanela Mehić"},{"redni":3,"ime":"Edin Bajrić"},
+            {"redni":4,"ime":"Amira Čengić"},{"redni":5,"ime":"Kemal Ibrahimović"},{"redni":6,"ime":"Nermina Šabić"},
+            {"redni":7,"ime":"Adnan Terzić"},{"redni":8,"ime":"Zerina Mehmedović"},{"redni":9,"ime":"Haris Mujanović"},
+            {"redni":10,"ime":"Fatima Delić"},{"redni":11,"ime":"Sanjin Mujkić"},{"redni":12,"ime":"Belma Kurtović"},
+            {"redni":13,"ime":"Tarik Halilović"},{"redni":14,"ime":"Alma Đapo"},{"redni":15,"ime":"Amir Ćehić"},
+            {"redni":16,"ime":"Lejla Bektić"},{"redni":17,"ime":"Adis Bajrić"},{"redni":18,"ime":"Emina Softić"},
+            {"redni":19,"ime":"Faruk Hadžić"},{"redni":20,"ime":"Zerina Begić"}]},
+        { "redni": 2, "naziv": "Savez nezavisnih socijaldemokrata", "kandidati": [
+            {"redni":1,"ime":"Boris Marković"},{"redni":2,"ime":"Gordana Petrović"},{"redni":3,"ime":"Rade Jovanović"},
+            {"redni":4,"ime":"Tanja Knežević"},{"redni":5,"ime":"Stefan Babić"},{"redni":6,"ime":"Olivera Lukić"},
+            {"redni":7,"ime":"Vlado Kurtović"},{"redni":8,"ime":"Bojana Bašić"},{"redni":9,"ime":"Ivan Delić"},
+            {"redni":10,"ime":"Ivana Hasanović"},{"redni":11,"ime":"Goran Mušić"},{"redni":12,"ime":"Gordana Pašić"},
+            {"redni":13,"ime":"Pavle Šarić"},{"redni":14,"ime":"Petar Begović"},{"redni":15,"ime":"Ognjen Karić"}]},
+        { "redni": 3, "naziv": "Hrvatska demokratska zajednica BiH", "kandidati": [
+            {"redni":1,"ime":"Ivan Galić"},{"redni":2,"ime":"Ivana Vasilj"},{"redni":3,"ime":"Petar Vidović"},
+            {"redni":4,"ime":"Vedrana Soldo"},{"redni":5,"ime":"Goran Boras"},{"redni":6,"ime":"Boris Kordić"},
+            {"redni":7,"ime":"Bojana Sarajlić"},{"redni":8,"ime":"Olivera Topčić"},{"redni":9,"ime":"Rade Mihajlović"},
+            {"redni":10,"ime":"Tanja Bjelica"},{"redni":11,"ime":"Stefan Crnogorac"},{"redni":12,"ime":"Pavle Šainović"}]},
+        { "redni": 4, "naziv": "Socijaldemokratska partija BiH", "kandidati": [
+            {"redni":1,"ime":"Damir Hodžić"},{"redni":2,"ime":"Dženana Begić"},{"redni":3,"ime":"Bekir Kovačević"},
+            {"redni":4,"ime":"Belma Halilović"},{"redni":5,"ime":"Amir Ibrahimović"},{"redni":6,"ime":"Aida Selimović"},
+            {"redni":7,"ime":"Adis Ahmetović"},{"redni":8,"ime":"Amra Đikić"},{"redni":9,"ime":"Ahmed Tomić"},
+            {"redni":10,"ime":"Alma Marković"},{"redni":11,"ime":"Amer Petrović"},{"redni":12,"ime":"Amra Jovanović"}]},
+        { "redni": 5, "naziv": "Narod i Pravda", "kandidati": [
+            {"redni":1,"ime":"Mirsad Knežević"},{"redni":2,"ime":"Mirela Babić"},{"redni":3,"ime":"Nedim Lukić"},
+            {"redni":4,"ime":"Nermina Kurtović"},{"redni":5,"ime":"Rifet Bašić"},{"redni":6,"ime":"Sanela Delić"},
+            {"redni":7,"ime":"Sanjin Hasanović"},{"redni":8,"ime":"Tarik Mušić"},{"redni":9,"ime":"Zerina Pašić"},
+            {"redni":10,"ime":"Adnan Šarić"},{"redni":11,"ime":"Amra Begović"},{"redni":12,"ime":"Adis Karić"},
+            {"redni":13,"ime":"Lejla Mujić"},{"redni":14,"ime":"Faruk Tadić"}]},
+        { "redni": 6, "naziv": "Naša stranka", "kandidati": [
+            {"redni":1,"ime":"Jasmin Vuković"},{"redni":2,"ime":"Jasmina Stanišić"},{"redni":3,"ime":"Kenan Lalić"},
+            {"redni":4,"ime":"Lejla Vukosav"},{"redni":5,"ime":"Maja Mihajlović"},{"redni":6,"ime":"Mirsad Bjelica"},
+            {"redni":7,"ime":"Mirela Crnogorac"},{"redni":8,"ime":"Nedim Šainović"},{"redni":9,"ime":"Nermina Maleš"},
+            {"redni":10,"ime":"Rifet Pranjić"}]},
+        { "redni": 7, "naziv": "Partija demokratskog progresa", "kandidati": [
+            {"redni":1,"ime":"Rade Lijanović"},{"redni":2,"ime":"Stefan Filipović"},{"redni":3,"ime":"Tanja Radić"},
+            {"redni":4,"ime":"Boris Grbavac"},{"redni":5,"ime":"Gordana Galić"},{"redni":6,"ime":"Ivan Vasilj"},
+            {"redni":7,"ime":"Ivana Vidović"},{"redni":8,"ime":"Goran Soldo"},{"redni":9,"ime":"Olivera Boras"},
+            {"redni":10,"ime":"Pavle Kordić"},{"redni":11,"ime":"Petar Sarajlić"},{"redni":12,"ime":"Ognjen Topčić"}]},
+        { "redni": 8, "naziv": "Demokratska fronta", "kandidati": [
+            {"redni":1,"ime":"Edin Halilović"},{"redni":2,"ime":"Elma Ibrahimović"},{"redni":3,"ime":"Emir Selimović"},
+            {"redni":4,"ime":"Emina Ahmetović"},{"redni":5,"ime":"Faruk Đikić"},{"redni":6,"ime":"Fatima Tomić"},
+            {"redni":7,"ime":"Haris Marković"},{"redni":8,"ime":"Hana Petrović"},{"redni":9,"ime":"Adnan Jovanović"},
+            {"redni":10,"ime":"Amra Knežević"}]},
+        { "redni": 9, "naziv": "Savez za bolju budućnost BiH", "kandidati": [
+            {"redni":1,"ime":"Kemal Babić"},{"redni":2,"ime":"Lejla Lukić"},{"redni":3,"ime":"Maja Kurtović"},
+            {"redni":4,"ime":"Mirsad Bašić"},{"redni":5,"ime":"Mirela Delić"},{"redni":6,"ime":"Nedim Hasanović"},
+            {"redni":7,"ime":"Nermina Mušić"},{"redni":8,"ime":"Rifet Pašić"},{"redni":9,"ime":"Sanela Šarić"},
+            {"redni":10,"ime":"Sanjin Begović"},{"redni":11,"ime":"Tarik Karić"},{"redni":12,"ime":"Zerina Mujić"}]},
+        { "redni": 10, "naziv": "Ujedinjena Srpska", "kandidati": [
+            {"redni":1,"ime":"Boris Tadić"},{"redni":2,"ime":"Gordana Pejić"},{"redni":3,"ime":"Rade Vuković"},
+            {"redni":4,"ime":"Tanja Stanišić"},{"redni":5,"ime":"Stefan Lalić"},{"redni":6,"ime":"Olivera Vukosav"},
+            {"redni":7,"ime":"Ivan Mihajlović"},{"redni":8,"ime":"Ivana Bjelica"}]},
+        { "redni": 11, "naziv": "Hrvatska republikanska stranka", "kandidati": [
+            {"redni":1,"ime":"Goran Crnogorac"},{"redni":2,"ime":"Ivana Šainović"},{"redni":3,"ime":"Petar Maleš"},
+            {"redni":4,"ime":"Vedrana Pranjić"},{"redni":5,"ime":"Pavle Lijanović"},{"redni":6,"ime":"Ognjen Filipović"},
+            {"redni":7,"ime":"Bojana Radić"},{"redni":8,"ime":"Vlado Grbavac"}]},
+        { "redni": 12, "naziv": "Pokret demokratske akcije", "kandidati": [
+            {"redni":1,"ime":"Adnan Galić"},{"redni":2,"ime":"Alma Vasilj"},{"redni":3,"ime":"Amir Vidović"},
+            {"redni":4,"ime":"Aida Soldo"},{"redni":5,"ime":"Ahmed Boras"},{"redni":6,"ime":"Adis Kordić"},
+            {"redni":7,"ime":"Amra Sarajlić"},{"redni":8,"ime":"Zerina Topčić"},{"redni":9,"ime":"Lejla Hodžić"}]},
+        { "redni": 13, "naziv": "Za nove generacije", "kandidati": [
+            {"redni":1,"ime":"Emir Begić"},{"redni":2,"ime":"Emina Kovačević"},{"redni":3,"ime":"Faruk Halilović"},
+            {"redni":4,"ime":"Fatima Ibrahimović"},{"redni":5,"ime":"Haris Selimović"},{"redni":6,"ime":"Hana Ahmetović"},
+            {"redni":7,"ime":"Damir Đikić"},{"redni":8,"ime":"Dženana Tomić"}]},
+        { "redni": 14, "naziv": "Nezavisni blok", "kandidati": [
+            {"redni":1,"ime":"Mirsad Marković"},{"redni":2,"ime":"Mirela Petrović"},{"redni":3,"ime":"Nedim Jovanović"},
+            {"redni":4,"ime":"Nermina Knežević"},{"redni":5,"ime":"Rifet Babić"},{"redni":6,"ime":"Sanela Lukić"}]},
+        { "redni": 15, "naziv": "Socijalistička partija", "kandidati": [
+            {"redni":1,"ime":"Rade Kurtović"},{"redni":2,"ime":"Stefan Bašić"},{"redni":3,"ime":"Tanja Delić"},
+            {"redni":4,"ime":"Boris Hasanović"},{"redni":5,"ime":"Gordana Mušić"},{"redni":6,"ime":"Ivan Pašić"}]},
+        { "redni": 16, "naziv": "Liberalna stranka BiH", "kandidati": [
+            {"redni":1,"ime":"Kenan Šarić"},{"redni":2,"ime":"Lejla Begović"},{"redni":3,"ime":"Maja Karić"},
+            {"redni":4,"ime":"Mirsad Mujić"},{"redni":5,"ime":"Mirela Tadić"},{"redni":6,"ime":"Nedim Pejić"},
+            {"redni":7,"ime":"Nermina Vuković"},{"redni":8,"ime":"Rifet Stanišić"}]},
+        { "redni": 17, "naziv": "BH inicijativa – Kasumović Fuad", "kandidati": [
+            {"redni":1,"ime":"Edin Lalić"},{"redni":2,"ime":"Elma Vukosav"},{"redni":3,"ime":"Emir Mihajlović"},
+            {"redni":4,"ime":"Emina Bjelica"},{"redni":5,"ime":"Faruk Crnogorac"}]},
+        { "redni": 18, "naziv": "Narodni evropski savez", "kandidati": [
+            {"redni":1,"ime":"Adnan Šainović"},{"redni":2,"ime":"Alma Maleš"},{"redni":3,"ime":"Amir Pranjić"},
+            {"redni":4,"ime":"Aida Lijanović"},{"redni":5,"ime":"Ahmed Filipović"},{"redni":6,"ime":"Adis Radić"}]}
+      ]
+    }
+  ]
+}

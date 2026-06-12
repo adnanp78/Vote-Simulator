@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="104" fill="#1f6feb"/>
+  <!-- glasačka kutija -->
+  <g transform="translate(256 268)">
+    <!-- tijelo kutije -->
+    <rect x="-126" y="-6" width="252" height="158" rx="16" fill="#ffffff"/>
+    <rect x="-126" y="-6" width="252" height="40" rx="16" fill="#dce7f7"/>
+    <!-- prorez -->
+    <rect x="-58" y="6" width="116" height="14" rx="7" fill="#1f6feb"/>
+    <!-- listić koji ulazi -->
+    <g transform="rotate(-12)">
+      <rect x="-46" y="-150" width="120" height="150" rx="10" fill="#ffffff" stroke="#cfd8e6" stroke-width="4"/>
+      <!-- kvačica na listiću -->
+      <path d="M -22 -86 l 18 18 l 40 -44" fill="none" stroke="#27ae60" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="-22" y1="-40" x2="50" y2="-40" stroke="#cfd8e6" stroke-width="8" stroke-linecap="round"/>
+      <line x1="-22" y1="-22" x2="34" y2="-22" stroke="#cfd8e6" stroke-width="8" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+# Build/deploy kopija (generiše se iz glavnih fajlova)
+deploy/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+*.log

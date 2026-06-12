@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<title>Glasački listić - A4 (varijanta 2 - masonry)</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    background: #fff;
+  }
+
+  body {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 8mm;
+  }
+
+  .header {
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 3mm;
+    margin-bottom: 4mm;
+  }
+
+  .header h1 {
+    font-size: 14pt;
+    margin: 0 0 1mm 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .header .sub {
+    font-size: 8pt;
+    margin: 0;
+  }
+
+  .instructions {
+    font-size: 7.5pt;
+    border: 1px solid #000;
+    padding: 2mm 3mm;
+    margin-bottom: 4mm;
+    line-height: 1.3;
+  }
+
+  .instructions strong { text-transform: uppercase; }
+
+  /* MASONRY: CSS multi-column layout — kutije variable visine, novi red se lijepi za blok iznad */
+  .grid {
+    column-count: 4;
+    column-gap: 2mm;
+  }
+
+  .party {
+    border: 1.2px solid #000;
+    padding: 1.5mm;
+    margin: 0 0 2mm 0;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .party-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5mm;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1.2mm;
+    margin-bottom: 1.5mm;
+  }
+
+  .party-num {
+    font-weight: bold;
+    font-size: 9pt;
+    min-width: 5mm;
+  }
+
+  .box {
+    width: 4mm;
+    height: 4mm;
+    border: 1.2px solid #000;
+    flex-shrink: 0;
+    background: #fff;
+    display: inline-block;
+  }
+
+  .party-name {
+    font-size: 7pt;
+    font-weight: bold;
+    line-height: 1.1;
+    flex: 1;
+    text-transform: uppercase;
+  }
+
+  .candidates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8mm 1.2mm;
+  }
+
+  .cand {
+    display: flex;
+    align-items: center;
+    gap: 0.8mm;
+    font-size: 6.5pt;
+  }
+
+  .cand .box {
+    width: 2.8mm;
+    height: 2.8mm;
+    border-width: 0.8px;
+  }
+
+  .cand-num {
+    font-size: 6.5pt;
+    min-width: 4mm;
+  }
+
+  .footer {
+    margin-top: 4mm;
+    text-align: center;
+    font-size: 6.5pt;
+    border-top: 1px solid #000;
+    padding-top: 2mm;
+  }
+
+  @media screen {
+    body {
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      margin: 20px auto;
+    }
+  }
+
+  @media print {
+    body { box-shadow: none; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Glasački listić</h1>
+  <p class="sub">Opći izbori — izborna jedinica br. ___ &nbsp;|&nbsp; ___.___.20__ &nbsp;|&nbsp; <em>varijanta 2 (masonry)</em></p>
+</div>
+
+<div class="instructions">
+  <strong>Uputstvo:</strong> Glasati možete na jedan od dva načina:
+  (1) zaokružite <span style="display:inline-block;width:3mm;height:3mm;border:1px solid #000;vertical-align:middle"></span> ispred naziva <strong>samo jedne stranke</strong>, ILI
+  (2) zaokružite kvadratiće ispred <strong>brojeva kandidata</strong> (jednog ili više) unutar <strong>samo jedne</strong> stranke.
+  Imena kandidata po brojevima nalaze se na plakatu u glasačkoj kabini.
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="footer">
+  Pečat izborne komisije: ______________________ &nbsp;&nbsp;|&nbsp;&nbsp; Listić nevažeći ako se glasa za više stranaka.
+</div>
+
+<script>
+  const stranke = [
+    "Stranka demokratske akcije",
+    "Savez nezavisnih socijaldemokrata",
+    "Hrvatska demokratska zajednica Bosne i Hercegovine",
+    "Socijaldemokratska partija Bosne i Hercegovine",
+    "Narod i Pravda",
+    "Naša stranka",
+    "Partija demokratskog progresa",
+    "Demokratska fronta",
+    "Savez za bolju budućnost Bosne i Hercegovine",
+    "Ujedinjena Srpska",
+    "Hrvatska republikanska stranka",
+    "Pokret demokratske akcije",
+    "Za nove generacije",
+    "Nezavisni blok",
+    "Socijalistička partija",
+    "Liberalna stranka Bosne i Hercegovine",
+    "Bosanskohercegovačka inicijativa – Kasumović Fuad",
+    "Narodni evropski savez",
+    "Srpska demokratska stranka",
+    "Hrvatska seljačka stranka Bosne i Hercegovine"
+  ];
+
+  function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const grid = document.getElementById('grid');
+
+  stranke.forEach((naziv, i) => {
+    const brojKandidata = randInt(10, 30);
+    const party = document.createElement('div');
+    party.className = 'party';
+
+    let candHTML = '';
+    for (let k = 1; k <= brojKandidata; k++) {
+      candHTML += `<div class="cand"><span class="box"></span><span class="cand-num">${k}.</span></div>`;
+    }
+
+    party.innerHTML = `
+      <div class="party-header">
+        <span class="party-num">${i + 1}.</span>
+        <span class="box"></span>
+        <span class="party-name">${naziv}</span>
+      </div>
+      <div class="candidates">${candHTML}</div>
+    `;
+    grid.appendChild(party);
+  });
+</script>
+
+</body>
+</html>
