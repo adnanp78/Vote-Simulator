@@ -1,0 +1,235 @@
+{
+  "izbornaJedinica": {
+    "kod": "001",
+    "naziv": "Velika Kladuša — opšti izbori",
+    "tip": "opsti",
+    "kanton": "Unsko-sanski kanton"
+  },
+  "trke": [
+    {
+      "id": "predsjednistvo",
+      "naslov": "Predsjedništvo Bosne i Hercegovine",
+      "podnaslov": "Bošnjački i Hrvatski član",
+      "tip": "predsjednistvo",
+      "kolone": [
+        {
+          "id": "bos",
+          "naslov": "Bošnjački član",
+          "kandidati": [
+            { "redni": 1, "ime": "Denis Bećirović",    "stranka": "Socijaldemokratska partija BiH" },
+            { "redni": 2, "ime": "Šefik Džaferović",   "stranka": "Stranka demokratske akcije" },
+            { "redni": 3, "ime": "Fahrudin Radončić",  "stranka": "Savez za bolju budućnost BiH" },
+            { "redni": 4, "ime": "Senad Šepić",        "stranka": "Nezavisni blok" },
+            { "redni": 5, "ime": "Mirsad Hadžikadić",  "stranka": "Platforma za progres" },
+            { "redni": 6, "ime": "Amer Jerlagić",      "stranka": "Stranka za BiH" }
+          ]
+        },
+        {
+          "id": "hrv",
+          "naslov": "Hrvatski član",
+          "kandidati": [
+            { "redni": 1, "ime": "Dragan Čović",               "stranka": "Hrvatska demokratska zajednica BiH" },
+            { "redni": 2, "ime": "Željko Komšić",              "stranka": "Demokratska fronta" },
+            { "redni": 3, "ime": "Boriša Falatar",             "stranka": "Naša stranka" },
+            { "redni": 4, "ime": "Diana Zelenika",             "stranka": "HDZ 1990" },
+            { "redni": 5, "ime": "Jerko Ivanković-Lijanović",  "stranka": "Narodna stranka Radom za boljitak" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-bih",
+      "naslov": "Zastupnički dom Parlamentarne skupštine BiH",
+      "podnaslov": "Federacija BiH – Izborna jedinica 1",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "Stranka demokratske akcije",
+          "kandidati": [
+            { "redni": 1, "ime": "Bakir Izetbegović" },
+            { "redni": 2, "ime": "Semir Efendić" },
+            { "redni": 3, "ime": "Amela Čengić" }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "Socijaldemokratska partija BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Nermin Nikšić" },
+            { "redni": 2, "ime": "Damir Hadžić" },
+            { "redni": 3, "ime": "Amira Selimović" }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "Narod i Pravda",
+          "kandidati": [
+            { "redni": 1, "ime": "Elmedin Konaković" },
+            { "redni": 2, "ime": "Fatima Bećić" }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "Naša stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Jasmin Imamović" },
+            { "redni": 2, "ime": "Lejla Vuković" }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "Demokratska fronta",
+          "kandidati": [
+            { "redni": 1, "ime": "Edin Forto" },
+            { "redni": 2, "ime": "Sanela Prnjavorac" },
+            { "redni": 3, "ime": "Haris Bašić" }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "Savez za bolju budućnost BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Mirsad Kukić" },
+            { "redni": 2, "ime": "Nermina Kapić" }
+          ]
+        },
+        {
+          "redni": 7,
+          "naziv": "Nezavisni blok",
+          "kandidati": [
+            { "redni": 1, "ime": "Senad Šepić" },
+            { "redni": 2, "ime": "Adna Pašić" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-fbih",
+      "naslov": "Zastupnički dom Parlamenta Federacije BiH",
+      "podnaslov": "Izborna jedinica 1 – Unsko-sanski kanton",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "Stranka demokratske akcije",
+          "kandidati": [
+            { "redni": 1, "ime": "Edita Đapo" },
+            { "redni": 2, "ime": "Kenan Softić" },
+            { "redni": 3, "ime": "Alma Mujanović" },
+            { "redni": 4, "ime": "Hasan Ćehić" },
+            { "redni": 5, "ime": "Zerina Bašić" }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "Socijaldemokratska partija BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Adnan Terzić" },
+            { "redni": 2, "ime": "Belma Kovačević" },
+            { "redni": 3, "ime": "Emir Hodžić" }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "Narod i Pravda",
+          "kandidati": [
+            { "redni": 1, "ime": "Mirela Delić" },
+            { "redni": 2, "ime": "Faruk Halilović" }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "Naša stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Sanjin Karić" },
+            { "redni": 2, "ime": "Emina Topčić" },
+            { "redni": 3, "ime": "Vedran Galić" }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "Demokratska fronta",
+          "kandidati": [
+            { "redni": 1, "ime": "Amir Begović" },
+            { "redni": 2, "ime": "Fatima Mujić" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kanton",
+      "naslov": "Skupština Unsko-sanskog kantona",
+      "podnaslov": "Kantonalna skupština",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "Stranka demokratske akcije",
+          "kandidati": [
+            { "redni": 1,  "ime": "Husein Rošić" },
+            { "redni": 2,  "ime": "Sanela Mehić" },
+            { "redni": 3,  "ime": "Edin Babić" },
+            { "redni": 4,  "ime": "Amira Ibrahimović" },
+            { "redni": 5,  "ime": "Kemal Delić" },
+            { "redni": 6,  "ime": "Nermina Selimović" },
+            { "redni": 7,  "ime": "Adnan Pašić" },
+            { "redni": 8,  "ime": "Zerina Kurtović" },
+            { "redni": 9,  "ime": "Haris Begić" },
+            { "redni": 10, "ime": "Fatima Hodžić" }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "Socijaldemokratska partija BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Damir Šarić" },
+            { "redni": 2, "ime": "Lejla Mahmutović" },
+            { "redni": 3, "ime": "Sanjin Bašić" },
+            { "redni": 4, "ime": "Emina Mušić" },
+            { "redni": 5, "ime": "Emir Halilović" },
+            { "redni": 6, "ime": "Alma Čaušević" }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "Narod i Pravda",
+          "kandidati": [
+            { "redni": 1, "ime": "Mirsad Karić" },
+            { "redni": 2, "ime": "Belma Hasanović" },
+            { "redni": 3, "ime": "Tarik Mujanović" },
+            { "redni": 4, "ime": "Amela Softić" }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "Naša stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Hana Kovačević" },
+            { "redni": 2, "ime": "Edin Šabić" },
+            { "redni": 3, "ime": "Lejla Terzić" }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "Savez za bolju budućnost BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Fikret Mehmedović" },
+            { "redni": 2, "ime": "Amra Bektić" },
+            { "redni": 3, "ime": "Nedim Galić" },
+            { "redni": 4, "ime": "Zerina Čehić" }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "Demokratska fronta",
+          "kandidati": [
+            { "redni": 1, "ime": "Adis Bajrić" },
+            { "redni": 2, "ime": "Mirela Topčić" },
+            { "redni": 3, "ime": "Faruk Dervišević" }
+          ]
+        }
+      ]
+    }
+  ]
+}

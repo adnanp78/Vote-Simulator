@@ -1,0 +1,120 @@
+{
+  "izbornaJedinica": {
+    "kod": "001-lokalni",
+    "naziv": "Velika Kladuša — lokalni izbori",
+    "tip": "lokalni"
+  },
+  "trke": [
+    {
+      "id": "nacelnik",
+      "naslov": "Načelnik općine Velika Kladuša",
+      "podnaslov": "Većinski izbor — izaberite jednog kandidata",
+      "tip": "vecinski",
+      "kandidati": [
+        { "redni": 1, "ime": "Fikret Abdić",    "stranka": "Demokratska narodna zajednica" },
+        { "redni": 2, "ime": "Husein Memić",    "stranka": "Stranka demokratske akcije" },
+        { "redni": 3, "ime": "Adnan Softić",    "stranka": "Socijaldemokratska partija BiH" },
+        { "redni": 4, "ime": "Sanjin Kudić",    "stranka": "Naša stranka" },
+        { "redni": 5, "ime": "Emir Karić",      "stranka": "Savez za bolju budućnost BiH" },
+        { "redni": 6, "ime": "Belma Ibrahimić", "stranka": "Narod i Pravda" }
+      ]
+    },
+    {
+      "id": "opstinsko-vijece",
+      "naslov": "Općinsko vijeće Velika Kladuša",
+      "podnaslov": "Otvorena lista · 8 stranaka",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "Demokratska narodna zajednica",
+          "kandidati": [
+            { "redni": 1,  "ime": "Fikret Abdić" },
+            { "redni": 2,  "ime": "Mirsad Bašić" },
+            { "redni": 3,  "ime": "Amira Ćehić" },
+            { "redni": 4,  "ime": "Nermina Topčić" },
+            { "redni": 5,  "ime": "Edin Mujanović" },
+            { "redni": 6,  "ime": "Zerina Hadžić" },
+            { "redni": 7,  "ime": "Adis Softić" },
+            { "redni": 8,  "ime": "Fatima Karić" },
+            { "redni": 9,  "ime": "Haris Begić" },
+            { "redni": 10, "ime": "Lejla Čengić" }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "Stranka demokratske akcije",
+          "kandidati": [
+            { "redni": 1, "ime": "Husein Memić" },
+            { "redni": 2, "ime": "Fatima Delić" },
+            { "redni": 3, "ime": "Kemal Hodžić" },
+            { "redni": 4, "ime": "Zerina Pašić" },
+            { "redni": 5, "ime": "Adis Babić" },
+            { "redni": 6, "ime": "Amra Šabić" },
+            { "redni": 7, "ime": "Emir Selimović" },
+            { "redni": 8, "ime": "Belma Kurtović" }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "Socijaldemokratska partija BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Adnan Softić" },
+            { "redni": 2, "ime": "Lejla Mujkić" },
+            { "redni": 3, "ime": "Damir Halilović" },
+            { "redni": 4, "ime": "Sanela Mahmutović" },
+            { "redni": 5, "ime": "Tarik Ibrahimović" },
+            { "redni": 6, "ime": "Alma Lukić" }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "Naša stranka",
+          "kandidati": [
+            { "redni": 1, "ime": "Sanjin Kudić" },
+            { "redni": 2, "ime": "Amela Terzić" },
+            { "redni": 3, "ime": "Edin Galić" },
+            { "redni": 4, "ime": "Hana Mehmedović" }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "Savez za bolju budućnost BiH",
+          "kandidati": [
+            { "redni": 1, "ime": "Emir Karić" },
+            { "redni": 2, "ime": "Mirela Čaušević" },
+            { "redni": 3, "ime": "Faruk Šarić" },
+            { "redni": 4, "ime": "Nermina Hasanović" },
+            { "redni": 5, "ime": "Adnan Begović" }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "Narod i Pravda",
+          "kandidati": [
+            { "redni": 1, "ime": "Belma Ibrahimić" },
+            { "redni": 2, "ime": "Haris Mujanović" },
+            { "redni": 3, "ime": "Amira Kovačević" }
+          ]
+        },
+        {
+          "redni": 7,
+          "naziv": "Demokratska fronta",
+          "kandidati": [
+            { "redni": 1, "ime": "Nedim Bajrić" },
+            { "redni": 2, "ime": "Zerina Dervišević" },
+            { "redni": 3, "ime": "Amir Mušić" }
+          ]
+        },
+        {
+          "redni": 8,
+          "naziv": "Nezavisni kandidati — lista 8",
+          "kandidati": [
+            { "redni": 1, "ime": "Jasmin Kulenović" },
+            { "redni": 2, "ime": "Vedrana Topić" }
+          ]
+        }
+      ]
+    }
+  ]
+}
