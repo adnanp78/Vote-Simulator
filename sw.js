@@ -1,5 +1,5 @@
 /* Service worker — offline keširanje + omogućava "Dodaj na početni ekran" */
-const CACHE = "glasanje-v1";
+const CACHE = "glasanje-v3";
 
 // App shell — keširamo odmah pri instalaciji
 const SHELL = [
@@ -36,8 +36,15 @@ self.addEventListener("fetch", event => {
   // samo isti origin (preskačemo CDN itd.)
   if (url.origin !== self.location.origin) return;
 
-  // JSON liste: network-first (da uhvati izmjene), fallback na keš
-  if (url.pathname.endsWith(".json")) {
+  const isHTML =
+    req.mode === "navigate" ||
+    req.destination === "document" ||
+    url.pathname.endsWith(".html") ||
+    url.pathname.endsWith("/");
+
+  // HTML i JSON: network-first (uvijek najnovija verzija kad ima signala),
+  // fallback na keš kad nema interneta — tako mobilni nikad ne zaglavi na staroj verziji.
+  if (isHTML || url.pathname.endsWith(".json")) {
     event.respondWith(
       fetch(req)
         .then(resp => {
@@ -45,12 +52,12 @@ self.addEventListener("fetch", event => {
           caches.open(CACHE).then(c => c.put(req, copy));
           return resp;
         })
-        .catch(() => caches.match(req))
+        .catch(() => caches.match(req).then(cached => cached || caches.match("./index.html")))
     );
     return;
   }
 
-  // ostalo (HTML, ikone): cache-first, pa mreža
+  // statički resursi (ikone, manifest): cache-first, pa mreža
   event.respondWith(
     caches.match(req).then(cached => cached || fetch(req).then(resp => {
       const copy = resp.clone();
