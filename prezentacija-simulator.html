@@ -688,8 +688,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   window.addEventListener("load", function() {
-    const base = window.location.href.replace(/[^/]*$/, "");
-    const url  = base + "lista.html?kod=001-gen";
+    // Javni link simulatora — QR uvijek vodi ovdje, bez obzira odakle se prezentacija otvara/štampa
+    const url = "https://adnanp78.github.io/Vote-Simulator/lista.html?kod=001-gen";
     document.getElementById("prez-qr-url").textContent = url.replace(/^https?:\/\//, "");
     try {
       new QRCode(document.getElementById("prez-qr"), {
