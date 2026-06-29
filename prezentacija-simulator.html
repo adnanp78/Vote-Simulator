@@ -625,7 +625,7 @@
           <div id="prez-qr"></div>
         </div>
         <div style="font-size:12px; color:#888; margin-top:10px; line-height:1.5;">
-          Skenirajte za demo simulatora<br>
+          Skenirajte i otvorite simulator<br>
           <span id="prez-qr-url" style="font-family:monospace;font-size:11px;color:#bbb"></span>
         </div>
       </div>
@@ -688,8 +688,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   window.addEventListener("load", function() {
-    // Javni link simulatora — QR uvijek vodi ovdje, bez obzira odakle se prezentacija otvara/štampa
-    const url = "https://adnanp78.github.io/Vote-Simulator/lista.html?kod=001-gen";
+    // Javni link simulatora — QR uvijek vodi na početnu (meni biračkih mjesta), bez obzira odakle se prezentacija otvara/štampa
+    const url = "https://adnanp78.github.io/Vote-Simulator/";
     document.getElementById("prez-qr-url").textContent = url.replace(/^https?:\/\//, "");
     try {
       new QRCode(document.getElementById("prez-qr"), {
