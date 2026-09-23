@@ -6,3 +6,10 @@ deploy/
 Thumbs.db
 .vscode/
 *.log
+
+# Admin (.NET) build
+admin/bin/
+admin/obj/
+
+# Admin: worktree za objavu na gh-pages
+admin/.deploy/

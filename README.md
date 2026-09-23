@@ -1,46 +1,62 @@
 # Vote Simulator 🗳️
 
-Simulator glasačkog listića za izbore u Bosni i Hercegovini. Omogućava biraču da na svom telefonu — prije izbornog dana — pogleda kandidate, razumije pravila glasanja i pripremi svoj izbor.
+Simulator glasačkog listića za izbore u Bosni i Hercegovini. Birač izabere svoju općinu i na telefonu — prije izbornog dana — vidi sve trke za koje glasa, pregleda kandidate i pripremi svoj izbor.
 
-## Šta nudi
+## Struktura
 
-- **Pravi prikaz listića** za opšte (FBiH i RS) i lokalne izbore
-- **Tri tipa glasanja** sa automatskim pravilima:
-  - *Predsjedništvo* — samo jedan kandidat ukupno
-  - *Otvorena lista* — stranka i/ili do 3 kandidata
-  - *Većinski* (načelnik / predsjednik RS) — jedan kandidat
-- **"Moj izbor"** — pregled svih odabira u realnom vremenu, klik na trku skoči na nju
-- **Podsjetnik** — odabir se pamti na uređaju, pa birač na biralištu vidi šta je planirao
-- **PWA** — "Dodaj na početni ekran", radi i bez interneta, kao prava aplikacija
+| Folder | Šta je |
+|--------|--------|
+| `public/` | **Javni sajt** — čisti HTML + JSON, ovo se objavljuje online |
+| `public/data/` | Podaci: `index.json` (spisak općina), `<šifra>.json` po općini, `config.json` (javna adresa za QR) — **generiše admin, ne mijenjati ručno** |
+| `admin/` | **Administracija** (.NET 10) — povlači podatke iz baze i generiše `public/data/` |
+| root | Prezentacije i stari prototipovi listića; `index.html` preusmjerava na `public/` |
 
-## Fajlovi
+### `public/`
 
 | Fajl | Opis |
 |------|------|
-| `index.html` | Početna stranica — meni biračkih mjesta |
-| `lista.html` | Glavni simulator (učitava listu preko `?kod=`) |
-| `qr.html` | Generator QR koda i plakata za biralište |
-| `manifest.json`, `sw.js`, `icon*.svg` | PWA (install + offline) |
-| `001-gen.json`, `003-gen.json`, `001-mun.json` | Podaci listića |
-| `prezentacija-simulator.html` | Prezentacija projekta |
+| `index.html` | Izbor općine (pretraga) |
+| `lista.html` | Simulator — `lista.html?kod=034` učitava `data/034.json`; na dnu dugme za A4 QR plakat |
+| `pismo.js` | Latinica / ćirilica — izbor pri prvom ulasku, prekidač Lat/Ћир; podaci su na latinici, ćirilica se preslovljava u browseru |
+| `manifest.json`, `sw.js`, `icon*.svg` | PWA ("Dodaj na početni ekran"). **Bez keša** — `sw.js` uvijek traži svježu verziju sa servera i briše stare keševe |
 
-## Pokretanje
+## Administracija — uvoz podataka
 
-Aplikacija koristi `fetch()` i Service Worker — treba HTTP(S) server (ne radi preko `file://`):
+Izvor: view `Ombre_Kombinacije` u bazi `JIISdb` na `DEVENV-SQL2012\DEVELOPMENT` (Windows autentifikacija). Konekcija i ime view-a su u `admin/appsettings.json`.
 
-```bash
-python -m http.server 8080
-# pa otvori http://localhost:8080/
+```powershell
+dotnet run --project admin
+# otvori http://localhost:5080
 ```
 
-Za testiranje na telefonu (PWA install + offline traže HTTPS): deploy na Netlify / GitHub Pages / Cloudflare Pages, ili tunel (`cloudflared` / `ngrok`).
+- **Provjeri promjene** — povuče view i pokaže koje su se općine/trke promijenile, bez upisa.
+- **Uvezi / ažuriraj podatke** — prepiše samo općine čiji su se podaci promijenili (poređenje po hashu), obriše općine kojih više nema, osvježi `index.json`.
+- **Objavi (git push)** — commit + push samo `public/data/`.
+- Lokalni pregled sajta sa svježim podacima: `http://localhost:5080/site/`
 
-## Primjeri
+### Kako se view pretvara u listić
 
-- `lista.html?kod=001-gen` — Velika Kladuša, opšti izbori
-- `lista.html?kod=003-gen` — Republika Srpska, opšti izbori
-- `lista.html?kod=001-mun` — Velika Kladuša, lokalni izbori
+| LevelCode | Trka | Tip |
+|-----------|------|-----|
+| `701/702/703` | Predsjedništvo BiH (bošnjački / hrvatski / srpski član) | `predsjednistvo` |
+| `51x` / `52x` | Zastupnički/Predstavnički dom PS BiH (FBiH / RS) | `otvorena-lista` |
+| `600` | Predsjednik i potpredsjednici RS | `vecinski` |
+| `4xx` | Zastupnički/Predstavnički dom Parlamenta FBiH | `otvorena-lista` |
+| `3xx` | Narodna skupština RS | `otvorena-lista` |
+| `2xx` | Skupština kantona | `otvorena-lista` |
+| ostalo | naslov iz `CRName` (admin prikaže upozorenje) | `otvorena-lista` |
+
+Stranke su poredane po `BallotOrder` i numerisane redom na listiću; kandidati po `ListPosition`.
+
+## Pokretanje javnog sajta lokalno
+
+Sajt koristi `fetch()` i Service Worker — treba HTTP server (ne radi preko `file://`). Najlakše kroz admin (`/site/`), ili:
+
+```bash
+cd public
+python -m http.server 8080
+```
 
 ---
 
-> Demonstracioni projekt. Odabiri birača ostaju samo na njegovom uređaju — ništa se ne šalje niti bilježi.
+> Odabiri birača ostaju samo na njegovom uređaju — ništa se ne šalje niti bilježi.

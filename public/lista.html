@@ -44,6 +44,8 @@
     padding: 8px 4px 14px;
     border-bottom: 1px solid var(--c-border);
   }
+  header.page { position: relative; }
+  header.page .pismo-slot { display: flex; justify-content: flex-end; margin: -4px 0 4px; }
   header.page h1 { margin: 0 0 4px 0; font-size: 20px; font-weight: 700; letter-spacing: -0.2px; }
   header.page p  { margin: 0; font-size: 13px; color: var(--c-muted); }
 
@@ -58,6 +60,9 @@
     scroll-margin-top: 8px;
   }
   .race.open { box-shadow: 0 6px 20px rgba(31,111,235,0.15); }
+  /* Trka u kojoj je glas dat — blago plava, da se vidi šta je završeno */
+  .race.done { background: #eef4ff; border-color: #bcd3fb; }
+  .race.done:not(.open) .race-header { background: #eef4ff; }
 
   .race-header {
     display: flex; align-items: center; gap: 12px;
@@ -86,7 +91,7 @@
     transition: transform 0.25s;
     flex-shrink: 0; margin-right: 4px; margin-bottom: 4px;
   }
-  .race.open .chevron { transform: rotate(-135deg); margin-bottom: -2px; border-color: var(--c-accent); }
+  .race.open > .race-header .chevron { transform: rotate(-135deg); margin-bottom: -2px; border-color: var(--c-accent); }
 
   .race-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
   .race.open .race-body { max-height: 100000px; }
@@ -136,7 +141,26 @@
   .party-num  { font-weight: 700; color: var(--c-muted); font-size: 13px; min-width: 22px; }
   .party-name { flex: 1; font-size: 13.5px; font-weight: 600; line-height: 1.25; }
   .party-meta { font-size: 11px; color: var(--c-muted); margin-top: 2px; font-weight: 400; }
-  .party-body { background: #fff; }
+  .party-header .chevron { width: 10px; height: 10px; margin: 0 6px 3px 2px; }
+  .party.open .party-header .chevron { transform: rotate(-135deg); margin-bottom: -3px; border-color: var(--c-accent); }
+  .party-body { background: #fff; display: none; }
+  .party.open .party-body { display: block; }
+
+  /* Zatvorena stranka: izabrani kandidati samo za pregled (bez checkboxa) */
+  .party-picked { padding: 0 12px 10px 44px; cursor: pointer; }
+  .party-picked:empty, .party.open .party-picked { display: none; }
+  .picked-row { display: flex; align-items: center; gap: 8px; padding: 3px 0; font-size: 13px; }
+  .picked-row .mark { color: var(--c-accent); font-weight: 700; width: 14px; text-align: center; }
+  .picked-row .num  { color: var(--c-muted); font-weight: 600; min-width: 20px; }
+
+  /* Zatvorena trka: izbor stranke/kandidata samo za pregled */
+  .race-picked { padding: 0 16px 14px 60px; margin-top: -6px; cursor: pointer; }
+  .race-picked:empty, .race.open .race-picked { display: none; }
+  .race-picked .picked-party { font-weight: 600; }
+  .race-picked .picked-cands { padding-left: 22px; }
+  .race-picked .picked-col { font-size: 11px; text-transform: uppercase; letter-spacing: .3px; color: var(--c-muted); margin-top: 4px; }
+  .race-picked .picked-sub { color: var(--c-muted); font-size: 12px; }
+  .race-picked .picked-none { font-size: 12.5px; color: #9aa0a6; font-style: italic; }
   .party-body-inner { padding: 8px 12px 12px; border-top: 1px solid var(--c-border); }
 
   .cand-row {
@@ -149,91 +173,16 @@
 
   .footer-note { text-align: center; font-size: 11px; color: var(--c-muted); margin-top: 20px; padding: 0 16px; }
 
-  /* ============ SUMMARY PANEL ============ */
-  .summary {
-    background: #fff; border: 1px solid var(--c-border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 16px; overflow: hidden;
-  }
-  .summary-header {
-    display: flex; align-items: center; gap: 10px;
-    padding: 12px 14px;
-    background: linear-gradient(135deg, #1f6feb 0%, #2d7ff9 100%);
-    color: #fff; cursor: pointer; user-select: none;
-  }
-  .summary-header .icon {
-    width: 22px; height: 22px; border-radius: 50%;
-    background: rgba(255,255,255,0.25);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 700;
-  }
-  .summary-title  { flex: 1; font-weight: 600; font-size: 14px; }
-  .summary-count  { font-size: 12px; background: rgba(255,255,255,0.22); padding: 3px 9px; border-radius: 999px; font-weight: 600; }
-  .summary-chev   { width: 10px; height: 10px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg); transition: transform 0.25s; margin-bottom: 3px; }
-  .summary.collapsed .summary-chev { transform: rotate(-45deg); margin-bottom: -2px; }
-
-  .summary-body { max-height: 100000px; overflow: hidden; transition: max-height 0.35s ease; background: #fcfcfd; }
-  .summary.collapsed .summary-body { max-height: 0; }
-
-  .sum-row { padding: 10px 14px; border-bottom: 1px solid #eef0f3; font-size: 13px; }
-  .sum-row:last-child { border-bottom: none; }
-
-  .sum-race {
-    font-weight: 600; font-size: 11.5px;
-    text-transform: uppercase; letter-spacing: 0.3px;
-    color: var(--c-muted); margin-bottom: 5px;
-  }
-  .sum-pick .label { color: var(--c-accent); font-weight: 600; }
-  .sum-empty { color: #aaa; font-style: italic; font-size: 12.5px; }
-
-  .sum-actions { display: flex; gap: 8px; padding: 10px 14px; background: #f5f6f8; border-top: 1px solid #eef0f3; }
-  .sum-btn { flex: 1; padding: 9px 12px; border: 1px solid var(--c-border); background: #fff; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--c-text); cursor: pointer; font-family: inherit; }
-  .sum-btn:active { background: #eef0f3; }
-  .sum-btn.danger { color: #c0392b; border-color: #f0c4be; }
-  .sum-btn.danger:active { background: #fbecea; }
-
-  /* Read-only checkboxes u sažetku */
-  .sum-check {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 15px; height: 15px;
-    border: 2px solid #bbb; border-radius: 3px;
-    flex-shrink: 0; background: #fff;
-    position: relative; margin-top: 1px;
-  }
-  .sum-check.on { background: #8a8a8a; border-color: #8a8a8a; }
-  .sum-check.on::after {
-    content: "";
-    position: absolute;
-    width: 4px; height: 7px;
-    border-right: 2px solid #fff; border-bottom: 2px solid #fff;
-    transform: rotate(45deg) translate(-1px,-1px);
-  }
-
-  .sum-pick-row {
-    display: flex; align-items: flex-start; gap: 8px;
-    margin-bottom: 4px; font-size: 13px; line-height: 1.4;
-  }
-  .sum-pick-row:last-child { margin-bottom: 0; }
-
-  .sum-cands { padding-left: 23px; }
-
-  .sum-race-link {
-    cursor: pointer;
-    display: inline-flex; align-items: center; gap: 4px;
-  }
-  .sum-race-link::after { content: "↗"; font-size: 9px; opacity: 0.4; flex-shrink: 0; transition: opacity 0.15s; }
-  .sum-race-link:hover { color: var(--c-accent); }
-  .sum-race-link:hover::after { opacity: 1; }
-
-  .sum-col-label {
-    font-size: 11px; text-transform: uppercase; letter-spacing: 0.3px;
-    color: var(--c-muted); margin: 6px 0 3px; font-weight: 600;
-  }
-  .sum-col-label:first-child { margin-top: 0; }
-
-  .save-note { padding: 5px 14px; background: #f5f6f8; border-top: 1px solid #eef0f3; text-align: right; font-size: 11px; color: #bbb; min-height: 22px; transition: color 0.3s; }
+  /* ---- Traka ispod trka: zapamćeno + poništi sve ---- */
+  .choice-bar { display: none; align-items: center; gap: 12px; margin: 16px 0 0; padding: 0 2px; }
+  .choice-bar.show { display: flex; }
+  .save-note { flex: 1; font-size: 12px; color: var(--c-muted); transition: color 0.3s; }
   .save-note.fresh { color: #27ae60; }
+  .clear-btn {
+    padding: 8px 14px; border: 1px solid #f0c4be; background: #fff; border-radius: 8px;
+    font: inherit; font-size: 13px; font-weight: 600; color: #c0392b; cursor: pointer;
+  }
+  .clear-btn:active { background: #fbecea; }
 
   /* ---- INSTALL APP ---- */
   .install-bar {
@@ -311,15 +260,42 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition: none !important; }
   }
+
+  /* -------- QR PLAKAT (A4) -------- */
+  .qr-btn {
+    display: none; margin: 18px auto 0; padding: 10px 18px;
+    background: #fff; border: 1px solid var(--c-border); border-radius: 10px;
+    font: inherit; font-size: 13px; font-weight: 600; color: var(--c-text); cursor: pointer;
+  }
+  .qr-btn.show { display: block; }
+  #poster { display: none; }
+  @media print {
+    @page { size: A4 portrait; margin: 14mm; }
+    html, body { background: #fff !important; }
+    body.printing-qr .app, body.printing-qr .toast { display: none !important; }
+    body.printing-qr #poster { display: block; }
+  }
+  #poster { text-align: center; color: #1a1a1a; font-family: inherit; }
+  #poster .p-top { border-bottom: 3px solid #1f6feb; padding: 6mm 0 7mm; margin-bottom: 10mm; }
+  #poster .p-kicker { font-size: 13pt; letter-spacing: 1.5px; text-transform: uppercase; color: #555; }
+  #poster h1 { font-size: 34pt; font-weight: 800; margin: 3mm 0 2mm; line-height: 1.1; }
+  #poster .p-sub { font-size: 14pt; color: #444; }
+  #poster #p-qr { display: flex; justify-content: center; margin: 4mm 0; }
+  #poster #p-qr img, #poster #p-qr canvas { width: 115mm !important; height: 115mm !important; }
+  #poster .p-url { font-size: 10pt; color: #777; word-break: break-all; margin-bottom: 10mm; }
+  #poster ol { display: inline-block; text-align: left; font-size: 14pt; line-height: 1.8; color: #333; }
 </style>
 </head>
 <body>
+<script src="pismo.js?v=21"></script>
 
 <div class="app">
 
   <header class="page">
+    <div class="pismo-slot" data-pismo-toggle></div>
     <h1 id="page-title">Glasanje</h1>
-    <p>Dodirnite trku da vidite stranke i kandidate</p>
+    <h1 class="show-unset" id="page-title-cyr"></h1>
+    <p class="hide-unset">Dodirnite trku da vidite stranke i kandidate</p>
   </header>
 
   <div class="install-bar" id="install-bar">
@@ -340,26 +316,33 @@
     </span> <b>Podijeli</b> na dnu, pa <b>"Dodaj na početni ekran"</b> — i listić ti je uvijek nadohvat ruke.
   </div>
 
-  <div class="summary" id="summary">
-    <div class="summary-header" id="summary-toggle">
-      <div class="icon">✓</div>
-      <div class="summary-title">Moj izbor</div>
-      <div class="summary-count" id="summary-count">0</div>
-      <div class="summary-chev"></div>
-    </div>
-    <div class="summary-body">
-      <div id="summary-list"></div>
-      <div class="sum-actions">
-        <button class="sum-btn danger" id="summary-clear">Poništi sve</button>
-      </div>
-      <div class="save-note" id="save-note"></div>
-    </div>
+  <div data-pismo-choose></div>
+  <div id="races" class="hide-unset"></div>
+
+  <div class="choice-bar hide-unset" id="choice-bar">
+    <span class="save-note" id="save-note"></span>
+    <button class="clear-btn" id="clear-all">Poništi sve</button>
   </div>
 
-  <div id="races"></div>
+  <p class="footer-note hide-unset" id="footer-note"></p>
+  <button class="qr-btn hide-unset" id="qr-btn">🔳 Štampaj QR plakat (A4)</button>
 
-  <p class="footer-note" id="footer-note"></p>
+</div>
 
+<div id="poster">
+  <div class="p-top">
+    <div class="p-kicker">Simulator glasačkog listića</div>
+    <h1 id="p-naziv"></h1>
+    <div class="p-sub">Skenirajte kod i isprobajte glasanje na svom telefonu</div>
+  </div>
+  <div id="p-qr"></div>
+  <div class="p-url no-translit" id="p-url"></div>
+  <ol>
+    <li>Skenirajte QR kod kamerom telefona</li>
+    <li>Pregledajte sve stranke i kandidate</li>
+    <li>Označite svoj izbor — ostaje zapamćen kao podsjetnik</li>
+    <li>Na biralište dođite sigurni i pripremljeni</li>
+  </ol>
 </div>
 
 <div class="toast" id="toast">
@@ -382,6 +365,7 @@
      ========================================================= */
   let appRaces = [];
   let currentKod = "";
+  let currentNaziv = "";
   const racesContainer = document.getElementById("races");
 
   function renderRaces(trke) {
@@ -414,6 +398,7 @@
           </div>
           <div class="chevron"></div>
         </div>
+        <div class="race-picked" data-toggle="race"></div>
         <div class="race-body">${bodyHTML}</div>
       `;
       racesContainer.appendChild(card);
@@ -462,7 +447,7 @@
   function renderParties(stranke, raceId) {
     return stranke.map(s=>`
       <div class="party" data-party data-party-idx="${s.redni}" data-party-name="${escapeAttr(s.naziv)}">
-        <div class="party-header">
+        <div class="party-header" data-toggle="party">
           <div class="check"
                data-toggle="check"
                data-race="${raceId}" data-kind="party"
@@ -472,7 +457,9 @@
             <div class="party-name">${s.naziv}</div>
             <div class="party-meta">${s.kandidati.length} kandidata</div>
           </div>
+          <div class="chevron"></div>
         </div>
+        <div class="party-picked" data-toggle="party"></div>
         <div class="party-body">
           <div class="party-body-inner">
             ${s.kandidati.map(k=>`
@@ -508,6 +495,20 @@
         return;
       }
     }
+    const partyToggle = e.target.closest('[data-toggle="party"]');
+    if (partyToggle) {
+      const party = partyToggle.closest(".party");
+      const opening = !party.classList.contains("open");
+      // Jedna otvorena stranka po trci — ne gušimo ekran
+      party.closest(".race").querySelectorAll(".party.open").forEach(p => { if (p !== party) p.classList.remove("open"); });
+      party.classList.toggle("open", opening);
+      // Ako se zatvorila duga stranka iznad, otvorena "skoči" gore — vrati je u vidno polje
+      if (opening) {
+        const top = party.getBoundingClientRect().top;
+        if (top < 0) window.scrollTo({ top: window.scrollY + top - 8, behavior: "smooth" });
+      }
+      return;
+    }
     const raceHeader = e.target.closest('[data-toggle="race"]');
     if (raceHeader) {
       const race = raceHeader.closest(".race");
@@ -524,7 +525,15 @@
     const raceId = box.dataset.race;
     const kind   = box.dataset.kind;
 
-    if (isChecked) { box.classList.remove("checked"); return; }
+    if (isChecked) {
+      box.classList.remove("checked");
+      // Bez glasa stranci nema ni glasova kandidatima te stranke
+      if (kind === "party") {
+        document.querySelectorAll(`.check.checked[data-race="${raceId}"][data-kind="cand"][data-party-idx="${box.dataset.partyIdx}"]`)
+          .forEach(b => b.classList.remove("checked"));
+      }
+      return;
+    }
 
     if (kind === "pres") {
       // Predsjedništvo: samo jedan ukupno, bez obzira na kolonu
@@ -555,72 +564,86 @@
     }
 
     box.classList.add("checked");
+    // Glas kandidatu je uvijek i glas njegovoj stranci
+    if (kind === "cand") partyCheck(raceId, box.dataset.partyIdx)?.classList.add("checked");
+
+    // Izbor u trci je gotov → zatvori trku (pregled ostaje ispod naslova), skroluj da se vidi sljedeća:
+    //  • Predsjedništvo / većinski: odmah poslije izbora (bira se samo jedan)
+    //  • Otvorena lista: kad je izabrano koliko se može — min(3, broj kandidata stranke)
+    const finished = kind === "pres" || kind === "vecinski" || (kind === "cand" && (() => {
+      const party = box.closest(".party");
+      const max = Math.min(3, party.querySelectorAll('.check[data-kind="cand"]').length);
+      return party.querySelectorAll('.check.checked[data-kind="cand"]').length === max;
+    })());
+    if (finished) {
+      const party = box.closest(".party");
+      const race  = box.closest(".race");
+      setTimeout(() => {
+        if (party) party.classList.remove("open");
+        race.classList.remove("open");
+        scrollRaceToTop(race);
+      }, 350);
+    }
+  }
+
+  function partyCheck(raceId, partyIdx) {
+    return document.querySelector(`.check[data-race="${raceId}"][data-kind="party"][data-party-idx="${partyIdx}"]`);
   }
 
   /* =========================================================
-     SAŽETAK — read-only checkboxovi
+     PREGLED IZBORA — read-only unutar zatvorenih stranaka i trka
      ========================================================= */
-  const summaryList  = document.getElementById("summary-list");
-  const summaryCount = document.getElementById("summary-count");
+
+  function renderPicked() {
+    document.querySelectorAll(".party").forEach(party => {
+      const picked = Array.from(party.querySelectorAll('.check.checked[data-kind="cand"]'))
+        .sort((a, b) => +a.dataset.idx - +b.dataset.idx);
+      party.querySelector(".party-picked").innerHTML = picked.map(c =>
+        `<div class="picked-row"><span class="mark">✓</span><span class="num">${c.dataset.idx}.</span><span>${escapeHTML(c.dataset.label)}</span></div>`
+      ).join("");
+    });
+  }
+
+  function pickedRow(num, label, extra, cls) {
+    return `<div class="picked-row ${cls || ""}"><span class="mark">✓</span>` +
+      (num ? `<span class="num">${escapeHTML(num)}.</span>` : "") +
+      `<span>${escapeHTML(label)}${extra ? ` <span class="picked-sub">(${escapeHTML(extra)})</span>` : ""}</span></div>`;
+  }
+
+  // Pregled izbora ispod naslova zatvorene trke
+  function renderRacePicked() {
+    appRaces.forEach(race => {
+      const el = document.querySelector(`.race[data-id="${race.id}"] .race-picked`);
+      if (!el) return;
+      const checks = Array.from(document.querySelectorAll(`.check.checked[data-race="${race.id}"]`));
+      let html = "";
+      if (checks.length && race.tip === "predsjednistvo") {
+        html = race.kolone.map(kol => {
+          const c = checks.find(x => x.dataset.col === kol.id);
+          return c ? (race.kolone.length > 1 ? `<div class="picked-col">${escapeHTML(kol.naslov)}</div>` : "") +
+                     pickedRow(c.dataset.idx, c.dataset.label, c.dataset.partyLabel) : "";
+        }).join("");
+      } else if (checks.length && race.tip === "vecinski") {
+        const c = checks[0];
+        html = pickedRow(c.dataset.idx, c.dataset.label, c.dataset.partyLabel);
+      } else if (checks.length) {
+        const party = checks.find(c => c.dataset.kind === "party");
+        const cands = checks.filter(c => c.dataset.kind === "cand").sort((a, b) => +a.dataset.idx - +b.dataset.idx);
+        const ref = party || cands[0];
+        html = pickedRow(ref.dataset.partyIdx, party ? party.dataset.label : ref.dataset.partyLabel, "",
+                         "picked-party") +
+               (cands.length ? `<div class="picked-cands">${cands.map(c => pickedRow(c.dataset.idx, c.dataset.label)).join("")}</div>` : "");
+      }
+      el.innerHTML = html || `<div class="picked-none">Nije izabrano</div>`;
+      el.closest(".race").classList.toggle("done", !!html);
+    });
+  }
 
   function renderSummary() {
-    summaryList.innerHTML = appRaces.map(buildRaceSummary).join("");
-    summaryCount.textContent = document.querySelectorAll(".check.checked").length;
-  }
-
-  function sumCheck(on) {
-    return `<span class="sum-check${on?" on":""}"></span>`;
-  }
-
-  function buildRaceSummary(race) {
-    const checks = Array.from(document.querySelectorAll(`.check.checked[data-race="${race.id}"]`));
-    let pickHTML;
-
-    if (checks.length === 0) {
-      pickHTML = `<div class="sum-empty">— ništa nije izabrano —</div>`;
-
-    } else if (race.tip === "predsjednistvo") {
-      const parts = [];
-      race.kolone.forEach(kol => {
-        const c = checks.find(x => x.dataset.col === kol.id);
-        parts.push(`<div class="sum-col-label">${kol.naslov}</div>`);
-        if (c) {
-          const party = c.dataset.partyLabel ? ` <span style="color:#999">(${c.dataset.partyLabel})</span>` : "";
-          parts.push(`<div class="sum-pick-row">${sumCheck(true)}<span>${c.dataset.idx}. ${c.dataset.label}${party}</span></div>`);
-        } else {
-          parts.push(`<div class="sum-empty" style="font-size:12px;margin-bottom:2px">— nije izabrano —</div>`);
-        }
-      });
-      pickHTML = parts.join("");
-
-    } else if (race.tip === "vecinski") {
-      const c = checks[0];
-      const party = c.dataset.partyLabel ? ` <span style="color:#999">(${c.dataset.partyLabel})</span>` : "";
-      pickHTML = `<div class="sum-pick-row">${sumCheck(true)}<span><strong>${c.dataset.idx}. ${c.dataset.label}</strong>${party}</span></div>`;
-
-    } else {
-      const party = checks.find(c => c.dataset.kind === "party");
-      const cands = checks.filter(c => c.dataset.kind === "cand")
-                          .sort((a,b) => +a.dataset.idx - +b.dataset.idx);
-      const partyIdx  = (party || cands[0]).dataset.partyIdx;
-      const partyName = party ? party.dataset.label : cands[0].dataset.partyLabel;
-
-      const parts = [];
-      parts.push(`<div class="sum-pick-row">
-        ${sumCheck(!!party)}
-        <span><span class="label">Stranka ${partyIdx}.</span> ${partyName}</span>
-      </div>`);
-
-      if (cands.length) {
-        const rows = cands.map(c =>
-          `<div class="sum-pick-row">${sumCheck(true)}<span>${c.dataset.idx}. ${c.dataset.label}</span></div>`
-        ).join("");
-        parts.push(`<div class="sum-cands">${rows}</div>`);
-      }
-      pickHTML = parts.join("");
-    }
-
-    return `<div class="sum-row"><div class="sum-race"><span class="sum-race-link" onclick="jumpToRace('${escapeAttr(race.id)}')">${escapeHTML(race.naslov)}</span></div>${pickHTML}</div>`;
+    renderPicked();
+    renderRacePicked();
+    document.getElementById("choice-bar").classList.toggle("show",
+      document.querySelectorAll(".check.checked").length > 0);
   }
 
   /* =========================================================
@@ -653,20 +676,8 @@
     }
   }
 
-  function jumpToRace(raceId) {
-    const card = document.querySelector(`.race[data-id="${raceId}"]`);
-    if (!card) return;
-    document.querySelectorAll(".race.open").forEach(r => r.classList.remove("open"));
-    card.classList.add("open");
-    scrollRaceToTop(card);
-  }
-
-  document.getElementById("summary-toggle").addEventListener("click", () => {
-    document.getElementById("summary").classList.toggle("collapsed");
-  });
-
-  document.getElementById("summary-clear").addEventListener("click", e => {
-    e.stopPropagation();
+  document.getElementById("clear-all").addEventListener("click", () => {
+    if (!confirm(Pismo.t("Poništiti sve odabire na ovom listiću?"))) return;
     document.querySelectorAll(".check.checked").forEach(b => b.classList.remove("checked"));
     renderSummary();
     try { if (currentKod) localStorage.removeItem("ballot_" + currentKod); } catch(err) {}
@@ -712,6 +723,8 @@
         const box = document.querySelector(sel);
         if (box) box.classList.add("checked");
       });
+      document.querySelectorAll('.check.checked[data-kind="cand"]')
+        .forEach(c => partyCheck(c.dataset.race, c.dataset.partyIdx)?.classList.add("checked"));
       const t = new Date().toLocaleTimeString("bs", {hour:"2-digit", minute:"2-digit"});
       document.getElementById("save-note").textContent = "Učitan sačuvani izbor · " + t;
     } catch(err) {}
@@ -721,7 +734,8 @@
      BOOTSTRAP — učitaj JSON
      ========================================================= */
   function showMessage(icon, title, sub) {
-    document.getElementById("summary").style.display = "none";
+    document.getElementById("choice-bar").classList.remove("show");
+    document.getElementById("races").classList.remove("hide-unset");   // greška se vidi i prije izbora pisma
     document.getElementById("races").innerHTML = `
       <div style="text-align:center;padding:48px 24px;color:var(--c-muted)">
         <div style="font-size:40px;margin-bottom:12px">${icon}</div>
@@ -740,23 +754,22 @@
       try { kod = localStorage.getItem("lastKod") || null; } catch(e) {}
     }
 
-    if (!kod) {
-      document.getElementById("page-title").textContent = "Glasanje";
-      showMessage("🗳️", "Nema odabrane liste",
-        "Dodajte <code style='background:#eee;padding:1px 5px;border-radius:3px'>?kod=</code> parametar u URL,<br>npr. <code style='background:#eee;padding:1px 5px;border-radius:3px'>lista.html?kod=001-gen</code>");
+    // Bez šifre (ili stara demo šifra tipa "001-gen") — izbor općine je na početnoj
+    if (!kod || !/^[0-9A-Za-z_]+$/.test(kod)) {
+      window.location.replace("index.html");
       return;
     }
 
-    const file = kod + ".json";
+    const file = "data/" + kod + ".json";
     let data;
     try {
-      const resp = await fetch(file);
+      const resp = await fetch(file, { cache: "no-cache" });
       if (!resp.ok) throw new Error("HTTP " + resp.status);
       data = await resp.json();
     } catch (err) {
       document.getElementById("page-title").textContent = "Glasanje";
       showMessage("⚠️", "Lista nije pronađena",
-        "Nije moguće učitati <code style='background:#eee;padding:1px 5px;border-radius:3px'>" + escapeHTML(file) + "</code><br>" +
+        "<a href='index.html' style='color:#1f6feb'>← Izaberite općinu</a><br><br>Nije moguće učitati <code style='background:#eee;padding:1px 5px;border-radius:3px'>" + escapeHTML(file) + "</code><br>" +
         "<span style='font-size:12px;color:#aaa'>" + escapeHTML(String(err)) + "</span>");
       return;
     }
@@ -769,14 +782,70 @@
 
     const naziv = data.izbornaJedinica && data.izbornaJedinica.naziv ? data.izbornaJedinica.naziv : kod;
     document.getElementById("page-title").textContent = "Glasanje — " + naziv;
-    document.getElementById("footer-note").textContent = "Glasački listić · " + naziv;
+    document.getElementById("page-title-cyr").textContent = Pismo.toCyr("Glasanje — " + naziv);
+    document.getElementById("footer-note").innerHTML =
+      "Glasački listić · " + escapeHTML(naziv) +
+      "<br><a href=\"index.html\" style=\"color:inherit\">← Promijeni općinu</a>";
 
     currentKod = kod;
+    currentNaziv = naziv;
+    document.getElementById("qr-btn").classList.add("show");
     try { localStorage.setItem("lastKod", kod); } catch(e) {}
     renderRaces(data.trke);
     loadChoices();
     renderSummary();
   })();
+
+  /* =========================================================
+     QR PLAKAT — jedan klik: generiši QR za ovu općinu i štampaj A4
+     Osnovni URL dolazi iz data/config.json (podešava se u adminu)
+     ========================================================= */
+  function loadScript(src) {
+    return new Promise((ok, fail) => {
+      if (window.QRCode) return ok();
+      const el = document.createElement("script");
+      el.src = src; el.onload = ok; el.onerror = () => fail(new Error("QR biblioteka nije dostupna (internet?)"));
+      document.head.appendChild(el);
+    });
+  }
+
+  async function simulatorUrl(kod) {
+    let base = "";
+    try {
+      const r = await fetch("data/config.json", { cache: "no-cache" });
+      if (r.ok) base = ((await r.json()).baseUrl || "").trim();
+    } catch (e) {}
+    if (!base) base = window.location.href.replace(/[^/]*$/, "");
+    if (!base.endsWith("/")) base += "/";
+    return base + "lista.html?kod=" + encodeURIComponent(kod);
+  }
+
+  document.getElementById("qr-btn").addEventListener("click", async () => {
+    const btn = document.getElementById("qr-btn");
+    btn.disabled = true;
+    try {
+      await loadScript("https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js");
+      const url = await simulatorUrl(currentKod);
+      document.getElementById("p-naziv").textContent = currentNaziv;
+      document.getElementById("p-url").textContent = url;
+      const box = document.getElementById("p-qr");
+      box.innerHTML = "";
+      new QRCode(box, { text: url, width: 600, height: 600, correctLevel: QRCode.CorrectLevel.M });
+      // qrcodejs puni <img> iz canvasa — sačekaj da bude spreman prije štampe
+      await new Promise(res => {
+        const img = box.querySelector("img");
+        if (!img || img.complete && img.src) return setTimeout(res, 50);
+        img.onload = res; setTimeout(res, 800);
+      });
+      document.body.classList.add("printing-qr");
+      window.print();
+    } catch (err) {
+      alert(Pismo.t(err.message));
+    } finally {
+      document.body.classList.remove("printing-qr");
+      btn.disabled = false;
+    }
+  });
 
   /* =========================================================
      PWA — Service Worker + "Dodaj na početni ekran"

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulator — administracija</title>
+<link rel="icon" href="/site/icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #f4f5f7; --card: #fff; --line: #d8dade; --text: #1a1a1a; --muted: #6b7280;
+    --blue: #1f6feb; --green: #1a7f37; --amber: #9a6700; --red: #cf222e;
+    --green-bg: #e8fbef; --amber-bg: #fff8c5; --red-bg: #ffebe9; --blue-bg: #e7f0ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.5; font-size: 14px; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 16px 60px; }
+  h1 { font-size: 20px; font-weight: 800; margin-bottom: 2px; }
+  .sub { color: var(--muted); margin-bottom: 20px; }
+  .sub a { color: var(--blue); }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+  .grid .card { margin-bottom: 0; }
+  .card h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 10px; }
+  .kv { display: grid; grid-template-columns: 130px 1fr; gap: 4px 10px; }
+  .kv dt { color: var(--muted); }
+  .kv dd { font-weight: 600; word-break: break-word; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; background: #bbb; }
+  .dot.ok { background: var(--green); } .dot.err { background: var(--red); }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  button { font: inherit; font-weight: 600; border-radius: 8px; padding: 10px 16px; cursor: pointer; border: 1px solid transparent; }
+  button:disabled { opacity: .5; cursor: wait; }
+  .b-primary { background: var(--blue); color: #fff; }
+  .b-sec { background: #fff; border-color: var(--line); color: var(--text); }
+  .b-green { background: var(--green); color: #fff; }
+  .hint { color: var(--muted); font-size: 12.5px; margin-top: 10px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; }
+  .chip { border-radius: 999px; padding: 3px 10px; font-weight: 600; font-size: 12.5px; background: #eef0f3; }
+  .chip.novo { background: var(--green-bg); color: var(--green); }
+  .chip.izmijenjeno { background: var(--amber-bg); color: var(--amber); }
+  .chip.obrisano { background: var(--red-bg); color: var(--red); }
+  .chip.dry { background: var(--blue-bg); color: var(--blue); }
+  .warn { background: var(--amber-bg); border-radius: 8px; padding: 8px 12px; margin-bottom: 8px; color: #5c4400; }
+  .error { background: var(--red-bg); border-radius: 8px; padding: 8px 12px; color: var(--red); }
+  pre { background: #0d1117; color: #e6edf3; border-radius: 8px; padding: 12px; font-size: 12px; overflow-x: auto; white-space: pre-wrap; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid #eceef1; vertical-align: top; }
+  th { font-size: 12px; color: var(--muted); font-weight: 600; }
+  td.num { font-variant-numeric: tabular-nums; }
+  td a { color: var(--blue); text-decoration: none; }
+  .small { font-size: 12px; color: var(--muted); }
+  input[type=search] { width: 100%; font: inherit; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 10px; }
+  .scroll { max-height: 520px; overflow: auto; }
+  #result:empty { display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Simulator glasačkog listića — administracija</h1>
+  <p class="sub">Uvoz podataka iz baze u <code>public/data/</code> · <a href="/site/" target="_blank">Otvori simulator (lokalno) ↗</a> · <a href="https://adnanp78.github.io/Vote-Simulator/" target="_blank">Javni sajt ↗</a></p>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Baza</h2>
+      <dl class="kv" id="db"><dt>Status</dt><dd>provjeravam…</dd></dl>
+    </div>
+    <div class="card">
+      <h2>Podaci (public/data)</h2>
+      <dl class="kv" id="data"><dt>Status</dt><dd>…</dd></dl>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Akcije</h2>
+    <div class="actions">
+      <button class="b-sec" id="btn-check">Provjeri promjene</button>
+      <button class="b-primary" id="btn-import">Uvezi / ažuriraj podatke</button>
+      <button class="b-green" id="btn-publish">Objavi online</button>
+    </div>
+    <p class="hint">
+      <b>Provjeri promjene</b> povuče view i pokaže šta bi se promijenilo, bez pisanja fajlova.
+      <b>Uvezi</b> prepiše samo općine čiji su se podaci promijenili.
+      <b>Objavi online</b> kopira cijeli <code>public/</code> (sajt + podaci) na GitHub Pages — <a href="https://adnanp78.github.io/Vote-Simulator/" target="_blank">adnanp78.github.io/Vote-Simulator</a>.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Postavke sajta</h2>
+    <label for="base-url" class="small" style="display:block;margin-bottom:4px">Javna adresa simulatora (koristi se u QR plakatima)</label>
+    <div class="actions">
+      <input type="url" id="base-url" placeholder="https://www.primjer.ba/simulator/" style="flex:1;min-width:240px;font:inherit;padding:9px 12px;border:1px solid var(--line);border-radius:8px">
+      <button class="b-sec" id="btn-save-cfg">Sačuvaj</button>
+    </div>
+    <p class="hint" id="cfg-hint">QR kod vodi na <code>&lt;adresa&gt;lista.html?kod=&lt;šifra&gt;</code>. Prazno = adresa na kojoj je sajt otvoren. Promjena se objavljuje dugmetom <b>Objavi online</b>.</p>
+  </div>
+
+  <div class="card" id="result"></div>
+
+  <div class="card">
+    <h2>Općine</h2>
+    <input type="search" id="q" placeholder="Pretraži po šifri, nazivu ili kantonu…">
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Šifra</th><th>Općina</th><th>Entitet / kanton</th><th>Trke</th><th>Redova</th><th>Ažurirano</th></tr></thead>
+        <tbody id="rows"><tr><td colspan="6" class="small">Nema uvezenih podataka.</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const fmt = iso => iso ? new Date(iso).toLocaleString("bs", { dateStyle: "short", timeStyle: "short" }) : "—";
+  const n = x => x == null ? "—" : Number(x).toLocaleString("bs");
+  let opcine = [];
+
+  async function loadStatus() {
+    const s = await (await fetch("/api/status")).json();
+    const b = s.baza;
+    $("db").innerHTML = `
+      <dt>Konekcija</dt><dd><span class="dot ${b.ok ? "ok" : "err"}"></span>${b.ok ? "OK" : "Greška"}</dd>
+      <dt>Server / baza</dt><dd>${esc(b.ok ? b.poruka : "—")}</dd>
+      <dt>View</dt><dd>${esc(b.view)}</dd>
+      <dt>Redova u view-u</dt><dd>${n(b.redova)}</dd>
+      ${b.ok ? "" : `<dt></dt><dd class="error">${esc(b.poruka)}</dd>`}`;
+    const d = s.podaci;
+    $("data").innerHTML = d ? `
+      <dt>Zadnji uvoz</dt><dd>${fmt(d.generisano)}</dd>
+      <dt>Općina</dt><dd>${n(d.opcina)}</dd>
+      <dt>Redova</dt><dd>${n(d.redova)}</dd>
+      <dt>Zadnja objava</dt><dd id="last-publish">…</dd>`
+      : `<dt>Status</dt><dd>Još nije rađen uvoz.</dd>`;
+    opcine = d ? d.opcine : [];
+    renderRows();
+    fetch("/api/publish/status").then(r => r.json()).then(p => {
+      const el = $("last-publish");
+      if (el) el.textContent = p.zadnjaObjava ? fmt(p.zadnjaObjava) : "—";
+    }).catch(() => {});
+  }
+
+  function renderRows() {
+    const q = $("q").value.trim().toLowerCase();
+    const list = opcine.filter(o => !q || [o.kod, o.naziv, o.entitet, o.kanton].join(" ").toLowerCase().includes(q));
+    $("rows").innerHTML = list.length ? list.map(o => `
+      <tr>
+        <td class="num"><a href="/site/lista.html?kod=${encodeURIComponent(o.kod)}" target="_blank">${esc(o.kod)}</a></td>
+        <td>${esc(o.naziv)}</td>
+        <td>${esc(o.entitet)}${o.kanton ? `<div class="small">${esc(o.kanton)}</div>` : ""}</td>
+        <td class="num">${o.trke}</td>
+        <td class="num">${n(o.redova)}</td>
+        <td class="small">${fmt(o.azurirano)}</td>
+      </tr>`).join("") : `<tr><td colspan="6" class="small">Nema rezultata.</td></tr>`;
+  }
+  $("q").addEventListener("input", renderRows);
+
+  function busy(on) { document.querySelectorAll("button").forEach(b => b.disabled = on); }
+
+  async function runImport(dryRun) {
+    busy(true);
+    $("result").innerHTML = `<h2>${dryRun ? "Provjera" : "Uvoz"}</h2><p class="small">Povlačim podatke iz baze…</p>`;
+    try {
+      const resp = await fetch("/api/import?dryRun=" + dryRun, { method: "POST" });
+      const r = await resp.json();
+      if (!resp.ok) throw new Error(r.greska || r.detail || r.title || resp.status);
+      const cnt = st => r.promjene.filter(p => p.status === st).length;
+      $("result").innerHTML = `
+        <h2>${dryRun ? "Provjera promjena (ništa nije upisano)" : "Uvoz završen"}</h2>
+        <div class="chips">
+          ${dryRun ? `<span class="chip dry">probni prolaz</span>` : ""}
+          <span class="chip">${n(r.redova)} redova · ${r.opcina} općina · ${(r.trajanjeMs/1000).toFixed(1)} s</span>
+          <span class="chip novo">${cnt("novo")} novo</span>
+          <span class="chip izmijenjeno">${cnt("izmijenjeno")} izmijenjeno</span>
+          <span class="chip obrisano">${cnt("obrisano")} obrisano</span>
+          <span class="chip">${r.nepromijenjeno} bez promjene</span>
+        </div>
+        ${r.upozorenja.map(w => `<div class="warn">⚠️ ${esc(w)}</div>`).join("")}
+        ${r.promjene.length ? `<div class="scroll"><table>
+          <thead><tr><th>Šifra</th><th>Općina</th><th>Status</th><th>Promijenjene trke</th></tr></thead>
+          <tbody>${r.promjene.map(p => `<tr>
+            <td class="num">${p.status === "obrisano" ? esc(p.kod) : `<a href="/site/lista.html?kod=${encodeURIComponent(p.kod)}" target="_blank">${esc(p.kod)}</a>`}</td>
+            <td>${esc(p.naziv)}</td>
+            <td><span class="chip ${p.status}">${p.status}</span></td>
+            <td class="small">${p.trke.map(esc).join("<br>") || "—"}</td></tr>`).join("")}</tbody>
+        </table></div>` : `<p class="small">Podaci u bazi su identični objavljenim.</p>`}`;
+      if (!dryRun) await loadStatus();
+    } catch (e) {
+      $("result").innerHTML = `<h2>Greška</h2><div class="error">${esc(e.message)}</div>`;
+    } finally { busy(false); }
+  }
+
+  async function publish() {
+    if (!confirm("Objaviti sajt i podatke online (GitHub Pages)?")) return;
+    busy(true);
+    $("result").innerHTML = `<h2>Objava</h2><p class="small">git commit + push…</p>`;
+    try {
+      const r = await (await fetch("/api/publish", { method: "POST" })).json();
+      $("result").innerHTML = `<h2>Objava</h2>
+        <div class="${r.ok ? "chip novo" : "error"}" style="display:inline-block;margin-bottom:10px">${esc(r.poruka || (r.ok ? "OK" : "Greška"))}</div>
+        <pre>${esc(r.log.join("\n\n"))}</pre>`;
+      await loadStatus();
+    } catch (e) {
+      $("result").innerHTML = `<h2>Greška</h2><div class="error">${esc(e.message)}</div>`;
+    } finally { busy(false); }
+  }
+
+  async function loadConfig() {
+    try { $("base-url").value = (await (await fetch("/api/config")).json()).baseUrl || ""; } catch (e) {}
+  }
+  $("btn-save-cfg").onclick = async () => {
+    const resp = await fetch("/api/config", { method: "POST", headers: { "Content-Type": "application/json" },
+                                              body: JSON.stringify({ baseUrl: $("base-url").value }) });
+    const r = await resp.json();
+    if (!resp.ok) { alert(r.greska || "Greška"); return; }
+    $("base-url").value = r.baseUrl || "";
+    $("btn-save-cfg").textContent = "Sačuvano ✓";
+    setTimeout(() => $("btn-save-cfg").textContent = "Sačuvaj", 1500);
+    loadStatus();
+  };
+  loadConfig();
+
+  $("btn-check").onclick = () => runImport(true);
+  $("btn-import").onclick = () => runImport(false);
+  $("btn-publish").onclick = publish;
+  loadStatus();
+</script>
+</body>
+</html>
