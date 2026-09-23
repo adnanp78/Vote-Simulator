@@ -27,13 +27,15 @@ var importer  = new Importer(app.Configuration.GetConnectionString("JIIS")!, vie
 // Admin UI (wwwroot) + pregled javnog sajta na /site — bez keša, da se odmah vide novi podaci
 app.UseDefaultFiles();
 app.UseStaticFiles();
+var publicFiles = new PhysicalFileProvider(publicDir);
+// /site/ → odmah servira index.html (bez preusmjeravanja), kao GitHub Pages; /site → /site/ radi sam middleware
+app.UseDefaultFiles(new DefaultFilesOptions { FileProvider = publicFiles, RequestPath = "/site" });
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(publicDir),
+    FileProvider = publicFiles,
     RequestPath = "/site",
     OnPrepareResponse = ctx => ctx.Context.Response.Headers.CacheControl = "no-store"
 });
-app.MapGet("/site", () => Results.Redirect("/site/index.html"));
 
 /* =========================================================
    API

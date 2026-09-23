@@ -20,5 +20,8 @@ self.addEventListener("fetch", event => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;   // CDN (QR biblioteka) ide normalno
 
-  event.respondWith(fetch(req.url, { cache: "no-cache", credentials: "same-origin" }));
+  // new Request(req, …) zadržava redirect-mode originalnog zahtjeva: kod otvaranja stranice
+  // preusmjerenje (npr. /site/ → /site/index.html) vraćamo browseru da ga sam isprati.
+  // (fetch(req.url) bi ga sam ispratio, a browser takav odgovor za stranicu odbija → ERR_FAILED)
+  event.respondWith(fetch(new Request(req, { cache: "no-cache" })));
 });
