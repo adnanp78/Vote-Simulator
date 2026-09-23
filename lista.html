@@ -174,8 +174,18 @@
     box-shadow: var(--shadow);
   }
   #gsearch:focus { border-color: var(--c-accent); box-shadow: 0 0 0 3px rgba(31,111,235,0.15); }
-  .gsearch-info { font-size: 12.5px; color: var(--c-muted); text-align: center; }
+  .gsearch-info { font-size: 12.5px; color: var(--c-muted); text-align: center; line-height: 1.5; }
   .gsearch-info:not(:empty) { padding-top: 6px; }
+  /* Filter uključen: deblji plavi okvir + plava pozadina + jasna poruka */
+  .global-search.active #gsearch {
+    border: 2px solid var(--c-accent); background: var(--c-accent-soft);
+    font-weight: 600; padding: 10px 13px;
+  }
+  .global-search.active .gsearch-info { color: #1a4fb4; }
+  .gsearch-clear {
+    font: inherit; font-size: 12px; font-weight: 700; color: #fff; background: var(--c-accent);
+    border: 0; border-radius: 999px; padding: 3px 10px; margin-left: 4px; cursor: pointer; white-space: nowrap;
+  }
   .s-hide { display: none !important; }
 
   .cand-row {
@@ -200,37 +210,22 @@
   .clear-btn:active { background: #fbecea; }
 
   /* ---- INSTALL APP ---- */
+  /* Dugmad na dnu: QR plakat + (nenametljivo) "Dodaj na početni ekran" u istoj liniji */
+  .bottom-actions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-top: 18px; }
   .install-bar {
-    display: none;
-    align-items: center; gap: 12px;
-    background: linear-gradient(135deg, #1f6feb 0%, #2d7ff9 100%);
-    color: #fff;
-    border-radius: var(--radius);
-    padding: 12px 14px;
-    margin: 20px 0 0;
-    box-shadow: 0 4px 14px rgba(31,111,235,0.25);
+    display: none; align-items: center;
+    background: #fff; border: 1px solid var(--c-border); border-radius: 10px;
   }
-  .install-bar.show { display: flex; }
-  .install-bar .ib-icon {
-    width: 38px; height: 38px; border-radius: 9px;
-    background: rgba(255,255,255,0.18);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px; flex-shrink: 0;
-  }
-  .install-bar .ib-text { flex: 1; min-width: 0; }
-  .install-bar .ib-title { font-weight: 700; font-size: 13.5px; }
-  .install-bar .ib-sub   { font-size: 11.5px; opacity: 0.85; margin-top: 1px; }
+  .install-bar.show { display: inline-flex; }
   .install-bar .ib-btn {
-    background: #fff; color: #1f6feb;
-    border: none; border-radius: 8px;
-    padding: 8px 14px; font-size: 13px; font-weight: 700;
-    cursor: pointer; font-family: inherit; flex-shrink: 0;
+    background: transparent; border: 0; padding: 10px 4px 10px 14px;
+    font: inherit; font-size: 13px; font-weight: 600; color: var(--c-text); cursor: pointer;
   }
-  .install-bar .ib-btn:active { background: #eef2fb; }
   .install-bar .ib-close {
-    background: transparent; border: none; color: rgba(255,255,255,0.8);
-    font-size: 20px; cursor: pointer; padding: 0 2px; flex-shrink: 0; line-height: 1;
+    background: transparent; border: 0; color: #999; cursor: pointer;
+    font-size: 17px; line-height: 1; padding: 8px 10px 8px 6px;
   }
+  .install-bar .ib-close:hover { color: #555; }
 
   /* iOS uputa */
   .ios-hint {
@@ -278,11 +273,11 @@
 
   /* -------- QR PLAKAT (A4) -------- */
   .qr-btn {
-    display: none; margin: 18px auto 0; padding: 10px 18px;
+    display: none; margin: 0; padding: 10px 18px;
     background: #fff; border: 1px solid var(--c-border); border-radius: 10px;
     font: inherit; font-size: 13px; font-weight: 600; color: var(--c-text); cursor: pointer;
   }
-  .qr-btn.show { display: block; }
+  .qr-btn.show { display: inline-block; }
   #poster { display: none; }
   @media print {
     @page { size: A4 portrait; margin: 14mm; }
@@ -316,7 +311,7 @@
   <div data-pismo-choose></div>
 
   <div class="global-search hide-unset" id="gsearch-wrap">
-    <input type="search" id="gsearch" placeholder="🔍 Traži stranku ili kandidata na cijelom listiću…" autocomplete="off" enterkeyhint="search">
+    <input type="search" id="gsearch" placeholder="🔍 Traži stranku ili kandidata na svim listićima…" autocomplete="off" enterkeyhint="search">
     <div class="gsearch-info" id="gsearch-info"></div>
   </div>
 
@@ -328,17 +323,13 @@
   </div>
 
   <p class="footer-note hide-unset" id="footer-note"></p>
-  <button class="qr-btn hide-unset" id="qr-btn">🔳 Štampaj QR plakat (A4)</button>
-
-  <!-- "Dodaj na početni ekran" — na dnu, da ne smeta glasanju -->
-  <div class="install-bar" id="install-bar">
-    <div class="ib-icon">🗳️</div>
-    <div class="ib-text">
-      <div class="ib-title">Dodaj na početni ekran</div>
-      <div class="ib-sub">Otvaraj listić jednim dodirom, kao aplikaciju</div>
+  <div class="bottom-actions">
+    <button class="qr-btn hide-unset" id="qr-btn">🔳 QR plakat (A4)</button>
+    <!-- "Dodaj na početni ekran" — nenametljivo, uz QR dugme; × ga trajno sklanja -->
+    <div class="install-bar hide-unset" id="install-bar">
+      <button class="ib-btn" id="install-btn">📲 Dodaj na početni ekran</button>
+      <button class="ib-close" id="install-close" aria-label="Zatvori">×</button>
     </div>
-    <button class="ib-btn" id="install-btn">Dodaj</button>
-    <button class="ib-close" id="install-close" aria-label="Zatvori">×</button>
   </div>
 
   <div class="ios-hint" id="ios-hint">
@@ -346,7 +337,7 @@
     <b>🗳️ Dodaj na početni ekran</b><br>
     Dodirni <span class="ih-share">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f6feb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/></svg>
-    </span> <b>Podijeli</b> na dnu, pa <b>"Dodaj na početni ekran"</b> — i listić ti je uvijek nadohvat ruke.
+    </span> <b>Podijeli</b> na dnu, pa <b>"Dodaj na početni ekran"</b> — i listići su ti uvijek nadohvat ruke.
   </div>
 
 </div>
@@ -576,12 +567,27 @@
       }
     });
 
+    // Jasno pokaži da je filter uključen — da niko ne pomisli da je to cijela lista
+    document.getElementById("gsearch-wrap").classList.toggle("active", active);
     const n = racesHit, word = n === 1 ? "trci" : (n >= 2 && n <= 4 ? "trke" : "trka");
-    document.getElementById("gsearch-info").textContent = !active ? ""
-      : n ? `Pronađeno u ${n} ${word}` : `Nema stranke ni kandidata za „${raw.trim()}“`;
+    const what = escapeHTML(raw.trim());
+    document.getElementById("gsearch-info").innerHTML = !active ? ""
+      : (n ? `🔍 <b>Filter je uključen</b> — prikazano samo ono što odgovara „${what}“ (${n} ${word})`
+           : `Nema stranke ni kandidata za „${what}“`)
+        + ` <button type="button" class="gsearch-clear" id="gsearch-clear">Prikaži sve</button>`;
+  }
+
+  // Ukloni filter; trka u kojoj korisnik upravo radi ostaje otvorena (sada sa punom listom)
+  function clearSearch(keepRace) {
+    const input = document.getElementById("gsearch");
+    if (!input.value && !searchActive) return;
+    input.value = "";
+    applyGlobalSearch("");
+    if (keepRace) keepRace.classList.add("open");
   }
 
   document.getElementById("gsearch").addEventListener("input", e => applyGlobalSearch(e.target.value));
+  document.addEventListener("click", e => { if (e.target.closest("#gsearch-clear")) clearSearch(); });
 
   // Visina zakačene pretrage — da skrolovanje ne sakrije naslov trke ispod nje
   function stickyOffset() {
@@ -603,6 +609,9 @@
         toggleCheck(box);
         renderSummary();
         saveChoices();
+        // Glas dat u svim trkama → ukloni filter, da se opet vide svi kandidati
+        if (searchActive && [...document.querySelectorAll(".race")].every(r => r.classList.contains("done")))
+          clearSearch(box.closest(".race"));
         return;
       }
     }
@@ -789,8 +798,9 @@
   }
 
   document.getElementById("clear-all").addEventListener("click", () => {
-    if (!confirm(Pismo.t("Poništiti sve odabire na ovom listiću?"))) return;
+    if (!confirm(Pismo.t("Poništiti sve odabire na svim listićima?"))) return;
     document.querySelectorAll(".check.checked").forEach(b => b.classList.remove("checked"));
+    clearSearch();
     renderSummary();
     try { if (currentKod) localStorage.removeItem("ballot_" + currentKod); } catch(err) {}
     const note = document.getElementById("save-note");
@@ -896,7 +906,7 @@
     document.getElementById("page-title").textContent = "Glasanje — " + naziv;
     document.getElementById("page-title-cyr").textContent = Pismo.toCyr("Glasanje — " + naziv);
     document.getElementById("footer-note").innerHTML =
-      "Glasački listić · " + escapeHTML(naziv) +
+      "Glasački listići · " + escapeHTML(naziv) +
       "<br><a href=\"index.html\" style=\"color:inherit\">← Promijeni općinu</a>";
 
     currentKod = kod;
