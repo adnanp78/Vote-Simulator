@@ -51,65 +51,109 @@
   .card .tx p  { font-size: 12.5px; color: #777; }
   .card .arrow { color: #c0c4cc; font-size: 20px; flex-shrink: 0; }
 
+  .search {
+    width: 100%; font: inherit; font-size: 16px; padding: 13px 16px;
+    border: 1px solid #d8dade; border-radius: 14px; background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); outline: none;
+  }
+  .search:focus { border-color: #1f6feb; box-shadow: 0 0 0 3px rgba(31,111,235,0.15); }
+  .ic.rs { background: #fdecec; }
+  .ic.brc { background: #fff4e0; }
+  .top-bar { display: flex; justify-content: flex-end; min-height: 26px; margin-bottom: -10px; }
+  .empty { text-align: center; color: #888; font-size: 14px; padding: 28px 0; }
+
   footer { text-align: center; font-size: 11.5px; color: #aaa; margin-top: 32px; line-height: 1.6; }
 </style>
 </head>
 <body>
+<script src="pismo.js?v=13"></script>
 <div class="wrap">
+  <div class="top-bar" data-pismo-toggle></div>
 
   <header>
     <img src="icon.svg" class="logo" alt="">
     <h1>Simulator glasačkog listića</h1>
-    <p>Isprobajte glasanje prije izbornog dana — pogledajte kandidate i pripremite svoj izbor.</p>
+    <h1 class="show-unset">Симулатор гласачког листића</h1>
+    <p class="hide-unset">Izaberite svoju općinu i isprobajte glasanje prije izbornog dana — pogledajte kandidate i pripremite svoj izbor.</p>
   </header>
 
-  <div class="group-label">Opšti izbori</div>
+  <div data-pismo-choose></div>
+  <input type="search" id="q" class="search" placeholder="Pronađite svoju općinu…" autocomplete="off">
+  <div id="list"><p class="empty">Učitavam općine…</p></div>
 
-  <a class="card" href="lista.html?kod=001-gen">
-    <div class="ic gen">🏛️</div>
-    <div class="tx">
-      <h3>Federacija — opšti</h3>
-      <p>Predsjedništvo · Parlament BiH · Parlament FBiH · Kanton</p>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-
-  <a class="card" href="lista.html?kod=003-gen">
-    <div class="ic gen">🏛️</div>
-    <div class="tx">
-      <h3>Republika Srpska — opšti</h3>
-      <p>Predsjedništvo (srpski član) · Predsjednik RS · NS RS</p>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-
-  <div class="group-label">Lokalni izbori</div>
-
-  <a class="card" href="lista.html?kod=001-mun">
-    <div class="ic mun">🏘️</div>
-    <div class="tx">
-      <h3>Velika Kladuša — lokalni</h3>
-      <p>Načelnik općine · Općinsko vijeće</p>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-
-  <div class="group-label">Alati</div>
-
-  <a class="card" href="qr.html">
-    <div class="ic tool">🔳</div>
-    <div class="tx">
-      <h3>Generiši QR kod</h3>
-      <p>Napravi QR i plakat za biračko mjesto</p>
-    </div>
-    <div class="arrow">›</div>
-  </a>
-
-  <footer>
-    Simulator glasačkog listića · demonstracija<br>
+  <footer class="hide-unset">
+    Simulator glasačkog listića<br>
     Odabiri ostaju samo na vašem uređaju.
   </footer>
 
 </div>
+<script>
+  const esc = s => String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  let groups = [];
+
+  function card(o) {
+    const cls = o.entitet === "Republika Srpska" ? "rs" : o.entitet === "Brčko distrikt" ? "brc" : "gen";
+    const sub = [o.kanton || o.entitet, o.trke + (o.trke === 1 ? " trka" : " trke")].filter(Boolean).join(" · ");
+    return `<a class="card" href="lista.html?kod=${encodeURIComponent(o.kod)}">
+      <div class="ic ${cls}">🏛️</div>
+      <div class="tx"><h3>${esc(o.naziv)}</h3><p>${esc(sub)}</p></div>
+      <div class="arrow">›</div></a>`;
+  }
+
+  function render() {
+    // pretraga radi i na ćirilici: sve poredimo na latinici
+    const q = Pismo.toLat(document.getElementById("q").value.trim()).toLocaleLowerCase("bs");
+    // Bez pretrage ne prikazujemo 150+ općina — samo uputa
+    if (!q) {
+      document.getElementById("list").innerHTML = `<p class="empty">Upišite naziv općine, npr. „Tuzla“ ili „Banja Luka“.</p>`;
+      return;
+    }
+    const html = groups.map(g => {
+      const items = g.items.filter(o => !q || (o.naziv + " " + o.kod + " " + (o.kanton || "")).toLocaleLowerCase("bs").includes(q));
+      return items.length ? `<div class="group-label">${esc(g.naslov)}</div>` + items.map(card).join("") : "";
+    }).join("");
+    document.getElementById("list").innerHTML = html || `<p class="empty">Nema općine za „${esc(q)}“.</p>`;
+  }
+
+  (async function () {
+    try {
+      const resp = await fetch("data/index.json");
+      if (!resp.ok) throw new Error("HTTP " + resp.status);
+      const data = await resp.json();
+
+      // Grad Mostar ima više šifri sa istim listićem — prikaži jednom
+      const seen = new Set();
+      const opcine = data.opcine.filter(o => {
+        const key = o.naziv + "|" + o.kanton + "|" + o.entitet;
+        if (seen.has(key)) return false;
+        seen.add(key); return true;
+      });
+
+      const byGroup = new Map();
+      for (const o of opcine) {
+        const g = o.entitet === "Federacija BiH" ? "Federacija BiH — " + (o.kanton || "") : o.entitet || "Ostalo";
+        if (!byGroup.has(g)) byGroup.set(g, []);
+        byGroup.get(g).push(o);
+      }
+      const order = g => g.startsWith("Federacija") ? 0 : g === "Republika Srpska" ? 1 : 2;
+      groups = [...byGroup.entries()]
+        .map(([naslov, items]) => ({ naslov, items: items.sort((a, b) => a.naziv.localeCompare(b.naziv, "bs")) }))
+        .sort((a, b) => order(a.naslov) - order(b.naslov) || a.naslov.localeCompare(b.naslov, "bs"));
+
+      render();
+    } catch (e) {
+      document.getElementById("list").innerHTML = `<p class="empty">⚠️ Spisak općina nije dostupan.<br><small>${esc(e.message)}</small></p>`;
+    }
+  })();
+  document.getElementById("q").addEventListener("input", render);
+  if (!Pismo.chosen) {
+    document.getElementById("q").style.display = "none";
+    document.getElementById("list").style.display = "none";
+  } else {
+    document.getElementById("q").focus();
+  }
+
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
+</script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 /* Service worker — offline keširanje + omogućava "Dodaj na početni ekran" */
-const CACHE = "glasanje-v3";
+const CACHE = "glasanje-v13";
 
 // App shell — keširamo odmah pri instalaciji
 const SHELL = [
   "./",
   "./index.html",
   "./lista.html",
-  "./qr.html",
+  "./pismo.js",
   "./manifest.json",
   "./icon.svg",
   "./icon-maskable.svg"
@@ -42,9 +42,9 @@ self.addEventListener("fetch", event => {
     url.pathname.endsWith(".html") ||
     url.pathname.endsWith("/");
 
-  // HTML i JSON: network-first (uvijek najnovija verzija kad ima signala),
+  // HTML, JSON i JS: network-first (uvijek najnovija verzija kad ima signala),
   // fallback na keš kad nema interneta — tako mobilni nikad ne zaglavi na staroj verziji.
-  if (isHTML || url.pathname.endsWith(".json")) {
+  if (isHTML || url.pathname.endsWith(".json") || url.pathname.endsWith(".js")) {
     event.respondWith(
       fetch(req)
         .then(resp => {

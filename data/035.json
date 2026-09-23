@@ -1,0 +1,1610 @@
+{
+  "izbornaJedinica": {
+    "kod": "035",
+    "naziv": "Čelinac",
+    "tip": "opsti",
+    "entitet": "Republika Srpska",
+    "azurirano": "2026-09-23T11:08:50"
+  },
+  "trke": [
+    {
+      "id": "predsjednistvo",
+      "naslov": "Predsjedništvo Bosne i Hercegovine",
+      "podnaslov": "Srpski član",
+      "tip": "predsjednistvo",
+      "kolone": [
+        {
+          "id": "srp",
+          "naslov": "Srpski član",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Marinko Božović",
+              "stranka": "SDS-SRPSKA DEMOKRATSKA STRANKA"
+            },
+            {
+              "redni": 2,
+              "ime": "Željka Cvijanović",
+              "stranka": "SAVEZ NEZAVISNIH SOCIJALDEMOKRATA - SNSD - MILORAD DODIK"
+            },
+            {
+              "redni": 3,
+              "ime": "Nebojša Vukanović",
+              "stranka": "ZA PRAVDU I RED - LISTA NEBOJŠE VUKANOVIĆA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-bih",
+      "naslov": "Zastupnički/Predstavnički dom Parlamentarne skupštine BiH",
+      "podnaslov": "Republika Srpska – Izborna jedinica 1B",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "SOCIJALISTIČKA PARTIJA PETAR ĐOKIĆ - DEMOS",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Duško Milunović"
+            },
+            {
+              "redni": 2,
+              "ime": "Jelena Kurtinović"
+            },
+            {
+              "redni": 3,
+              "ime": "Nikola Vukčević"
+            },
+            {
+              "redni": 4,
+              "ime": "Boran Bosančić"
+            },
+            {
+              "redni": 5,
+              "ime": "Snježana Miljković"
+            },
+            {
+              "redni": 6,
+              "ime": "Velibor Stanić"
+            },
+            {
+              "redni": 7,
+              "ime": "Milanka Tevanović"
+            },
+            {
+              "redni": 8,
+              "ime": "Blaško Kaurin"
+            }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "SAVEZ NEZAVISNIH SOCIJALDEMOKRATA - SNSD - MILORAD DODIK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Srđan Amidžić"
+            },
+            {
+              "redni": 2,
+              "ime": "Snježana Novaković Bursać"
+            },
+            {
+              "redni": 3,
+              "ime": "Milorad Kojić"
+            },
+            {
+              "redni": 4,
+              "ime": "Ranka Perić Romić"
+            },
+            {
+              "redni": 5,
+              "ime": "Goran Velaula"
+            },
+            {
+              "redni": 6,
+              "ime": "Zoran Aleksić"
+            },
+            {
+              "redni": 7,
+              "ime": "Milan Kovač"
+            },
+            {
+              "redni": 8,
+              "ime": "Milijana Topić"
+            }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "UJEDINJENA SRPSKA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Milan Petković"
+            },
+            {
+              "redni": 2,
+              "ime": "Sanja Trninić"
+            },
+            {
+              "redni": 3,
+              "ime": "Siniša Vidović"
+            },
+            {
+              "redni": 4,
+              "ime": "Milorad Radić"
+            },
+            {
+              "redni": 5,
+              "ime": "Snježana Martić"
+            },
+            {
+              "redni": 6,
+              "ime": "Dragan Popović"
+            },
+            {
+              "redni": 7,
+              "ime": "Tijana Bereta Jacišin"
+            },
+            {
+              "redni": 8,
+              "ime": "Mirko Bukvić"
+            }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "ZA PRAVDU I RED - LISTA NEBOJŠE VUKANOVIĆA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Aleksandar Savić"
+            },
+            {
+              "redni": 2,
+              "ime": "Valentina Krminac"
+            },
+            {
+              "redni": 3,
+              "ime": "Ozren Perduv"
+            },
+            {
+              "redni": 4,
+              "ime": "Vladimir Vujanić"
+            },
+            {
+              "redni": 5,
+              "ime": "Snežana Savanović"
+            },
+            {
+              "redni": 6,
+              "ime": "Bogdan Kljajić"
+            },
+            {
+              "redni": 7,
+              "ime": "Mirjana Savić"
+            },
+            {
+              "redni": 8,
+              "ime": "Vuk Mučibabić"
+            }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "DNS-NPS BANJAC-NEŠIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Bojan Subotić"
+            },
+            {
+              "redni": 2,
+              "ime": "Jovana Radonić"
+            },
+            {
+              "redni": 3,
+              "ime": "Stevica Dronjak"
+            },
+            {
+              "redni": 4,
+              "ime": "Davor Šandara"
+            },
+            {
+              "redni": 5,
+              "ime": "Maja Špica Knežević"
+            },
+            {
+              "redni": 6,
+              "ime": "Boško Latinović"
+            },
+            {
+              "redni": 7,
+              "ime": "Nikolina Ljubojević"
+            },
+            {
+              "redni": 8,
+              "ime": "Aleksandar Šuvak"
+            }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "NAROD I PRAVDA, SDBIH",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Haris Gazić"
+            }
+          ]
+        },
+        {
+          "redni": 7,
+          "naziv": "SPS - SOCIJALISTIČKA PARTIJA SRPSKE - GORAN SELAK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Nebojša Raković"
+            },
+            {
+              "redni": 2,
+              "ime": "Željka Vidović"
+            },
+            {
+              "redni": 3,
+              "ime": "Milan Unčanin"
+            },
+            {
+              "redni": 4,
+              "ime": "Mladen Šumar"
+            },
+            {
+              "redni": 5,
+              "ime": "Ivana Crnić"
+            },
+            {
+              "redni": 6,
+              "ime": "Zoran Vekić"
+            },
+            {
+              "redni": 7,
+              "ime": "Nikolina Gašić"
+            },
+            {
+              "redni": 8,
+              "ime": "Dalibor Runjo"
+            }
+          ]
+        },
+        {
+          "redni": 8,
+          "naziv": "HDZ BIH, HSP BIH, HKDU, HSP AS, HDU, HSP HB, HRAST",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Ljiljana Došen"
+            },
+            {
+              "redni": 2,
+              "ime": "Mario Sandro Tunjić"
+            }
+          ]
+        },
+        {
+          "redni": 9,
+          "naziv": "SBIH - STRANKA ZA BOSNU I HERCEGOVINU",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Almasa Mušić"
+            },
+            {
+              "redni": 2,
+              "ime": "Besim Hodžić"
+            }
+          ]
+        },
+        {
+          "redni": 10,
+          "naziv": "VOLJA NARODA SRPSKE - DR VLADO ĐAJIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Vitomir Popović"
+            },
+            {
+              "redni": 2,
+              "ime": "Tatjana Špirić"
+            },
+            {
+              "redni": 3,
+              "ime": "Igor Davidović"
+            },
+            {
+              "redni": 4,
+              "ime": "Jelena Trivunović"
+            }
+          ]
+        },
+        {
+          "redni": 11,
+          "naziv": "DRAŠKO STANIVUKOVIĆ - POKRET SIGURNA SRPSKA (PSS,PDP,NPSP..)",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Branislav Borenović"
+            },
+            {
+              "redni": 2,
+              "ime": "Mira Pekić"
+            },
+            {
+              "redni": 3,
+              "ime": "Perica Stanić"
+            },
+            {
+              "redni": 4,
+              "ime": "Milorad Maran"
+            },
+            {
+              "redni": 5,
+              "ime": "Jelena Elčija Jovanić"
+            },
+            {
+              "redni": 6,
+              "ime": "Dragan Dragojević"
+            },
+            {
+              "redni": 7,
+              "ime": "Tanja Stevanović"
+            },
+            {
+              "redni": 8,
+              "ime": "Igor Radojičić"
+            }
+          ]
+        },
+        {
+          "redni": 12,
+          "naziv": "NARODNI FRONT - JELENA TRIVIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Željko Dubravac"
+            },
+            {
+              "redni": 2,
+              "ime": "Gabrijela Ćurguz"
+            },
+            {
+              "redni": 3,
+              "ime": "Branislav Čerek"
+            },
+            {
+              "redni": 4,
+              "ime": "Dejan Kojić"
+            },
+            {
+              "redni": 5,
+              "ime": "Svjetlana Krivokuća"
+            },
+            {
+              "redni": 6,
+              "ime": "Milan Kostur"
+            },
+            {
+              "redni": 7,
+              "ime": "Gordana Plavšić"
+            },
+            {
+              "redni": 8,
+              "ime": "Saša Balaban"
+            }
+          ]
+        },
+        {
+          "redni": 13,
+          "naziv": "SDA - STRANKA DEMOKRATSKE AKCIJE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Anes Opardija"
+            },
+            {
+              "redni": 2,
+              "ime": "Tehvida Spahić-Dindić"
+            },
+            {
+              "redni": 3,
+              "ime": "Samir Zulić"
+            },
+            {
+              "redni": 4,
+              "ime": "Tanja Milanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Muhamed Gerzić"
+            },
+            {
+              "redni": 6,
+              "ime": "Hedija Džajić"
+            }
+          ]
+        },
+        {
+          "redni": 14,
+          "naziv": "REPUBLIKANCI BOSNE I HERCEGOVINE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Oliver Vukadinović"
+            }
+          ]
+        },
+        {
+          "redni": 15,
+          "naziv": "SRPSKA DEMOKRATSKA STRANKA - VOLJA NARODA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Milan Blagojević"
+            },
+            {
+              "redni": 2,
+              "ime": "Mila Grublješić"
+            },
+            {
+              "redni": 3,
+              "ime": "Nedeljko Glamočak"
+            },
+            {
+              "redni": 4,
+              "ime": "Slaviša Jenjić"
+            },
+            {
+              "redni": 5,
+              "ime": "Danijela Malijević"
+            },
+            {
+              "redni": 6,
+              "ime": "Živko Rosić"
+            },
+            {
+              "redni": 7,
+              "ime": "Milijana Stanković"
+            },
+            {
+              "redni": 8,
+              "ime": "Slavko Grbić"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "predsjednik-rs",
+      "naslov": "Predsjednik i potpredsjednici Republike Srpske",
+      "podnaslov": "Izaberite jednog kandidata",
+      "tip": "vecinski",
+      "kandidati": [
+        {
+          "redni": 1,
+          "ime": "Bogdan Jovanović",
+          "stranka": "STRANKA ŽIVOT"
+        },
+        {
+          "redni": 2,
+          "ime": "Branko Blanuša",
+          "stranka": "SDS-SRPSKA DEMOKRATSKA STRANKA"
+        },
+        {
+          "redni": 3,
+          "ime": "Ćamil Duraković",
+          "stranka": "ĆAMIL DURAKOVIĆ - NEZAVISNI KANDIDAT"
+        },
+        {
+          "redni": 4,
+          "ime": "Ivan Begić",
+          "stranka": "SDP - SOCIJALDEMOKRATSKA PARTIJA BOSNE I HERCEGOVINE"
+        },
+        {
+          "redni": 5,
+          "ime": "Savo Minić",
+          "stranka": "SAVEZ NEZAVISNIH SOCIJALDEMOKRATA - SNSD - MILORAD DODIK"
+        },
+        {
+          "redni": 6,
+          "ime": "Igor Balukčić",
+          "stranka": "HDZ 1990 - HRVATSKA DEMOKRATSKA ZAJEDNICA 1990"
+        },
+        {
+          "redni": 7,
+          "ime": "Franjo Jukić",
+          "stranka": "HDZ BIH, HSP BIH, HKDU, HSP AS, HDU, HSP HB, HRAST"
+        },
+        {
+          "redni": 8,
+          "ime": "Begija Smajić",
+          "stranka": "SBIH - STRANKA ZA BOSNU I HERCEGOVINU"
+        },
+        {
+          "redni": 9,
+          "ime": "Jusuf Arifagić",
+          "stranka": "NAROD I PRAVDA (NIP)"
+        },
+        {
+          "redni": 10,
+          "ime": "Ramiz Salkić",
+          "stranka": "SDA - STRANKA DEMOKRATSKE AKCIJE"
+        },
+        {
+          "redni": 11,
+          "ime": "Marko Jorgić",
+          "stranka": "MARKO JORGIĆ - NEOVISNI KANDIDAT"
+        },
+        {
+          "redni": 12,
+          "ime": "Ivo Kamenjašević",
+          "stranka": "HRVATSKA SELJAČKA STRANKA - HSS"
+        }
+      ]
+    },
+    {
+      "id": "nsrs",
+      "naslov": "Narodna skupština Republike Srpske",
+      "podnaslov": "Izborna jedinica 3",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "KOALICIJA ZA DRŽAVU",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Srđan Jovanović"
+            },
+            {
+              "redni": 2,
+              "ime": "Samija Muslimović"
+            },
+            {
+              "redni": 3,
+              "ime": "Mirudin Dugonjić"
+            },
+            {
+              "redni": 4,
+              "ime": "Edina Karabegović Mujčinović"
+            },
+            {
+              "redni": 5,
+              "ime": "Dragan Kopanja"
+            },
+            {
+              "redni": 6,
+              "ime": "Almin Ibričić"
+            },
+            {
+              "redni": 7,
+              "ime": "Mirsada Delnezirević"
+            },
+            {
+              "redni": 8,
+              "ime": "Sabahet Palić"
+            },
+            {
+              "redni": 9,
+              "ime": "Andrea Gajić"
+            },
+            {
+              "redni": 10,
+              "ime": "Adis Čavka"
+            },
+            {
+              "redni": 11,
+              "ime": "Milica Šikić"
+            },
+            {
+              "redni": 12,
+              "ime": "Mehmed Puškar"
+            },
+            {
+              "redni": 13,
+              "ime": "Sanela Botić"
+            },
+            {
+              "redni": 14,
+              "ime": "Amra Palić"
+            },
+            {
+              "redni": 15,
+              "ime": "Luca Topalović"
+            },
+            {
+              "redni": 16,
+              "ime": "Dušica Savić"
+            },
+            {
+              "redni": 17,
+              "ime": "Rusmir Osmančević"
+            }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "STRANKA ŽIVOT",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Davor Dragičević"
+            },
+            {
+              "redni": 2,
+              "ime": "Jovana Ivanović"
+            },
+            {
+              "redni": 3,
+              "ime": "Dražen Ivanović"
+            },
+            {
+              "redni": 4,
+              "ime": "Radovan Ćulum"
+            },
+            {
+              "redni": 5,
+              "ime": "Andrea Lazić"
+            },
+            {
+              "redni": 6,
+              "ime": "Milan Živković"
+            },
+            {
+              "redni": 7,
+              "ime": "Dajana Pelengić"
+            },
+            {
+              "redni": 8,
+              "ime": "Siniša Jeftenić"
+            },
+            {
+              "redni": 9,
+              "ime": "Suzana Pejaković"
+            },
+            {
+              "redni": 10,
+              "ime": "Miodrag Lazić"
+            },
+            {
+              "redni": 11,
+              "ime": "Tijana Vernački"
+            },
+            {
+              "redni": 12,
+              "ime": "Borislav Štrkić"
+            },
+            {
+              "redni": 13,
+              "ime": "Zvezdana Šormaz"
+            },
+            {
+              "redni": 14,
+              "ime": "Dragan Knežević"
+            },
+            {
+              "redni": 15,
+              "ime": "Dragana Pelikan"
+            },
+            {
+              "redni": 16,
+              "ime": "Aleksandar Stanković"
+            },
+            {
+              "redni": 17,
+              "ime": "Rada Stanković"
+            }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "SOCIJALISTIČKA PARTIJA PETAR ĐOKIĆ - DEMOS - NDP",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Davor Strika"
+            },
+            {
+              "redni": 2,
+              "ime": "Zdenka Gojković"
+            },
+            {
+              "redni": 3,
+              "ime": "Nedeljko Čubrilović"
+            },
+            {
+              "redni": 4,
+              "ime": "Petar Jokanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Aleksandra Ostić"
+            },
+            {
+              "redni": 6,
+              "ime": "Dejan Kurtinović"
+            },
+            {
+              "redni": 7,
+              "ime": "Biljana Devura"
+            },
+            {
+              "redni": 8,
+              "ime": "Mladen Tešanović"
+            },
+            {
+              "redni": 9,
+              "ime": "Slavica Vitezović"
+            },
+            {
+              "redni": 10,
+              "ime": "Aleksandar Plazinić"
+            },
+            {
+              "redni": 11,
+              "ime": "Svjetlana Ignjić"
+            },
+            {
+              "redni": 12,
+              "ime": "Dragan Mijić"
+            },
+            {
+              "redni": 13,
+              "ime": "Slađana Stojaković"
+            },
+            {
+              "redni": 14,
+              "ime": "Miro Jurišić"
+            },
+            {
+              "redni": 15,
+              "ime": "Miloš Gajić"
+            },
+            {
+              "redni": 16,
+              "ime": "Žana Arsić"
+            },
+            {
+              "redni": 17,
+              "ime": "Saša Dobričanin"
+            }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "REPUBLIČKA STRANKA SRPSKE - RSS",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Miroslav Zurovac"
+            },
+            {
+              "redni": 2,
+              "ime": "Bojana Topić Mirković"
+            },
+            {
+              "redni": 3,
+              "ime": "Goran Savić"
+            },
+            {
+              "redni": 4,
+              "ime": "Tijana Ćeranić"
+            },
+            {
+              "redni": 5,
+              "ime": "Dragan Pajić"
+            },
+            {
+              "redni": 6,
+              "ime": "Dajana Ševa"
+            },
+            {
+              "redni": 7,
+              "ime": "Jovica Babić"
+            },
+            {
+              "redni": 8,
+              "ime": "Violeta Petković"
+            },
+            {
+              "redni": 9,
+              "ime": "Kristijan Knežević"
+            },
+            {
+              "redni": 10,
+              "ime": "Nikola Atlagić"
+            },
+            {
+              "redni": 11,
+              "ime": "Nela Mačkić"
+            },
+            {
+              "redni": 12,
+              "ime": "Nikola Kutić"
+            },
+            {
+              "redni": 13,
+              "ime": "Vanja Radumilo"
+            },
+            {
+              "redni": 14,
+              "ime": "Darko Antić"
+            },
+            {
+              "redni": 15,
+              "ime": "Tomislav Grabež"
+            },
+            {
+              "redni": 16,
+              "ime": "Ljiljana Šodolović"
+            },
+            {
+              "redni": 17,
+              "ime": "Sergej Vranješ"
+            }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "SAVEZ NEZAVISNIH SOCIJALDEMOKRATA - SNSD - MILORAD DODIK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Igor Dodik"
+            },
+            {
+              "redni": 2,
+              "ime": "Nevena Todorović"
+            },
+            {
+              "redni": 3,
+              "ime": "Goran Maričić"
+            },
+            {
+              "redni": 4,
+              "ime": "Alen Šeranić"
+            },
+            {
+              "redni": 5,
+              "ime": "Nataša Radulović"
+            },
+            {
+              "redni": 6,
+              "ime": "Goran Talić"
+            },
+            {
+              "redni": 7,
+              "ime": "Nikola Šobot"
+            },
+            {
+              "redni": 8,
+              "ime": "Snežana Ružičić"
+            },
+            {
+              "redni": 9,
+              "ime": "Irena Joldžić"
+            },
+            {
+              "redni": 10,
+              "ime": "Dragan Vođević"
+            },
+            {
+              "redni": 11,
+              "ime": "Jelena Pavlović"
+            },
+            {
+              "redni": 12,
+              "ime": "Mladen Ilić"
+            },
+            {
+              "redni": 13,
+              "ime": "Renata Kuzmić"
+            },
+            {
+              "redni": 14,
+              "ime": "Bogoljub Zeljković"
+            },
+            {
+              "redni": 15,
+              "ime": "Miroslav Janković"
+            },
+            {
+              "redni": 16,
+              "ime": "Daliborka Davidović"
+            },
+            {
+              "redni": 17,
+              "ime": "Srđan Mazalica"
+            }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "UJEDINJENA SRPSKA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Nenad Stevandić"
+            },
+            {
+              "redni": 2,
+              "ime": "Mirela Kajkut Zeljković"
+            },
+            {
+              "redni": 3,
+              "ime": "Bojan Vipotnik"
+            },
+            {
+              "redni": 4,
+              "ime": "Jasna Milešević"
+            },
+            {
+              "redni": 5,
+              "ime": "Dejan Sejmanović"
+            },
+            {
+              "redni": 6,
+              "ime": "Marko Marković"
+            },
+            {
+              "redni": 7,
+              "ime": "Minja Šurlan"
+            },
+            {
+              "redni": 8,
+              "ime": "Nikola Radonjić"
+            },
+            {
+              "redni": 9,
+              "ime": "Valentina Kecman"
+            },
+            {
+              "redni": 10,
+              "ime": "Milenko Rosić"
+            },
+            {
+              "redni": 11,
+              "ime": "Mira Berić"
+            },
+            {
+              "redni": 12,
+              "ime": "Milan Đukanović"
+            },
+            {
+              "redni": 13,
+              "ime": "Dijana Grujić"
+            },
+            {
+              "redni": 14,
+              "ime": "Dragan Đekanović"
+            },
+            {
+              "redni": 15,
+              "ime": "Milan Kutanjac"
+            },
+            {
+              "redni": 16,
+              "ime": "Tijana Štrkić"
+            },
+            {
+              "redni": 17,
+              "ime": "Radomir Dujaković"
+            }
+          ]
+        },
+        {
+          "redni": 7,
+          "naziv": "DNS-NPS BANJAC-NEŠIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Dejan Lolić"
+            },
+            {
+              "redni": 2,
+              "ime": "Jelena Orašanin"
+            },
+            {
+              "redni": 3,
+              "ime": "Branislav Škobo"
+            },
+            {
+              "redni": 4,
+              "ime": "Mladen Vukman"
+            },
+            {
+              "redni": 5,
+              "ime": "Duška Kamenko"
+            },
+            {
+              "redni": 6,
+              "ime": "Milenko Vučeta"
+            },
+            {
+              "redni": 7,
+              "ime": "Dalibor Leković"
+            },
+            {
+              "redni": 8,
+              "ime": "Maja Spremo"
+            },
+            {
+              "redni": 9,
+              "ime": "Marina Rokvić-Miljković"
+            },
+            {
+              "redni": 10,
+              "ime": "Milovan Vujičić"
+            },
+            {
+              "redni": 11,
+              "ime": "Sofija Bajić"
+            },
+            {
+              "redni": 12,
+              "ime": "Aleksandar Smiljić"
+            },
+            {
+              "redni": 13,
+              "ime": "Stefani Vuleta"
+            },
+            {
+              "redni": 14,
+              "ime": "Rade Tešić"
+            },
+            {
+              "redni": 15,
+              "ime": "Damir Jovanić"
+            },
+            {
+              "redni": 16,
+              "ime": "Anđela Galić"
+            },
+            {
+              "redni": 17,
+              "ime": "Željko Stanišić"
+            }
+          ]
+        },
+        {
+          "redni": 8,
+          "naziv": "ZA PRAVDU I RED-LISTA NEBOJŠE VUKANOVIĆA-PDP RS-IGOR CRNADAK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Igor Crnadak"
+            },
+            {
+              "redni": 2,
+              "ime": "Suzana Rajković"
+            },
+            {
+              "redni": 3,
+              "ime": "Igor Mandić"
+            },
+            {
+              "redni": 4,
+              "ime": "Miloš Šašić"
+            },
+            {
+              "redni": 5,
+              "ime": "Sara Potkonjak"
+            },
+            {
+              "redni": 6,
+              "ime": "Saša Lazić"
+            },
+            {
+              "redni": 7,
+              "ime": "Jovana Kisin Zagajac"
+            },
+            {
+              "redni": 8,
+              "ime": "Saša Čekrlija"
+            },
+            {
+              "redni": 9,
+              "ime": "Nataša Krivošija Filipović"
+            },
+            {
+              "redni": 10,
+              "ime": "Dragan Serdar"
+            },
+            {
+              "redni": 11,
+              "ime": "Željka Samac"
+            },
+            {
+              "redni": 12,
+              "ime": "Tadija Dobranić"
+            },
+            {
+              "redni": 13,
+              "ime": "Jadranka Kićanović"
+            },
+            {
+              "redni": 14,
+              "ime": "Draženko Savić"
+            },
+            {
+              "redni": 15,
+              "ime": "Stefan Travar"
+            },
+            {
+              "redni": 16,
+              "ime": "Kristina Jekić"
+            },
+            {
+              "redni": 17,
+              "ime": "Vuk Vukašinović"
+            }
+          ]
+        },
+        {
+          "redni": 9,
+          "naziv": "HDZ BIH, HSP BIH, HKDU, HSP AS, HDU, HSP HB, HRAST",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Marko Majdandžić"
+            },
+            {
+              "redni": 2,
+              "ime": "Klara Perić"
+            },
+            {
+              "redni": 3,
+              "ime": "Stipo Perić"
+            }
+          ]
+        },
+        {
+          "redni": 10,
+          "naziv": "SBIH - STRANKA ZA BOSNU I HERCEGOVINU",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Bakir Tatar"
+            },
+            {
+              "redni": 2,
+              "ime": "Milosava Jakovljević"
+            }
+          ]
+        },
+        {
+          "redni": 11,
+          "naziv": "SPS - GORAN SELAK - POKRET JEDINSTVENA SRPSKA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Goran Selak"
+            },
+            {
+              "redni": 2,
+              "ime": "Maja Vekić"
+            },
+            {
+              "redni": 3,
+              "ime": "Saša Gligorić"
+            },
+            {
+              "redni": 4,
+              "ime": "Ratko Jokić"
+            },
+            {
+              "redni": 5,
+              "ime": "Helena Kerkez"
+            },
+            {
+              "redni": 6,
+              "ime": "Aleksandar Ćurković"
+            },
+            {
+              "redni": 7,
+              "ime": "Bojan Ćosić"
+            },
+            {
+              "redni": 8,
+              "ime": "Nikolina Petrović"
+            },
+            {
+              "redni": 9,
+              "ime": "Vukosava Govedarica"
+            },
+            {
+              "redni": 10,
+              "ime": "Željko Mandić"
+            },
+            {
+              "redni": 11,
+              "ime": "Aleksandra Banović"
+            },
+            {
+              "redni": 12,
+              "ime": "Goran Bobar"
+            },
+            {
+              "redni": 13,
+              "ime": "Dragana Filipović"
+            },
+            {
+              "redni": 14,
+              "ime": "Željko Katić"
+            },
+            {
+              "redni": 15,
+              "ime": "Nebojša Keleman"
+            },
+            {
+              "redni": 16,
+              "ime": "Mirjana Lazendić"
+            },
+            {
+              "redni": 17,
+              "ime": "Marko Smiljanić"
+            }
+          ]
+        },
+        {
+          "redni": 12,
+          "naziv": "VOLJA NARODA SRPSKE - DR VLADO ĐAJIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Vlado Đajić"
+            },
+            {
+              "redni": 2,
+              "ime": "Dragana Mandić"
+            },
+            {
+              "redni": 3,
+              "ime": "Dragomir Batar"
+            },
+            {
+              "redni": 4,
+              "ime": "Aleksandar Stajčić"
+            },
+            {
+              "redni": 5,
+              "ime": "Brankica Miljanović"
+            },
+            {
+              "redni": 6,
+              "ime": "Dragomir Keserović"
+            },
+            {
+              "redni": 7,
+              "ime": "Draško Svjetlanović"
+            },
+            {
+              "redni": 8,
+              "ime": "Svetlana Tomašević-Pavlović"
+            },
+            {
+              "redni": 9,
+              "ime": "Daliborka Radivojević"
+            },
+            {
+              "redni": 10,
+              "ime": "Miroslav Margetić"
+            },
+            {
+              "redni": 11,
+              "ime": "Olgica Mrđa"
+            },
+            {
+              "redni": 12,
+              "ime": "Nebojša Rodić"
+            },
+            {
+              "redni": 13,
+              "ime": "Kristina Malić"
+            },
+            {
+              "redni": 14,
+              "ime": "Bojan Tepić"
+            },
+            {
+              "redni": 15,
+              "ime": "Vanja Borić"
+            },
+            {
+              "redni": 16,
+              "ime": "Sandra Vatovec"
+            },
+            {
+              "redni": 17,
+              "ime": "Milovan Todorović"
+            }
+          ]
+        },
+        {
+          "redni": 13,
+          "naziv": "DRAŠKO STANIVUKOVIĆ - POKRET SIGURNA SRPSKA (PSS,PDP,NPSP..)",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Draško Stanivuković"
+            },
+            {
+              "redni": 2,
+              "ime": "Mirna Savić-Banjac"
+            },
+            {
+              "redni": 3,
+              "ime": "Nebojša Drinić"
+            },
+            {
+              "redni": 4,
+              "ime": "Tanja Vukomanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Dragan Milanović"
+            },
+            {
+              "redni": 6,
+              "ime": "Milan Grubor"
+            },
+            {
+              "redni": 7,
+              "ime": "Željko Šušnjar"
+            },
+            {
+              "redni": 8,
+              "ime": "Amira Žmirić"
+            },
+            {
+              "redni": 9,
+              "ime": "Tanja Palačković"
+            },
+            {
+              "redni": 10,
+              "ime": "Bojan Kresojević"
+            },
+            {
+              "redni": 11,
+              "ime": "Danijela Kajkut"
+            },
+            {
+              "redni": 12,
+              "ime": "Goran Tubak"
+            },
+            {
+              "redni": 13,
+              "ime": "Adriana Basara"
+            },
+            {
+              "redni": 14,
+              "ime": "Draženko Macanović"
+            },
+            {
+              "redni": 15,
+              "ime": "Milan Savanović"
+            },
+            {
+              "redni": 16,
+              "ime": "Aleksandra Simić"
+            },
+            {
+              "redni": 17,
+              "ime": "Zoran Savanović"
+            }
+          ]
+        },
+        {
+          "redni": 14,
+          "naziv": "NAROD I PRAVDA (NIP)",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Edin Gunić"
+            },
+            {
+              "redni": 2,
+              "ime": "Sanela Bajrić"
+            },
+            {
+              "redni": 3,
+              "ime": "Ahmet Talić"
+            },
+            {
+              "redni": 4,
+              "ime": "Mersad Salkanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Amira Čauš"
+            }
+          ]
+        },
+        {
+          "redni": 15,
+          "naziv": "NARODNI FRONT - JELENA TRIVIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Jelena Trivić"
+            },
+            {
+              "redni": 2,
+              "ime": "Milan Plavšić"
+            },
+            {
+              "redni": 3,
+              "ime": "Predrag Laketa"
+            },
+            {
+              "redni": 4,
+              "ime": "Daniela Grahovac"
+            },
+            {
+              "redni": 5,
+              "ime": "Saša Radić"
+            },
+            {
+              "redni": 6,
+              "ime": "Milko Branković"
+            },
+            {
+              "redni": 7,
+              "ime": "Slobodanka Obradović"
+            },
+            {
+              "redni": 8,
+              "ime": "Predrag Ćurić"
+            },
+            {
+              "redni": 9,
+              "ime": "Zorica Pejić"
+            },
+            {
+              "redni": 10,
+              "ime": "Borislav Smiljić"
+            },
+            {
+              "redni": 11,
+              "ime": "Radica Milanović"
+            },
+            {
+              "redni": 12,
+              "ime": "Sergej Milanović"
+            },
+            {
+              "redni": 13,
+              "ime": "Marica Đukić"
+            },
+            {
+              "redni": 14,
+              "ime": "Grigor Herbez"
+            },
+            {
+              "redni": 15,
+              "ime": "Danijel Štrbac"
+            },
+            {
+              "redni": 16,
+              "ime": "Dragana Stojanović"
+            },
+            {
+              "redni": 17,
+              "ime": "Robert Vulić"
+            }
+          ]
+        },
+        {
+          "redni": 16,
+          "naziv": "REPUBLIKANCI BOSNE I HERCEGOVINE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Bojan Kostić"
+            }
+          ]
+        },
+        {
+          "redni": 17,
+          "naziv": "SRPSKA DEMOKRATSKA STRANKA - VOLJA NARODA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Biljana Lukić"
+            },
+            {
+              "redni": 2,
+              "ime": "Božo Krivokuća"
+            },
+            {
+              "redni": 3,
+              "ime": "Nedeljko Kesić"
+            },
+            {
+              "redni": 4,
+              "ime": "Božo Važić"
+            },
+            {
+              "redni": 5,
+              "ime": "Sandra Janković"
+            },
+            {
+              "redni": 6,
+              "ime": "Aleksandra Čavić"
+            },
+            {
+              "redni": 7,
+              "ime": "Marko Runjić"
+            },
+            {
+              "redni": 8,
+              "ime": "Zoran Kovačević"
+            },
+            {
+              "redni": 9,
+              "ime": "Rosana Kljajić"
+            },
+            {
+              "redni": 10,
+              "ime": "Aleksandar Dragičević"
+            },
+            {
+              "redni": 11,
+              "ime": "Duška Škrbić"
+            },
+            {
+              "redni": 12,
+              "ime": "Milan Sukur"
+            },
+            {
+              "redni": 13,
+              "ime": "Sonja Pilipović"
+            },
+            {
+              "redni": 14,
+              "ime": "Dragan Zeljković"
+            },
+            {
+              "redni": 15,
+              "ime": "Aleksandar Krejić"
+            },
+            {
+              "redni": 16,
+              "ime": "Željka Raljić"
+            },
+            {
+              "redni": 17,
+              "ime": "Aleksandar-Saša Grandić"
+            }
+          ]
+        },
+        {
+          "redni": 18,
+          "naziv": "HRVATSKA SELJAČKA STRANKA - HSS",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Kristijan Milanović"
+            },
+            {
+              "redni": 2,
+              "ime": "Kata Davidović"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

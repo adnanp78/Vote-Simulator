@@ -1,0 +1,1452 @@
+{
+  "generisano": "2026-09-23T11:41:02",
+  "izvor": "Ombre_Kombinacije",
+  "redova": 69254,
+  "opcine": [
+    {
+      "kod": "001",
+      "naziv": "Velika Kladuša",
+      "entitet": "Federacija BiH",
+      "kanton": "Unsko-sanski kanton",
+      "trke": 4,
+      "redova": 678,
+      "hash": "2e9665379618d034",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "002",
+      "naziv": "Cazin",
+      "entitet": "Federacija BiH",
+      "kanton": "Unsko-sanski kanton",
+      "trke": 4,
+      "redova": 678,
+      "hash": "354619dfb6ab4f0a",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "003",
+      "naziv": "Bihać",
+      "entitet": "Federacija BiH",
+      "kanton": "Unsko-sanski kanton",
+      "trke": 4,
+      "redova": 678,
+      "hash": "9db6c5718137a6d7",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "004",
+      "naziv": "Bosanska Krupa",
+      "entitet": "Federacija BiH",
+      "kanton": "Unsko-sanski kanton",
+      "trke": 4,
+      "redova": 678,
+      "hash": "a935597cfe03b57c",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "005",
+      "naziv": "Bužim",
+      "entitet": "Federacija BiH",
+      "kanton": "Unsko-sanski kanton",
+      "trke": 4,
+      "redova": 678,
+      "hash": "65895b0184c168ac",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "006",
+      "naziv": "Krupa na Uni",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "b27c902713f9d713",
+      "azurirano": "2026-09-23T11:10:58"
+    },
+    {
+      "kod": "007",
+      "naziv": "Novi Grad",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "d4ea3d64b2393669",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "008",
+      "naziv": "Kozarska Dubica",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "efbc6e75c350b8b2",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "009",
+      "naziv": "Prijedor",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "3f9f7331eaccbd62",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "010",
+      "naziv": "Gradiška",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 246,
+      "hash": "f381ab8f6849afda",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "011",
+      "naziv": "Laktaši",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 246,
+      "hash": "8513cbeecbb514a2",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "012",
+      "naziv": "Srbac",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 246,
+      "hash": "5cc13d3f071aac3b",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "013",
+      "naziv": "Prnjavor",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 246,
+      "hash": "d7fe693712c03313",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "014",
+      "naziv": "Derventa",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 203,
+      "hash": "4d7fda7349b075a4",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "016",
+      "naziv": "Brod",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 203,
+      "hash": "0fc534344b3b8839",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "017",
+      "naziv": "Odžak",
+      "entitet": "Federacija BiH",
+      "kanton": "Posavski kanton",
+      "trke": 4,
+      "redova": 373,
+      "hash": "703ee1d41789d377",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "018",
+      "naziv": "Vukosavlje",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 203,
+      "hash": "4f12e4660a74961d",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "020",
+      "naziv": "Domaljevac - Šamac",
+      "entitet": "Federacija BiH",
+      "kanton": "Posavski kanton",
+      "trke": 4,
+      "redova": 373,
+      "hash": "87c6a2df954b682d",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "021",
+      "naziv": "Šamac",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 266,
+      "hash": "f59814060b665fe1",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "022",
+      "naziv": "Orašje",
+      "entitet": "Federacija BiH",
+      "kanton": "Posavski kanton",
+      "trke": 4,
+      "redova": 373,
+      "hash": "cc5d2268af220197",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "023",
+      "naziv": "Donji Žabar",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 266,
+      "hash": "13cee7d7c38ec549",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "024",
+      "naziv": "Modriča",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 203,
+      "hash": "ebd41d1ee7d4b2fc",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "025",
+      "naziv": "Gradačac",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 720,
+      "hash": "bd91949afc93369d",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "026",
+      "naziv": "Pelagićevo",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 266,
+      "hash": "47f02f90f6e10805",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "027",
+      "naziv": "Brčko distrikt BiH (opcija FBiH)",
+      "entitet": "Brčko distrikt",
+      "trke": 3,
+      "redova": 201,
+      "hash": "964ef75afdc03bf3",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "028",
+      "naziv": "Brčko distrikt BiH (opcija RS)",
+      "entitet": "Brčko distrikt",
+      "trke": 4,
+      "redova": 266,
+      "hash": "03d75e0f3c8aa413",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "029",
+      "naziv": "Bijeljina",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 266,
+      "hash": "09570292800094f0",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "030",
+      "naziv": "Bosanski Petrovac",
+      "entitet": "Federacija BiH",
+      "kanton": "Unsko-sanski kanton",
+      "trke": 4,
+      "redova": 678,
+      "hash": "3ff4c5484938bea1",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "031",
+      "naziv": "Petrovac",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "a385955548762160",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "032",
+      "naziv": "Sanski Most",
+      "entitet": "Federacija BiH",
+      "kanton": "Unsko-sanski kanton",
+      "trke": 4,
+      "redova": 678,
+      "hash": "a6f4406f23756a0e",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "033",
+      "naziv": "Oštra Luka",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "11c7db5af37edc88",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "034",
+      "naziv": "Banja Luka",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "26449f87b8759cff",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "035",
+      "naziv": "Čelinac",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "cfb8e370117e5e41",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "036",
+      "naziv": "Doboj - Istok",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 720,
+      "hash": "3774aec2caeba6c7",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "037",
+      "naziv": "Doboj - Jug",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 821,
+      "hash": "bfe6edb76b74e621",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "038",
+      "naziv": "Doboj",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 224,
+      "hash": "b2b1356d93289a1b",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "039",
+      "naziv": "Tešanj",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 821,
+      "hash": "8d1574b78d0b794b",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "040",
+      "naziv": "Stanari",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 224,
+      "hash": "d5b96db15d24d94c",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "042",
+      "naziv": "Maglaj",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 821,
+      "hash": "96f5ec2bceb11d0e",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "044",
+      "naziv": "Gračanica",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 720,
+      "hash": "05664b677c7a88d6",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "045",
+      "naziv": "Petrovo",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 224,
+      "hash": "04656db649374ecc",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "047",
+      "naziv": "Lukavac",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 745,
+      "hash": "ab06c86c6443010e",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "049",
+      "naziv": "Srebrenik",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 745,
+      "hash": "98f847648c9645b8",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "050",
+      "naziv": "Tuzla",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 745,
+      "hash": "03909ff78010b1fe",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "052",
+      "naziv": "Čelić",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 745,
+      "hash": "fa9460fbc23d0b70",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "054",
+      "naziv": "Lopare",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 266,
+      "hash": "a75d4625e28bc195",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "055",
+      "naziv": "Teočak",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 713,
+      "hash": "d436b65c12e9f3cd",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "056",
+      "naziv": "Ugljevik",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 266,
+      "hash": "912726be649584a5",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "057",
+      "naziv": "Drvar",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton 10",
+      "trke": 4,
+      "redova": 424,
+      "hash": "ef287a091fe751e1",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "058",
+      "naziv": "Istočni Drvar",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "edafa6f2d16b673c",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "059",
+      "naziv": "Ključ",
+      "entitet": "Federacija BiH",
+      "kanton": "Unsko-sanski kanton",
+      "trke": 4,
+      "redova": 678,
+      "hash": "3947f142e720af15",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "061",
+      "naziv": "Ribnik",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "2845e7e206c2d032",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "064",
+      "naziv": "Mrkonjić Grad",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "4c7b3b1b826911d4",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "065",
+      "naziv": "Jajce",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "4dcc6ac1edc1dd28",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "066",
+      "naziv": "Jezero",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "b21885731e0128f3",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "067",
+      "naziv": "Dobretići",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "82826cdd09bbff28",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "068",
+      "naziv": "Kneževo",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "95b3a8d3f73d4d8a",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "070",
+      "naziv": "Kotor Varoš",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "c3e34101e2917086",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "074",
+      "naziv": "Teslić",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 224,
+      "hash": "8c7d2c65abbe23a8",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "075",
+      "naziv": "Žepče",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 821,
+      "hash": "325a6d71a1298bd9",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "077",
+      "naziv": "Zavidovići",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 821,
+      "hash": "df5de33f0416ed80",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "078",
+      "naziv": "Banovići",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 713,
+      "hash": "5c87603a60f23112",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "079",
+      "naziv": "Živinice",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 713,
+      "hash": "7e6f4ce912aeb015",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "080",
+      "naziv": "Kalesija",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 713,
+      "hash": "4bf4e720d2c1d3c9",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "081",
+      "naziv": "Osmaci",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 262,
+      "hash": "373f0734a9e7c431",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "082",
+      "naziv": "Sapna",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 713,
+      "hash": "fef502aaff7ead4a",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "083",
+      "naziv": "Zvornik",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 262,
+      "hash": "aa374cf4a6e59a6e",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "084",
+      "naziv": "Bosansko Grahovo",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton 10",
+      "trke": 4,
+      "redova": 424,
+      "hash": "e35cf668d2e561cf",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "085",
+      "naziv": "Glamoč",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton 10",
+      "trke": 4,
+      "redova": 424,
+      "hash": "77670fc8be665f27",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "088",
+      "naziv": "Šipovo",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "3a63a83473dd4072",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "089",
+      "naziv": "Donji Vakuf",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "33c9620877e7da7f",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "091",
+      "naziv": "Travnik",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "d6b1d38d49a6c75d",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "093",
+      "naziv": "Zenica",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 821,
+      "hash": "c98841ab1baa8d3b",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "094",
+      "naziv": "Kakanj",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 777,
+      "hash": "dedf2f36e38864e9",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "095",
+      "naziv": "Vareš",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 777,
+      "hash": "9341d5739b2dda10",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "096",
+      "naziv": "Olovo",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 777,
+      "hash": "7d358c6979d01049",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "098",
+      "naziv": "Kladanj",
+      "entitet": "Federacija BiH",
+      "kanton": "Tuzlanski kanton",
+      "trke": 4,
+      "redova": 713,
+      "hash": "37d8ba8c597161cc",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "101",
+      "naziv": "Šekovići",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 262,
+      "hash": "2e4590decdf07391",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "103",
+      "naziv": "Vlasenica",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 262,
+      "hash": "1a93903791fab628",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "104",
+      "naziv": "Bratunac",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 262,
+      "hash": "6db3ff707271d936",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "105",
+      "naziv": "Srebrenica",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 262,
+      "hash": "1120da56a1503eb3",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "106",
+      "naziv": "Livno",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton 10",
+      "trke": 4,
+      "redova": 424,
+      "hash": "831a93cb6adac1fa",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "107",
+      "naziv": "Kupres",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton 10",
+      "trke": 4,
+      "redova": 424,
+      "hash": "2212aa7d8d119a58",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "108",
+      "naziv": "Kupres (RS)",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 337,
+      "hash": "1268d6db49b209df",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "109",
+      "naziv": "Bugojno",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "b85c862a57b85470",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "110",
+      "naziv": "Gornji Vakuf - Uskoplje",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "fc80492ac63f4aec",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "111",
+      "naziv": "Novi Travnik",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "7a0f2eb6a1751019",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "112",
+      "naziv": "Vitez",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "a54b68eaee0b1d6b",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "113",
+      "naziv": "Busovača",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "28e5fe50f94e7f29",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "114",
+      "naziv": "Fojnica",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "7562c0d2c96ec2d2",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "115",
+      "naziv": "Kiseljak",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "8bcecc6b9c656d4c",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "116",
+      "naziv": "Visoko",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 777,
+      "hash": "f616da570ff3211f",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "117",
+      "naziv": "Breza",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 777,
+      "hash": "25857629a7944bf8",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "118",
+      "naziv": "Ilijaš",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 738,
+      "hash": "391e35352945d023",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "121",
+      "naziv": "Sokolac",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 201,
+      "hash": "39ad873f842bdc74",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "123",
+      "naziv": "Han Pijesak",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 201,
+      "hash": "94d8d821e7ddaf7e",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "124",
+      "naziv": "Tomislavgrad",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton 10",
+      "trke": 4,
+      "redova": 424,
+      "hash": "07b25dddb34e3cd3",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "125",
+      "naziv": "Prozor-Rama",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "eb5a51008202c467",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "126",
+      "naziv": "Jablanica",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "b30f73346970791a",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "127",
+      "naziv": "Konjic",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "b9e54b1eddacdaf2",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "129",
+      "naziv": "Kreševo",
+      "entitet": "Federacija BiH",
+      "kanton": "Srednjobosanski kanton",
+      "trke": 4,
+      "redova": 572,
+      "hash": "41b15549dad3d3cf",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "130",
+      "naziv": "Hadžići",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 730,
+      "hash": "ce90645a38038303",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "131",
+      "naziv": "Ilidža",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 730,
+      "hash": "68cd2bc75588c005",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "132",
+      "naziv": "Istočna Ilidža",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 201,
+      "hash": "93f8300283421d16",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "133",
+      "naziv": "Novi Grad Sarajevo",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 730,
+      "hash": "24d6c9736c0bbc04",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "135",
+      "naziv": "Vogošća",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 738,
+      "hash": "23e30226f6ee6b34",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "136",
+      "naziv": "Centar Sarajevo",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 738,
+      "hash": "32f6851520d6a5c5",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "137",
+      "naziv": "Stari Grad Sarajevo",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 738,
+      "hash": "8716ae6d44e10b68",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "138",
+      "naziv": "Istočni Stari Grad",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 201,
+      "hash": "d2f108fb2eb08c76",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "139",
+      "naziv": "Novo Sarajevo",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 738,
+      "hash": "befcbfc16fc91725",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "140",
+      "naziv": "Istočno Novo Sarajevo",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 201,
+      "hash": "96792ce9a345750d",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "141",
+      "naziv": "Trnovo (FBiH)",
+      "entitet": "Federacija BiH",
+      "kanton": "Kanton Sarajevo",
+      "trke": 4,
+      "redova": 730,
+      "hash": "473fa2fbefbbc3d9",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "142",
+      "naziv": "Trnovo",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 201,
+      "hash": "4a1535ebe9c4f207",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "143",
+      "naziv": "Pale (FBiH)",
+      "entitet": "Federacija BiH",
+      "kanton": "Bosansko-podrinjski kanton Goražde",
+      "trke": 4,
+      "redova": 701,
+      "hash": "b21175afe1d7276f",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "144",
+      "naziv": "Pale",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 201,
+      "hash": "9e1b73c22d38f0f8",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "146",
+      "naziv": "Rogatica",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 201,
+      "hash": "22bbd51c8a9f3aee",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "147",
+      "naziv": "Višegrad",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "16c0eac02394c6c1",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "148",
+      "naziv": "Posušje",
+      "entitet": "Federacija BiH",
+      "kanton": "Zapadnohercegovački kanton",
+      "trke": 4,
+      "redova": 223,
+      "hash": "2b2968f568dc294f",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "149",
+      "naziv": "Grude",
+      "entitet": "Federacija BiH",
+      "kanton": "Zapadnohercegovački kanton",
+      "trke": 4,
+      "redova": 223,
+      "hash": "38717c466b9b0243",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "150",
+      "naziv": "Široki Brijeg",
+      "entitet": "Federacija BiH",
+      "kanton": "Zapadnohercegovački kanton",
+      "trke": 4,
+      "redova": 223,
+      "hash": "ecf31d7a44786862",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "151",
+      "naziv": "Grad Mostar",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "941dabf783c1f49a",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "152",
+      "naziv": "Grad Mostar",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "5249bdb8d02b2f89",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "153",
+      "naziv": "Grad Mostar",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "e1a6e42fb6903bfb",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "154",
+      "naziv": "Grad Mostar",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "e123aee4f7e07edf",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "155",
+      "naziv": "Grad Mostar",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "5a13cf991f4d3036",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "156",
+      "naziv": "Grad Mostar",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "ac96e3c525cff4e9",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "157",
+      "naziv": "Grad Mostar",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "5b697738bff758ac",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "158",
+      "naziv": "Istočni Mostar",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "4d7bd2cdb96752f6",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "161",
+      "naziv": "Nevesinje",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "b433a7a52f6bde2d",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "163",
+      "naziv": "Kalinovik",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "0787f4820c7c1634",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "164",
+      "naziv": "Gacko",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "9245a9ae465deccf",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "165",
+      "naziv": "Foča (FBiH)",
+      "entitet": "Federacija BiH",
+      "kanton": "Bosansko-podrinjski kanton Goražde",
+      "trke": 4,
+      "redova": 701,
+      "hash": "566cc97d778c68ee",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "166",
+      "naziv": "Foča",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "31639995465eb458",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "167",
+      "naziv": "Goražde",
+      "entitet": "Federacija BiH",
+      "kanton": "Bosansko-podrinjski kanton Goražde",
+      "trke": 4,
+      "redova": 701,
+      "hash": "fbe0a718b7ee45bd",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "168",
+      "naziv": "Novo Goražde",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "0cea6bf4f9b43b9a",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "169",
+      "naziv": "Čajniče",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "65596f3b6252aa8b",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "170",
+      "naziv": "Rudo",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "5e30220beeefc78d",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "171",
+      "naziv": "Ljubuški",
+      "entitet": "Federacija BiH",
+      "kanton": "Zapadnohercegovački kanton",
+      "trke": 4,
+      "redova": 223,
+      "hash": "984d40d1fd973120",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "172",
+      "naziv": "Čitluk",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "cf3568e9c6348114",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "173",
+      "naziv": "Čapljina",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "990bfdb196082f21",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "174",
+      "naziv": "Neum",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "b5c7b1e95ca9f411",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "176",
+      "naziv": "Stolac",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "1a7df1c88b368bf7",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "177",
+      "naziv": "Berkovići",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "334f009e184eb9fe",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "179",
+      "naziv": "Ljubinje",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "617a190b5c2ab525",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "180",
+      "naziv": "Bileća",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "2359e3d72b597f0b",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "181",
+      "naziv": "Ravno",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "0cbcc7fe2baf9823",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "182",
+      "naziv": "Trebinje",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "dfa7937a3a3f03b4",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "183",
+      "naziv": "Usora",
+      "entitet": "Federacija BiH",
+      "kanton": "Zeničko-dobojski kanton",
+      "trke": 4,
+      "redova": 821,
+      "hash": "d686e0e8ce4dc4e4",
+      "azurirano": "2026-09-23T11:41:02"
+    },
+    {
+      "kod": "184",
+      "naziv": "Kostajnica",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 248,
+      "hash": "85acca2496c45d78",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "185",
+      "naziv": "Milići",
+      "entitet": "Republika Srpska",
+      "trke": 4,
+      "redova": 262,
+      "hash": "17cd9948947f999e",
+      "azurirano": "2026-09-23T11:08:50"
+    },
+    {
+      "kod": "199",
+      "naziv": "Grad Mostar",
+      "entitet": "Federacija BiH",
+      "kanton": "Hercegovačko-neretvanski kanton",
+      "trke": 4,
+      "redova": 502,
+      "hash": "5bf6a99436985bce",
+      "azurirano": "2026-09-23T11:41:02"
+    }
+  ]
+}

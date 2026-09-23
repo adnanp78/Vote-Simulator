@@ -1,0 +1,3057 @@
+{
+  "izbornaJedinica": {
+    "kod": "004",
+    "naziv": "Bosanska Krupa",
+    "tip": "opsti",
+    "entitet": "Federacija BiH",
+    "kanton": "Unsko-sanski kanton",
+    "azurirano": "2026-09-23T11:41:02"
+  },
+  "trke": [
+    {
+      "id": "predsjednistvo",
+      "naslov": "Predsjedništvo Bosne i Hercegovine",
+      "podnaslov": "Bošnjački član · Hrvatski član",
+      "tip": "predsjednistvo",
+      "kolone": [
+        {
+          "id": "bos",
+          "naslov": "Bošnjački član",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Fahrudin Radončić",
+              "stranka": "SBB-FAHRUDIN RADONČIĆ"
+            },
+            {
+              "redni": 2,
+              "ime": "Semir Efendić",
+              "stranka": "SBIH - STRANKA ZA BOSNU I HERCEGOVINU"
+            },
+            {
+              "redni": 3,
+              "ime": "Bakir Izetbegović",
+              "stranka": "SDA - STRANKA DEMOKRATSKE AKCIJE"
+            },
+            {
+              "redni": 4,
+              "ime": "Denis Bećirović",
+              "stranka": "UJEDINJENI ZA DRŽAVU BOSNU I HERCEGOVINU"
+            }
+          ]
+        },
+        {
+          "id": "hrv",
+          "naslov": "Hrvatski član",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Darijana Filipović",
+              "stranka": "HDZ BIH-HRVATSKA DEMOKRATSKA ZAJEDNICA BOSNE I HERCEGOVINE"
+            },
+            {
+              "redni": 2,
+              "ime": "Zdenko Lučić",
+              "stranka": "ZDENKO LUČIĆ - NEOVISNI KANDIDAT"
+            },
+            {
+              "redni": 3,
+              "ime": "Slaven Kovačević",
+              "stranka": "DEMOKRATSKA FRONTA - DF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-bih",
+      "naslov": "Zastupnički/Predstavnički dom Parlamentarne skupštine BiH",
+      "podnaslov": "Federacija BiH – Izborna jedinica 1A",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "NAŠA STRANKA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Šeherzada Delić"
+            },
+            {
+              "redni": 2,
+              "ime": "Edin Mašić"
+            },
+            {
+              "redni": 3,
+              "ime": "Suad Dervišević"
+            }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "NES BIH, PDA, NAPRIJED! - ZA EVROPSKU BIH ZAJEDNO",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Jasmin Emrić"
+            },
+            {
+              "redni": 2,
+              "ime": "Elvisa Hodžić"
+            },
+            {
+              "redni": 3,
+              "ime": "Elvis Keranović"
+            },
+            {
+              "redni": 4,
+              "ime": "Muhamed Dračić"
+            },
+            {
+              "redni": 5,
+              "ime": "Elvira Palić"
+            },
+            {
+              "redni": 6,
+              "ime": "Mehmed Haskić"
+            },
+            {
+              "redni": 7,
+              "ime": "Ernada Smajić"
+            },
+            {
+              "redni": 8,
+              "ime": "Amir Kosović"
+            }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "HRVATSKA PETORKA HDZ 1990, HRS, HNP, HDS I HSS",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Mario Mašić"
+            },
+            {
+              "redni": 2,
+              "ime": "Antonija Šantić"
+            },
+            {
+              "redni": 3,
+              "ime": "Tomislav Ćosić"
+            },
+            {
+              "redni": 4,
+              "ime": "Ivan Petrović"
+            },
+            {
+              "redni": 5,
+              "ime": "Jelena Zorić"
+            },
+            {
+              "redni": 6,
+              "ime": "Zdravko Mioč"
+            },
+            {
+              "redni": 7,
+              "ime": "Josip Penić"
+            },
+            {
+              "redni": 8,
+              "ime": "Mila Kuliš"
+            }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "SDP - SOCIJALDEMOKRATSKA PARTIJA BOSNE I HERCEGOVINE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Albin Muslić"
+            },
+            {
+              "redni": 2,
+              "ime": "Aida Alagić"
+            },
+            {
+              "redni": 3,
+              "ime": "Jugoslav Brdar"
+            },
+            {
+              "redni": 4,
+              "ime": "Nedžad Zukanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Ermina Topić"
+            },
+            {
+              "redni": 6,
+              "ime": "Osman Čaušević"
+            },
+            {
+              "redni": 7,
+              "ime": "Edin Goretić"
+            },
+            {
+              "redni": 8,
+              "ime": "Zinajda Husarević Hadžić"
+            }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "SAVEZ NEZAVISNIH SOCIJALDEMOKRATA - SNSD - MILORAD DODIK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Miroslav Trninić"
+            }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "ZA PRAVDU I RED - LISTA NEBOJŠE VUKANOVIĆA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Mile Vučković"
+            }
+          ]
+        },
+        {
+          "redni": 7,
+          "naziv": "BH ZELENI",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Besim Tabaković"
+            },
+            {
+              "redni": 2,
+              "ime": "Amela Isaković"
+            },
+            {
+              "redni": 3,
+              "ime": "Anel Okanović"
+            },
+            {
+              "redni": 4,
+              "ime": "Hadisa Miljković"
+            }
+          ]
+        },
+        {
+          "redni": 8,
+          "naziv": "NAROD I PRAVDA, SDBIH",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Nijaz Nanić"
+            },
+            {
+              "redni": 2,
+              "ime": "Sandra Jašarević Merdžanić"
+            },
+            {
+              "redni": 3,
+              "ime": "Amir Hasić"
+            },
+            {
+              "redni": 4,
+              "ime": "Mirzet Kalić"
+            },
+            {
+              "redni": 5,
+              "ime": "Selma Dizdarević"
+            },
+            {
+              "redni": 6,
+              "ime": "Rukija Halilagić Omanović"
+            }
+          ]
+        },
+        {
+          "redni": 9,
+          "naziv": "HDZ BIH, HSP BIH, HKDU, HSP AS, HDU, HSP HB, HRAST",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Borjana Krišto"
+            },
+            {
+              "redni": 2,
+              "ime": "Krešimir Jolić"
+            },
+            {
+              "redni": 3,
+              "ime": "Petra Madunić"
+            },
+            {
+              "redni": 4,
+              "ime": "Ilijana Dronjić"
+            },
+            {
+              "redni": 5,
+              "ime": "Ivica Ćurić"
+            },
+            {
+              "redni": 6,
+              "ime": "Zdenko Propadalo"
+            },
+            {
+              "redni": 7,
+              "ime": "Karlo Grgić"
+            },
+            {
+              "redni": 8,
+              "ime": "Velimir Križan"
+            }
+          ]
+        },
+        {
+          "redni": 10,
+          "naziv": "LABURISTIČKA STRANKA BOSNE I HERCEGOVINE LABURISTI BIH",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Edina Abdić Pleho"
+            },
+            {
+              "redni": 2,
+              "ime": "Amir Đogić"
+            },
+            {
+              "redni": 3,
+              "ime": "Mersudin Šabić"
+            },
+            {
+              "redni": 4,
+              "ime": "Verica Kovačević"
+            },
+            {
+              "redni": 5,
+              "ime": "Hasan Tabaković"
+            },
+            {
+              "redni": 6,
+              "ime": "Fikret Abdić"
+            },
+            {
+              "redni": 7,
+              "ime": "Sofija Karajić"
+            },
+            {
+              "redni": 8,
+              "ime": "Muhamed Samardžić"
+            }
+          ]
+        },
+        {
+          "redni": 11,
+          "naziv": "SBB-FAHRUDIN RADONČIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Alija Džaferbegović"
+            },
+            {
+              "redni": 2,
+              "ime": "Ervina Duračković"
+            },
+            {
+              "redni": 3,
+              "ime": "Eduard Živni"
+            }
+          ]
+        },
+        {
+          "redni": 12,
+          "naziv": "SBIH - STRANKA ZA BOSNU I HERCEGOVINU",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Ernad Poprženović"
+            },
+            {
+              "redni": 2,
+              "ime": "Aida Ibrahimpašić"
+            },
+            {
+              "redni": 3,
+              "ime": "Hasan Talić"
+            },
+            {
+              "redni": 4,
+              "ime": "Sanel Bešić"
+            },
+            {
+              "redni": 5,
+              "ime": "Ajla Kamber"
+            },
+            {
+              "redni": 6,
+              "ime": "Sulejman Šušić"
+            },
+            {
+              "redni": 7,
+              "ime": "Nikolina Živković-Klarić"
+            },
+            {
+              "redni": 8,
+              "ime": "Berbir Misimović"
+            }
+          ]
+        },
+        {
+          "redni": 13,
+          "naziv": "SDA - STRANKA DEMOKRATSKE AKCIJE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Šemsudin Dedić"
+            },
+            {
+              "redni": 2,
+              "ime": "Šejla Smajić"
+            },
+            {
+              "redni": 3,
+              "ime": "Elvedina Balčinović"
+            },
+            {
+              "redni": 4,
+              "ime": "Amir Džajić"
+            },
+            {
+              "redni": 5,
+              "ime": "Nermina Malić"
+            },
+            {
+              "redni": 6,
+              "ime": "Redžep Velagić"
+            },
+            {
+              "redni": 7,
+              "ime": "Eldar Zukić"
+            },
+            {
+              "redni": 8,
+              "ime": "Angelina Delić"
+            }
+          ]
+        },
+        {
+          "redni": 14,
+          "naziv": "ŽELJKO KOMŠIĆ - ZA GRAĐANSKU DRŽAVU - DF/GS",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Zekerijah Alagić"
+            },
+            {
+              "redni": 2,
+              "ime": "Amra Mujakić"
+            },
+            {
+              "redni": 3,
+              "ime": "Božidar Živko"
+            },
+            {
+              "redni": 4,
+              "ime": "Ibrahim Grošić"
+            },
+            {
+              "redni": 5,
+              "ime": "Amela Bajrić"
+            },
+            {
+              "redni": 6,
+              "ime": "Adnan Redžić"
+            },
+            {
+              "redni": 7,
+              "ime": "Senita Vojić"
+            },
+            {
+              "redni": 8,
+              "ime": "Tarik Rekanović"
+            }
+          ]
+        },
+        {
+          "redni": 15,
+          "naziv": "REPUBLIKANCI BOSNE I HERCEGOVINE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Lejla Adžemović"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parlament-fbih",
+      "naslov": "Zastupnički/Predstavnički dom Parlamenta Federacije BiH",
+      "podnaslov": "Izborna jedinica 1",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "NAŠA STRANKA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Amir Purić"
+            },
+            {
+              "redni": 2,
+              "ime": "Elvira Felić"
+            },
+            {
+              "redni": 3,
+              "ime": "Admir Džafić"
+            },
+            {
+              "redni": 4,
+              "ime": "Nasija Džihanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Zlatan Čizmić"
+            },
+            {
+              "redni": 6,
+              "ime": "Lorena Lojić"
+            },
+            {
+              "redni": 7,
+              "ime": "Izet Ponjević"
+            },
+            {
+              "redni": 8,
+              "ime": "Armin Nasić"
+            }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "NES BIH, PDA, NAPRIJED! - ZA EVROPSKU BIH ZAJEDNO",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Nermin Ogrešević"
+            },
+            {
+              "redni": 2,
+              "ime": "Dženita Muratagić"
+            },
+            {
+              "redni": 3,
+              "ime": "Irfan Durić"
+            },
+            {
+              "redni": 4,
+              "ime": "Sandi Salkić"
+            },
+            {
+              "redni": 5,
+              "ime": "Emina Mujić"
+            },
+            {
+              "redni": 6,
+              "ime": "Sabahudin Koštić"
+            },
+            {
+              "redni": 7,
+              "ime": "Ajla Alić"
+            },
+            {
+              "redni": 8,
+              "ime": "Ermin Goretić"
+            },
+            {
+              "redni": 9,
+              "ime": "Amela Šarić"
+            },
+            {
+              "redni": 10,
+              "ime": "Hamid Šahinović"
+            },
+            {
+              "redni": 11,
+              "ime": "Dževida Hasić"
+            },
+            {
+              "redni": 12,
+              "ime": "Samir Jašaragić"
+            },
+            {
+              "redni": 13,
+              "ime": "Lejla Beglerbegović"
+            },
+            {
+              "redni": 14,
+              "ime": "Zaim Tralješić"
+            }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "SDP - SOCIJALDEMOKRATSKA PARTIJA BOSNE I HERCEGOVINE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Armin Halitović"
+            },
+            {
+              "redni": 2,
+              "ime": "Fatka Kulenović"
+            },
+            {
+              "redni": 3,
+              "ime": "Suvad Šahinović"
+            },
+            {
+              "redni": 4,
+              "ime": "Amar Trožić"
+            },
+            {
+              "redni": 5,
+              "ime": "Evresa Ćerimović"
+            },
+            {
+              "redni": 6,
+              "ime": "Midhad Zečević"
+            },
+            {
+              "redni": 7,
+              "ime": "Tarik Mujagić"
+            },
+            {
+              "redni": 8,
+              "ime": "Anela Kazazić"
+            },
+            {
+              "redni": 9,
+              "ime": "Mina Bužimkić"
+            },
+            {
+              "redni": 10,
+              "ime": "Amir Korčić"
+            },
+            {
+              "redni": 11,
+              "ime": "Sanja Džafić"
+            },
+            {
+              "redni": 12,
+              "ime": "Arnes Bešić"
+            },
+            {
+              "redni": 13,
+              "ime": "Aida Hadžić"
+            },
+            {
+              "redni": 14,
+              "ime": "Elvis Bajrić"
+            }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "SAVEZ NEZAVISNIH SOCIJALDEMOKRATA - SNSD - MILORAD DODIK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Dejan Grujić"
+            }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "KOALICIJA HDZ 1990, HRS, HDS I HSS",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Vinko Šantić"
+            }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "SNAGA NARODA - RAMO ISAK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Muhamed Babić"
+            }
+          ]
+        },
+        {
+          "redni": 7,
+          "naziv": "NAROD I PRAVDA, SDBIH, SPUBIH",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Mehmed Elezović"
+            },
+            {
+              "redni": 2,
+              "ime": "Sunčica Dedić"
+            },
+            {
+              "redni": 3,
+              "ime": "Nermin Porić"
+            },
+            {
+              "redni": 4,
+              "ime": "Anel Čarkić"
+            },
+            {
+              "redni": 5,
+              "ime": "Sadeta Redžić"
+            },
+            {
+              "redni": 6,
+              "ime": "Edin Selimović"
+            },
+            {
+              "redni": 7,
+              "ime": "Meris Jušić"
+            },
+            {
+              "redni": 8,
+              "ime": "Jasminka Abazi"
+            },
+            {
+              "redni": 9,
+              "ime": "Amna Hadžić"
+            },
+            {
+              "redni": 10,
+              "ime": "Anes Budimlić"
+            }
+          ]
+        },
+        {
+          "redni": 8,
+          "naziv": "LABURISTIČKA STRANKA BOSNE I HERCEGOVINE LABURISTI BIH",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Elvira Abdić Jelenović"
+            },
+            {
+              "redni": 2,
+              "ime": "Elvedin Pašić"
+            },
+            {
+              "redni": 3,
+              "ime": "Nedžad Salkić"
+            },
+            {
+              "redni": 4,
+              "ime": "Aida Šakanović-Okanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Refik Tabaković"
+            },
+            {
+              "redni": 6,
+              "ime": "Huse Mehić"
+            },
+            {
+              "redni": 7,
+              "ime": "Veuma Rist"
+            },
+            {
+              "redni": 8,
+              "ime": "Elvir Sefić"
+            },
+            {
+              "redni": 9,
+              "ime": "Emina Keserović"
+            },
+            {
+              "redni": 10,
+              "ime": "Ammar Silahić"
+            },
+            {
+              "redni": 11,
+              "ime": "Mirsada Alibegić"
+            },
+            {
+              "redni": 12,
+              "ime": "Enes Šabić"
+            }
+          ]
+        },
+        {
+          "redni": 9,
+          "naziv": "SBB-FAHRUDIN RADONČIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Enver Mustafić"
+            },
+            {
+              "redni": 2,
+              "ime": "Vanja Ibrahimpašić"
+            },
+            {
+              "redni": 3,
+              "ime": "Osman Bratić"
+            },
+            {
+              "redni": 4,
+              "ime": "Sandra Tutić"
+            },
+            {
+              "redni": 5,
+              "ime": "Haris Hodžić"
+            },
+            {
+              "redni": 6,
+              "ime": "Suad Šehić"
+            },
+            {
+              "redni": 7,
+              "ime": "Zlate Hrnjica"
+            }
+          ]
+        },
+        {
+          "redni": 10,
+          "naziv": "BH ZELENI - NOVO VRIJEME - TUZLANSKA ALTERNATIVA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Rifet Šahinović"
+            },
+            {
+              "redni": 2,
+              "ime": "Samra Alibegić"
+            },
+            {
+              "redni": 3,
+              "ime": "Izan Izet Mustafić"
+            },
+            {
+              "redni": 4,
+              "ime": "Amela Dizdarević"
+            },
+            {
+              "redni": 5,
+              "ime": "Neris Zulić"
+            },
+            {
+              "redni": 6,
+              "ime": "Emina Srabović"
+            },
+            {
+              "redni": 7,
+              "ime": "Nadir Džaferović"
+            },
+            {
+              "redni": 8,
+              "ime": "Aldina Memić"
+            }
+          ]
+        },
+        {
+          "redni": 11,
+          "naziv": "SBIH - STRANKA ZA BOSNU I HERCEGOVINU",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Hamdija Lipovača"
+            },
+            {
+              "redni": 2,
+              "ime": "Lejla Šahinović-Kedić"
+            },
+            {
+              "redni": 3,
+              "ime": "Ajdin Asotić"
+            },
+            {
+              "redni": 4,
+              "ime": "Ahmet Bašić"
+            },
+            {
+              "redni": 5,
+              "ime": "Sanela Draganović"
+            },
+            {
+              "redni": 6,
+              "ime": "Muhamed Porić"
+            },
+            {
+              "redni": 7,
+              "ime": "Ishak Zahirović"
+            },
+            {
+              "redni": 8,
+              "ime": "Maida Horozović"
+            },
+            {
+              "redni": 9,
+              "ime": "Nervina Handžić"
+            },
+            {
+              "redni": 10,
+              "ime": "Rizvan Zjakić"
+            },
+            {
+              "redni": 11,
+              "ime": "Ajla Habibović"
+            },
+            {
+              "redni": 12,
+              "ime": "Ervin Bukić"
+            },
+            {
+              "redni": 13,
+              "ime": "Rusmira Konjević"
+            },
+            {
+              "redni": 14,
+              "ime": "Ibrahim Livaković"
+            }
+          ]
+        },
+        {
+          "redni": 12,
+          "naziv": "SDA - STRANKA DEMOKRATSKE AKCIJE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Nijaz Hušić"
+            },
+            {
+              "redni": 2,
+              "ime": "Bisenija Mušedinović"
+            },
+            {
+              "redni": 3,
+              "ime": "Hamdija Abdić"
+            },
+            {
+              "redni": 4,
+              "ime": "Asim Kamber"
+            },
+            {
+              "redni": 5,
+              "ime": "Elma Mulalić"
+            },
+            {
+              "redni": 6,
+              "ime": "Amir Avdić"
+            },
+            {
+              "redni": 7,
+              "ime": "Esad Bašagić"
+            },
+            {
+              "redni": 8,
+              "ime": "Elvisa Ramić"
+            },
+            {
+              "redni": 9,
+              "ime": "Mirela Osmančević"
+            },
+            {
+              "redni": 10,
+              "ime": "Nermin Šabić"
+            },
+            {
+              "redni": 11,
+              "ime": "Zerina Kasumović"
+            },
+            {
+              "redni": 12,
+              "ime": "Rusmir Musa"
+            },
+            {
+              "redni": 13,
+              "ime": "Ajna Jodanović"
+            },
+            {
+              "redni": 14,
+              "ime": "Safet Dervić"
+            }
+          ]
+        },
+        {
+          "redni": 13,
+          "naziv": "ŽELJKO KOMŠIĆ - ZA GRAĐANSKU DRŽAVU - DF/GS",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Almir Zulić"
+            },
+            {
+              "redni": 2,
+              "ime": "Alma Šabić"
+            },
+            {
+              "redni": 3,
+              "ime": "Amir Rekanović"
+            },
+            {
+              "redni": 4,
+              "ime": "Hasan Ćerimović"
+            },
+            {
+              "redni": 5,
+              "ime": "Elvisa Dizdarević"
+            },
+            {
+              "redni": 6,
+              "ime": "Asmir Mustedanagić"
+            },
+            {
+              "redni": 7,
+              "ime": "Haris Kapidžić"
+            },
+            {
+              "redni": 8,
+              "ime": "Katarina Amorosi"
+            },
+            {
+              "redni": 9,
+              "ime": "Medina Durić"
+            },
+            {
+              "redni": 10,
+              "ime": "Esad Dizdarević"
+            },
+            {
+              "redni": 11,
+              "ime": "Mirsada Hasanagić"
+            },
+            {
+              "redni": 12,
+              "ime": "Jasmin Begić"
+            },
+            {
+              "redni": 13,
+              "ime": "Džemila Kasić"
+            },
+            {
+              "redni": 14,
+              "ime": "Almir Duraković"
+            }
+          ]
+        },
+        {
+          "redni": 14,
+          "naziv": "REPUBLIKANCI BOSNE I HERCEGOVINE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Hasan Kudić"
+            }
+          ]
+        },
+        {
+          "redni": 15,
+          "naziv": "POMAK-POKRET ZA MODERNU I AKTIVNU KRAJINU",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Šuhret Fazlić"
+            },
+            {
+              "redni": 2,
+              "ime": "Arijana Vojić"
+            },
+            {
+              "redni": 3,
+              "ime": "Ibrahim Dizdarić"
+            },
+            {
+              "redni": 4,
+              "ime": "Alen Zulić"
+            },
+            {
+              "redni": 5,
+              "ime": "Sara Hujić"
+            },
+            {
+              "redni": 6,
+              "ime": "Sulejman Kulenović"
+            },
+            {
+              "redni": 7,
+              "ime": "Ismet Sijamhodžić"
+            },
+            {
+              "redni": 8,
+              "ime": "Selma Salkić"
+            },
+            {
+              "redni": 9,
+              "ime": "Hanka Gonilović"
+            },
+            {
+              "redni": 10,
+              "ime": "Adnan Mekić"
+            },
+            {
+              "redni": 11,
+              "ime": "Hadžera Ferizović"
+            },
+            {
+              "redni": 12,
+              "ime": "Ćazim Durić"
+            },
+            {
+              "redni": 13,
+              "ime": "Aida Memagić"
+            },
+            {
+              "redni": 14,
+              "ime": "Dinko Mulić"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kanton",
+      "naslov": "Skupština kantona",
+      "podnaslov": "Unsko-sanski kanton",
+      "tip": "otvorena-lista",
+      "stranke": [
+        {
+          "redni": 1,
+          "naziv": "NAŠA STRANKA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Jasmin Hodžić"
+            },
+            {
+              "redni": 2,
+              "ime": "Selma Kendić"
+            },
+            {
+              "redni": 3,
+              "ime": "Zlatko Pajazetović"
+            },
+            {
+              "redni": 4,
+              "ime": "Suad Terzić"
+            },
+            {
+              "redni": 5,
+              "ime": "Emina Behar"
+            },
+            {
+              "redni": 6,
+              "ime": "Sven Vidović-Popek"
+            },
+            {
+              "redni": 7,
+              "ime": "Emina Krupić"
+            },
+            {
+              "redni": 8,
+              "ime": "Mirnes Grgić"
+            },
+            {
+              "redni": 9,
+              "ime": "Sabina Mujagić"
+            },
+            {
+              "redni": 10,
+              "ime": "Haris Šarganović"
+            },
+            {
+              "redni": 11,
+              "ime": "Belkisa Hadžalić"
+            },
+            {
+              "redni": 12,
+              "ime": "Selver Lojić"
+            },
+            {
+              "redni": 13,
+              "ime": "Ajna Felić"
+            },
+            {
+              "redni": 14,
+              "ime": "Ale Mustedanagić"
+            },
+            {
+              "redni": 15,
+              "ime": "Omer Durek"
+            },
+            {
+              "redni": 16,
+              "ime": "Silvedina Medić"
+            },
+            {
+              "redni": 17,
+              "ime": "Emrah Rekić"
+            },
+            {
+              "redni": 18,
+              "ime": "Melita Grahović"
+            },
+            {
+              "redni": 19,
+              "ime": "Mirsad Pilipović"
+            },
+            {
+              "redni": 20,
+              "ime": "Inis Bahić"
+            }
+          ]
+        },
+        {
+          "redni": 2,
+          "naziv": "HDZ BIH-HRVATSKA DEMOKRATSKA ZAJEDNICA BOSNE I HERCEGOVINE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Mate Šimić"
+            },
+            {
+              "redni": 2,
+              "ime": "Martina Jurić"
+            },
+            {
+              "redni": 3,
+              "ime": "Saša Sokač"
+            },
+            {
+              "redni": 4,
+              "ime": "Milan Klepić"
+            },
+            {
+              "redni": 5,
+              "ime": "Marija Bubulj"
+            },
+            {
+              "redni": 6,
+              "ime": "Tomo Jurić"
+            },
+            {
+              "redni": 7,
+              "ime": "Tomislav Dujmović"
+            },
+            {
+              "redni": 8,
+              "ime": "Tea Jurić"
+            },
+            {
+              "redni": 9,
+              "ime": "Tatjana Dujmović"
+            }
+          ]
+        },
+        {
+          "redni": 3,
+          "naziv": "SDP - SOCIJALDEMOKRATSKA PARTIJA BOSNE I HERCEGOVINE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Almin Hopovac"
+            },
+            {
+              "redni": 2,
+              "ime": "Žanina Ibradžić"
+            },
+            {
+              "redni": 3,
+              "ime": "Aladin Ćerimović"
+            },
+            {
+              "redni": 4,
+              "ime": "Mladen Lonić"
+            },
+            {
+              "redni": 5,
+              "ime": "Sanda Čekić"
+            },
+            {
+              "redni": 6,
+              "ime": "Mersad Draganović"
+            },
+            {
+              "redni": 7,
+              "ime": "Jasmin Dervić"
+            },
+            {
+              "redni": 8,
+              "ime": "Veldina Alibegić"
+            },
+            {
+              "redni": 9,
+              "ime": "Sara Porčić"
+            },
+            {
+              "redni": 10,
+              "ime": "Adnan Habibija"
+            },
+            {
+              "redni": 11,
+              "ime": "Edina Šertović"
+            },
+            {
+              "redni": 12,
+              "ime": "Danko Jakšić"
+            },
+            {
+              "redni": 13,
+              "ime": "Kemila Skenderović"
+            },
+            {
+              "redni": 14,
+              "ime": "Denis Osmankić"
+            },
+            {
+              "redni": 15,
+              "ime": "Aiman Sawanda"
+            },
+            {
+              "redni": 16,
+              "ime": "Alma Karabeg"
+            },
+            {
+              "redni": 17,
+              "ime": "Malik Seferagić"
+            },
+            {
+              "redni": 18,
+              "ime": "Amela Zenković"
+            },
+            {
+              "redni": 19,
+              "ime": "Emil Koljić"
+            },
+            {
+              "redni": 20,
+              "ime": "Jasmin Hošić"
+            },
+            {
+              "redni": 21,
+              "ime": "Emira Družić"
+            },
+            {
+              "redni": 22,
+              "ime": "Ferid Kuželj"
+            },
+            {
+              "redni": 23,
+              "ime": "Anita Šehić"
+            },
+            {
+              "redni": 24,
+              "ime": "Selim Toromanović"
+            },
+            {
+              "redni": 25,
+              "ime": "Sinhad Golubović"
+            },
+            {
+              "redni": 26,
+              "ime": "Amra Ismailovski"
+            },
+            {
+              "redni": 27,
+              "ime": "Aldin Kulenović"
+            },
+            {
+              "redni": 28,
+              "ime": "Elma Džamastagić"
+            },
+            {
+              "redni": 29,
+              "ime": "Nihad Ugarak"
+            },
+            {
+              "redni": 30,
+              "ime": "Haris Omerbegović"
+            },
+            {
+              "redni": 31,
+              "ime": "Daniela Delić"
+            },
+            {
+              "redni": 32,
+              "ime": "Alen Lipovača"
+            },
+            {
+              "redni": 33,
+              "ime": "Sara Hušidić"
+            },
+            {
+              "redni": 34,
+              "ime": "Nedžad Grošić"
+            },
+            {
+              "redni": 35,
+              "ime": "Muhidin Šertović"
+            }
+          ]
+        },
+        {
+          "redni": 4,
+          "naziv": "SAVEZ NEZAVISNIH SOCIJALDEMOKRATA - SNSD - MILORAD DODIK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Boban Simić"
+            }
+          ]
+        },
+        {
+          "redni": 5,
+          "naziv": "SNAGA NARODA - RAMO ISAK",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Ratko Knežević"
+            },
+            {
+              "redni": 2,
+              "ime": "Jasminka Halilagić"
+            },
+            {
+              "redni": 3,
+              "ime": "Enes Šušnjar"
+            },
+            {
+              "redni": 4,
+              "ime": "Safeta Kadić"
+            },
+            {
+              "redni": 5,
+              "ime": "Enes Sipić"
+            },
+            {
+              "redni": 6,
+              "ime": "Emina Tutić"
+            },
+            {
+              "redni": 7,
+              "ime": "Almir Babić"
+            },
+            {
+              "redni": 8,
+              "ime": "Edina Fazlić Zaman"
+            },
+            {
+              "redni": 9,
+              "ime": "Irfan Saltaga"
+            },
+            {
+              "redni": 10,
+              "ime": "Besima Gverić"
+            }
+          ]
+        },
+        {
+          "redni": 6,
+          "naziv": "ZA PRAVDU I RED - LISTA NEBOJŠE VUKANOVIĆA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Milena Vranješ"
+            },
+            {
+              "redni": 2,
+              "ime": "Zoran Latinović"
+            }
+          ]
+        },
+        {
+          "redni": 7,
+          "naziv": "BH ZELENI",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Selma Džanić"
+            },
+            {
+              "redni": 2,
+              "ime": "Agan Bunić"
+            },
+            {
+              "redni": 3,
+              "ime": "Sanel Zulić"
+            },
+            {
+              "redni": 4,
+              "ime": "Eniz Ćatić"
+            },
+            {
+              "redni": 5,
+              "ime": "Aldina Bašagić"
+            },
+            {
+              "redni": 6,
+              "ime": "Adna Pašalić"
+            },
+            {
+              "redni": 7,
+              "ime": "Ajdin Zulić"
+            },
+            {
+              "redni": 8,
+              "ime": "Nezir Tahić"
+            },
+            {
+              "redni": 9,
+              "ime": "Mirsada Ičanović"
+            },
+            {
+              "redni": 10,
+              "ime": "Hasan Čaušević"
+            },
+            {
+              "redni": 11,
+              "ime": "Sara Salihović"
+            },
+            {
+              "redni": 12,
+              "ime": "Irfan Hadžić"
+            },
+            {
+              "redni": 13,
+              "ime": "Maida Livaković"
+            },
+            {
+              "redni": 14,
+              "ime": "Fatima Gerzić"
+            },
+            {
+              "redni": 15,
+              "ime": "Huse Baltić"
+            },
+            {
+              "redni": 16,
+              "ime": "Elvisa Pehlić"
+            },
+            {
+              "redni": 17,
+              "ime": "Osman Mustafić"
+            },
+            {
+              "redni": 18,
+              "ime": "Erna Mulalić"
+            },
+            {
+              "redni": 19,
+              "ime": "Dženan Begić"
+            },
+            {
+              "redni": 20,
+              "ime": "Emir Dizdarević"
+            },
+            {
+              "redni": 21,
+              "ime": "Elvisa Muratović"
+            },
+            {
+              "redni": 22,
+              "ime": "Zilhad Šakanović"
+            },
+            {
+              "redni": 23,
+              "ime": "Sandra Miljković"
+            },
+            {
+              "redni": 24,
+              "ime": "Nihad Memić"
+            },
+            {
+              "redni": 25,
+              "ime": "Anes Gerzić"
+            },
+            {
+              "redni": 26,
+              "ime": "Admira Latić"
+            },
+            {
+              "redni": 27,
+              "ime": "Nijaz Husić"
+            },
+            {
+              "redni": 28,
+              "ime": "Dijana Ćehić"
+            },
+            {
+              "redni": 29,
+              "ime": "Senaid Ponjević"
+            },
+            {
+              "redni": 30,
+              "ime": "Adem Velić"
+            },
+            {
+              "redni": 31,
+              "ime": "Amela Nahić"
+            },
+            {
+              "redni": 32,
+              "ime": "Smail Budimlić"
+            },
+            {
+              "redni": 33,
+              "ime": "Džeraldina Begić"
+            },
+            {
+              "redni": 34,
+              "ime": "Rabija Dervišević"
+            },
+            {
+              "redni": 35,
+              "ime": "Hazim Velić"
+            }
+          ]
+        },
+        {
+          "redni": 8,
+          "naziv": "NAPRIJED BOSNA I HERCEGOVINA!",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Melisa Imamović"
+            },
+            {
+              "redni": 2,
+              "ime": "Emir Mujadžić"
+            },
+            {
+              "redni": 3,
+              "ime": "Ermin Karić"
+            },
+            {
+              "redni": 4,
+              "ime": "Admira Sijamhodžić"
+            },
+            {
+              "redni": 5,
+              "ime": "Hasudin Muminović"
+            },
+            {
+              "redni": 6,
+              "ime": "Dženan Softić"
+            },
+            {
+              "redni": 7,
+              "ime": "Edina Halilović"
+            },
+            {
+              "redni": 8,
+              "ime": "Sejan Dulić"
+            },
+            {
+              "redni": 9,
+              "ime": "Azra Abdijanović"
+            },
+            {
+              "redni": 10,
+              "ime": "Aldin Beširević"
+            },
+            {
+              "redni": 11,
+              "ime": "Amina Kajdić"
+            },
+            {
+              "redni": 12,
+              "ime": "Feho Hodžić"
+            },
+            {
+              "redni": 13,
+              "ime": "Zlata Begović"
+            },
+            {
+              "redni": 14,
+              "ime": "Ismet Alijagić"
+            },
+            {
+              "redni": 15,
+              "ime": "Goran Antić"
+            },
+            {
+              "redni": 16,
+              "ime": "Sanela Medić"
+            },
+            {
+              "redni": 17,
+              "ime": "Fahrudin Hrnjić"
+            },
+            {
+              "redni": 18,
+              "ime": "Sefija Alagić"
+            },
+            {
+              "redni": 19,
+              "ime": "Omer Perviz"
+            },
+            {
+              "redni": 20,
+              "ime": "Eniza Kičin"
+            },
+            {
+              "redni": 21,
+              "ime": "Asmir Tirić"
+            },
+            {
+              "redni": 22,
+              "ime": "Aida Čaušević"
+            },
+            {
+              "redni": 23,
+              "ime": "Karim Hažbić"
+            },
+            {
+              "redni": 24,
+              "ime": "Muhamed Kajdić"
+            },
+            {
+              "redni": 25,
+              "ime": "Midhad Alagić"
+            },
+            {
+              "redni": 26,
+              "ime": "Mevlude Muminović"
+            },
+            {
+              "redni": 27,
+              "ime": "Bešir Karajković"
+            },
+            {
+              "redni": 28,
+              "ime": "Semir Hajirić"
+            },
+            {
+              "redni": 29,
+              "ime": "Amina Hodžić"
+            },
+            {
+              "redni": 30,
+              "ime": "Safeta Pašić"
+            },
+            {
+              "redni": 31,
+              "ime": "Medžida Muslić"
+            },
+            {
+              "redni": 32,
+              "ime": "Branimir Soleša"
+            },
+            {
+              "redni": 33,
+              "ime": "Miljenko Knežević"
+            },
+            {
+              "redni": 34,
+              "ime": "Mirko Divjak"
+            },
+            {
+              "redni": 35,
+              "ime": "Rijalda Sejfović"
+            }
+          ]
+        },
+        {
+          "redni": 9,
+          "naziv": "LABURISTIČKA STRANKA BOSNE I HERCEGOVINE LABURISTI BIH",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Elma Đogić"
+            },
+            {
+              "redni": 2,
+              "ime": "Hasib Štulanović"
+            },
+            {
+              "redni": 3,
+              "ime": "Mirsad Kasumović"
+            },
+            {
+              "redni": 4,
+              "ime": "Emina Ćehić"
+            },
+            {
+              "redni": 5,
+              "ime": "Emir Delić"
+            },
+            {
+              "redni": 6,
+              "ime": "Suad Šarić"
+            },
+            {
+              "redni": 7,
+              "ime": "Selma Mržljak"
+            },
+            {
+              "redni": 8,
+              "ime": "Esad Čović"
+            },
+            {
+              "redni": 9,
+              "ime": "Mirzeta Muheljić"
+            },
+            {
+              "redni": 10,
+              "ime": "Šemsudin Pajazetović"
+            },
+            {
+              "redni": 11,
+              "ime": "Dijana Miskić"
+            },
+            {
+              "redni": 12,
+              "ime": "Esad Šabić"
+            },
+            {
+              "redni": 13,
+              "ime": "Emina Beganović"
+            },
+            {
+              "redni": 14,
+              "ime": "Hasan Galijašević"
+            },
+            {
+              "redni": 15,
+              "ime": "Fikret Salkić"
+            },
+            {
+              "redni": 16,
+              "ime": "Zarifa Galijašević"
+            },
+            {
+              "redni": 17,
+              "ime": "Rasim Škrgić"
+            },
+            {
+              "redni": 18,
+              "ime": "Remzija Foštagić"
+            },
+            {
+              "redni": 19,
+              "ime": "Arsen Čuturić"
+            },
+            {
+              "redni": 20,
+              "ime": "Melik Murić"
+            },
+            {
+              "redni": 21,
+              "ime": "Ema Đogić"
+            },
+            {
+              "redni": 22,
+              "ime": "Adian Grahović"
+            },
+            {
+              "redni": 23,
+              "ime": "Fadil Omanović"
+            },
+            {
+              "redni": 24,
+              "ime": "Senhida Murtić"
+            },
+            {
+              "redni": 25,
+              "ime": "Elmin Hozanović"
+            },
+            {
+              "redni": 26,
+              "ime": "Seada Mujkić"
+            },
+            {
+              "redni": 27,
+              "ime": "Hasan Ružnić"
+            },
+            {
+              "redni": 28,
+              "ime": "Adis Rizvanović"
+            },
+            {
+              "redni": 29,
+              "ime": "Mileva Capan"
+            },
+            {
+              "redni": 30,
+              "ime": "Ibrahim Ćatić"
+            },
+            {
+              "redni": 31,
+              "ime": "Asima Kapić"
+            },
+            {
+              "redni": 32,
+              "ime": "Esmir Kazić"
+            },
+            {
+              "redni": 33,
+              "ime": "Refik Hegić"
+            },
+            {
+              "redni": 34,
+              "ime": "Suzana Hašić"
+            },
+            {
+              "redni": 35,
+              "ime": "Eldin Alibegić"
+            }
+          ]
+        },
+        {
+          "redni": 10,
+          "naziv": "SBB-FAHRUDIN RADONČIĆ",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Šefik Smlatić"
+            },
+            {
+              "redni": 2,
+              "ime": "Ermina Kasić"
+            },
+            {
+              "redni": 3,
+              "ime": "Amarildo Mulić"
+            },
+            {
+              "redni": 4,
+              "ime": "Nedin Bahtić"
+            },
+            {
+              "redni": 5,
+              "ime": "Jasmina Cepić"
+            },
+            {
+              "redni": 6,
+              "ime": "Hasan Ponjević"
+            },
+            {
+              "redni": 7,
+              "ime": "Muhamed Zulić"
+            },
+            {
+              "redni": 8,
+              "ime": "Aldijana Topalović"
+            },
+            {
+              "redni": 9,
+              "ime": "Zorka Stanarević"
+            },
+            {
+              "redni": 10,
+              "ime": "Mirnes Semanić"
+            },
+            {
+              "redni": 11,
+              "ime": "Erna Džambegović"
+            },
+            {
+              "redni": 12,
+              "ime": "Armin Avdibašić"
+            },
+            {
+              "redni": 13,
+              "ime": "Lejla Kovačević"
+            },
+            {
+              "redni": 14,
+              "ime": "Ermin Vojić"
+            },
+            {
+              "redni": 15,
+              "ime": "Dušan Zorić"
+            },
+            {
+              "redni": 16,
+              "ime": "Medina Čaušević"
+            },
+            {
+              "redni": 17,
+              "ime": "Šefik Harbaš"
+            },
+            {
+              "redni": 18,
+              "ime": "Zinka Četić"
+            },
+            {
+              "redni": 19,
+              "ime": "Sead Toromanović"
+            },
+            {
+              "redni": 20,
+              "ime": "Hajrudin Bećirspahić"
+            },
+            {
+              "redni": 21,
+              "ime": "Nadina Ibrahimpašić"
+            },
+            {
+              "redni": 22,
+              "ime": "Arnel Hasanagić"
+            },
+            {
+              "redni": 23,
+              "ime": "Emin Hadžić"
+            },
+            {
+              "redni": 24,
+              "ime": "Fadila Modronja"
+            },
+            {
+              "redni": 25,
+              "ime": "Fikret Piralić"
+            },
+            {
+              "redni": 26,
+              "ime": "Jasmina Mahmić"
+            },
+            {
+              "redni": 27,
+              "ime": "Dževad Jusić"
+            },
+            {
+              "redni": 28,
+              "ime": "Aldin Tutić"
+            },
+            {
+              "redni": 29,
+              "ime": "Hasiba Džajić"
+            },
+            {
+              "redni": 30,
+              "ime": "Elvira Porčić"
+            },
+            {
+              "redni": 31,
+              "ime": "Mersudin Samardžić"
+            },
+            {
+              "redni": 32,
+              "ime": "Teufik Toromanović"
+            },
+            {
+              "redni": 33,
+              "ime": "Merima Semanić Dizdarević"
+            },
+            {
+              "redni": 34,
+              "ime": "Haris Sedić"
+            },
+            {
+              "redni": 35,
+              "ime": "Fuad Hrnjica"
+            }
+          ]
+        },
+        {
+          "redni": 11,
+          "naziv": "SBIH - STRANKA ZA BOSNU I HERCEGOVINU",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Nisvet Jusić"
+            },
+            {
+              "redni": 2,
+              "ime": "Samra Mehić"
+            },
+            {
+              "redni": 3,
+              "ime": "Suada Selimović-Horozović"
+            },
+            {
+              "redni": 4,
+              "ime": "Jasmin Handanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Damir Jušić"
+            },
+            {
+              "redni": 6,
+              "ime": "Muharem Eljazović"
+            },
+            {
+              "redni": 7,
+              "ime": "Džemal Kadić"
+            },
+            {
+              "redni": 8,
+              "ime": "Irma Krantić"
+            },
+            {
+              "redni": 9,
+              "ime": "Lejla Hodžić"
+            },
+            {
+              "redni": 10,
+              "ime": "Salih Hodžić"
+            },
+            {
+              "redni": 11,
+              "ime": "Dijana Karabegović"
+            },
+            {
+              "redni": 12,
+              "ime": "Mahmut Alagić"
+            },
+            {
+              "redni": 13,
+              "ime": "Amila Vesković"
+            },
+            {
+              "redni": 14,
+              "ime": "Šehzad Mujanović"
+            },
+            {
+              "redni": 15,
+              "ime": "Ahmed Šertović"
+            },
+            {
+              "redni": 16,
+              "ime": "Amra Dedić"
+            },
+            {
+              "redni": 17,
+              "ime": "Haris Mehić"
+            },
+            {
+              "redni": 18,
+              "ime": "Šemsa Hasanagić"
+            },
+            {
+              "redni": 19,
+              "ime": "Muhamed Kržalić"
+            },
+            {
+              "redni": 20,
+              "ime": "Jasmin Alagić"
+            },
+            {
+              "redni": 21,
+              "ime": "Dalila Alešević"
+            },
+            {
+              "redni": 22,
+              "ime": "Nedžad Hamzić"
+            },
+            {
+              "redni": 23,
+              "ime": "Izeta Pajazetović"
+            },
+            {
+              "redni": 24,
+              "ime": "Haris Mahmić"
+            },
+            {
+              "redni": 25,
+              "ime": "Hajro Šušić"
+            },
+            {
+              "redni": 26,
+              "ime": "Mirzeta Pajalić"
+            },
+            {
+              "redni": 27,
+              "ime": "Murat Toromanović"
+            },
+            {
+              "redni": 28,
+              "ime": "Jasmina Burnić"
+            },
+            {
+              "redni": 29,
+              "ime": "Vildan Felić"
+            },
+            {
+              "redni": 30,
+              "ime": "Edina Ramić"
+            },
+            {
+              "redni": 31,
+              "ime": "Dinko Ljubijankić"
+            },
+            {
+              "redni": 32,
+              "ime": "Jadranko Semanić"
+            },
+            {
+              "redni": 33,
+              "ime": "Amela Kozlica"
+            },
+            {
+              "redni": 34,
+              "ime": "Muhammed Mušić"
+            },
+            {
+              "redni": 35,
+              "ime": "Almir Dupanović"
+            }
+          ]
+        },
+        {
+          "redni": 12,
+          "naziv": "SDA - STRANKA DEMOKRATSKE AKCIJE",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Zinajda Hadžić"
+            },
+            {
+              "redni": 2,
+              "ime": "Abid Mulalić"
+            },
+            {
+              "redni": 3,
+              "ime": "Mehmed Mahmić"
+            },
+            {
+              "redni": 4,
+              "ime": "Asmir Ćufurović"
+            },
+            {
+              "redni": 5,
+              "ime": "Aida Pašić-Čizmić"
+            },
+            {
+              "redni": 6,
+              "ime": "Emir Šabić"
+            },
+            {
+              "redni": 7,
+              "ime": "Muamer Egrlić"
+            },
+            {
+              "redni": 8,
+              "ime": "Ansela Husetić"
+            },
+            {
+              "redni": 9,
+              "ime": "Ines Delić"
+            },
+            {
+              "redni": 10,
+              "ime": "Adis Ćoralić"
+            },
+            {
+              "redni": 11,
+              "ime": "Indira Bosnić"
+            },
+            {
+              "redni": 12,
+              "ime": "Tehvid Hajrić"
+            },
+            {
+              "redni": 13,
+              "ime": "Memnuna Mahić"
+            },
+            {
+              "redni": 14,
+              "ime": "Meho Salkić"
+            },
+            {
+              "redni": 15,
+              "ime": "Ibro Rekić"
+            },
+            {
+              "redni": 16,
+              "ime": "Semra Okanović"
+            },
+            {
+              "redni": 17,
+              "ime": "Ramiz Kišmetović"
+            },
+            {
+              "redni": 18,
+              "ime": "Sabina Kadrić-Hadžić"
+            },
+            {
+              "redni": 19,
+              "ime": "Ilijaz Harčević"
+            },
+            {
+              "redni": 20,
+              "ime": "Mirzet Brkić"
+            },
+            {
+              "redni": 21,
+              "ime": "Midheta Bečić"
+            },
+            {
+              "redni": 22,
+              "ime": "Almir Tutić"
+            },
+            {
+              "redni": 23,
+              "ime": "Edna Kličić"
+            },
+            {
+              "redni": 24,
+              "ime": "Mirza Smailović"
+            },
+            {
+              "redni": 25,
+              "ime": "Husein Vilić"
+            },
+            {
+              "redni": 26,
+              "ime": "Mediha Skalić"
+            },
+            {
+              "redni": 27,
+              "ime": "Zlatan Terzić"
+            },
+            {
+              "redni": 28,
+              "ime": "Hajdi Šepić"
+            },
+            {
+              "redni": 29,
+              "ime": "Nevres Šekić"
+            },
+            {
+              "redni": 30,
+              "ime": "Adis Džaferović"
+            },
+            {
+              "redni": 31,
+              "ime": "Sara Topić"
+            },
+            {
+              "redni": 32,
+              "ime": "Asmir Mašić"
+            },
+            {
+              "redni": 33,
+              "ime": "Jasmina Grošić"
+            },
+            {
+              "redni": 34,
+              "ime": "Jasmina Kajtazović"
+            },
+            {
+              "redni": 35,
+              "ime": "Irnes Rizvić"
+            }
+          ]
+        },
+        {
+          "redni": 13,
+          "naziv": "ŽELJKO KOMŠIĆ - ZA GRAĐANSKU DRŽAVU - DF/GS",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Adisa Omerčić"
+            },
+            {
+              "redni": 2,
+              "ime": "Igor Vilić"
+            },
+            {
+              "redni": 3,
+              "ime": "Jasmin Hušić"
+            },
+            {
+              "redni": 4,
+              "ime": "Sanil Hasić"
+            },
+            {
+              "redni": 5,
+              "ime": "Nađa Mustedanagić Hadžić"
+            },
+            {
+              "redni": 6,
+              "ime": "Adnan Botić"
+            },
+            {
+              "redni": 7,
+              "ime": "Muhamed Ljutić"
+            },
+            {
+              "redni": 8,
+              "ime": "Senija Alešević-Veladžić"
+            },
+            {
+              "redni": 9,
+              "ime": "Sanela Begić"
+            },
+            {
+              "redni": 10,
+              "ime": "Edvin Alijanović"
+            },
+            {
+              "redni": 11,
+              "ime": "Edina Mesić"
+            },
+            {
+              "redni": 12,
+              "ime": "Senad Eljazović"
+            },
+            {
+              "redni": 13,
+              "ime": "Sabina Dervišević"
+            },
+            {
+              "redni": 14,
+              "ime": "Amir Tahić"
+            },
+            {
+              "redni": 15,
+              "ime": "Edin Mujakić"
+            },
+            {
+              "redni": 16,
+              "ime": "Hana Čavkić"
+            },
+            {
+              "redni": 17,
+              "ime": "Ajdin Bećirević"
+            },
+            {
+              "redni": 18,
+              "ime": "Lorena Đogić"
+            },
+            {
+              "redni": 19,
+              "ime": "Elvir Šehić"
+            },
+            {
+              "redni": 20,
+              "ime": "Džuneid Šakinović"
+            },
+            {
+              "redni": 21,
+              "ime": "Azra Mustedanagić"
+            },
+            {
+              "redni": 22,
+              "ime": "Ibrahim Veladžić"
+            },
+            {
+              "redni": 23,
+              "ime": "Suada Veljačić"
+            },
+            {
+              "redni": 24,
+              "ime": "Ibro Mujagić"
+            },
+            {
+              "redni": 25,
+              "ime": "Mujo Kurtović"
+            },
+            {
+              "redni": 26,
+              "ime": "Esnefa Kajtazović"
+            },
+            {
+              "redni": 27,
+              "ime": "Nermin Ćoralić"
+            },
+            {
+              "redni": 28,
+              "ime": "Edina Kačar"
+            },
+            {
+              "redni": 29,
+              "ime": "Nedžad Durić"
+            },
+            {
+              "redni": 30,
+              "ime": "Adnan Jašić"
+            },
+            {
+              "redni": 31,
+              "ime": "Jasminka Pajazetović"
+            },
+            {
+              "redni": 32,
+              "ime": "Fadil Ćatić"
+            },
+            {
+              "redni": 33,
+              "ime": "Aida Mahmutović"
+            }
+          ]
+        },
+        {
+          "redni": 14,
+          "naziv": "NAROD I PRAVDA (NIP), STRANKA PENZIONERA-UMIROVLJENIKA BIH",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Azhar Sejarić"
+            },
+            {
+              "redni": 2,
+              "ime": "Azra Tajić"
+            },
+            {
+              "redni": 3,
+              "ime": "Kemal Hrnjić"
+            },
+            {
+              "redni": 4,
+              "ime": "Jasmin Mujačić"
+            },
+            {
+              "redni": 5,
+              "ime": "Besima Mizić"
+            },
+            {
+              "redni": 6,
+              "ime": "Hasan Fatkić"
+            },
+            {
+              "redni": 7,
+              "ime": "Đemal Elezović"
+            },
+            {
+              "redni": 8,
+              "ime": "Zemira Kantarević"
+            },
+            {
+              "redni": 9,
+              "ime": "Alma Gutlić"
+            },
+            {
+              "redni": 10,
+              "ime": "Zijad Nanić"
+            },
+            {
+              "redni": 11,
+              "ime": "Aida Subašić"
+            },
+            {
+              "redni": 12,
+              "ime": "Jasmin Mešić"
+            },
+            {
+              "redni": 13,
+              "ime": "Sanela Velagić"
+            },
+            {
+              "redni": 14,
+              "ime": "Ibrahim Hadžić"
+            },
+            {
+              "redni": 15,
+              "ime": "Muharem Pašalić"
+            },
+            {
+              "redni": 16,
+              "ime": "Zarfija Skoko"
+            },
+            {
+              "redni": 17,
+              "ime": "Šefik Kličić"
+            },
+            {
+              "redni": 18,
+              "ime": "Indira Omerović"
+            },
+            {
+              "redni": 19,
+              "ime": "Edis Kadrić"
+            },
+            {
+              "redni": 20,
+              "ime": "Zlatan Bratić"
+            },
+            {
+              "redni": 21,
+              "ime": "Aida Medić"
+            },
+            {
+              "redni": 22,
+              "ime": "Amel Mizić"
+            },
+            {
+              "redni": 23,
+              "ime": "Adisa Osmanović"
+            },
+            {
+              "redni": 24,
+              "ime": "Kenan Velagić"
+            },
+            {
+              "redni": 25,
+              "ime": "Zerin Krupić"
+            },
+            {
+              "redni": 26,
+              "ime": "Elma Piralić"
+            },
+            {
+              "redni": 27,
+              "ime": "Mile Erceg"
+            },
+            {
+              "redni": 28,
+              "ime": "Sara Huskić Turanović"
+            },
+            {
+              "redni": 29,
+              "ime": "Idriz Trejić"
+            },
+            {
+              "redni": 30,
+              "ime": "Irfan Ahmetagić"
+            },
+            {
+              "redni": 31,
+              "ime": "Jasminka Hadžić"
+            },
+            {
+              "redni": 32,
+              "ime": "Senad Bolić"
+            },
+            {
+              "redni": 33,
+              "ime": "Seida Arnautović"
+            },
+            {
+              "redni": 34,
+              "ime": "Amir Korlat"
+            },
+            {
+              "redni": 35,
+              "ime": "Mirsad Jusić"
+            }
+          ]
+        },
+        {
+          "redni": 15,
+          "naziv": "DNZ BIH - KRAJIŠKA STRANKA",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Nermin Purić"
+            },
+            {
+              "redni": 2,
+              "ime": "Esma Mašinović-Gjocaj"
+            },
+            {
+              "redni": 3,
+              "ime": "Rifat Dolić"
+            },
+            {
+              "redni": 4,
+              "ime": "Džemila Pilipović"
+            },
+            {
+              "redni": 5,
+              "ime": "Adem Pajazetović"
+            },
+            {
+              "redni": 6,
+              "ime": "Fatima Husić"
+            },
+            {
+              "redni": 7,
+              "ime": "Rade Vujasin"
+            },
+            {
+              "redni": 8,
+              "ime": "Samir Mustedanagić"
+            },
+            {
+              "redni": 9,
+              "ime": "Eldina Mulalić"
+            },
+            {
+              "redni": 10,
+              "ime": "Muhamed Škrgić"
+            },
+            {
+              "redni": 11,
+              "ime": "Fatima Pandžić"
+            },
+            {
+              "redni": 12,
+              "ime": "Elvis Odobašić"
+            },
+            {
+              "redni": 13,
+              "ime": "Fatima Imerovska"
+            },
+            {
+              "redni": 14,
+              "ime": "Amir Ćufurović"
+            },
+            {
+              "redni": 15,
+              "ime": "Sanel Dolić"
+            },
+            {
+              "redni": 16,
+              "ime": "Mirela Mašinović"
+            },
+            {
+              "redni": 17,
+              "ime": "Fikret Dukić"
+            },
+            {
+              "redni": 18,
+              "ime": "Elvedina Husić"
+            },
+            {
+              "redni": 19,
+              "ime": "Enver Keranović"
+            },
+            {
+              "redni": 20,
+              "ime": "Fikret Ibradžić"
+            },
+            {
+              "redni": 21,
+              "ime": "Alajda Ćoragić"
+            },
+            {
+              "redni": 22,
+              "ime": "Adin Osmankić"
+            },
+            {
+              "redni": 23,
+              "ime": "Šemsa Čaušević"
+            },
+            {
+              "redni": 24,
+              "ime": "Husein Kendić"
+            },
+            {
+              "redni": 25,
+              "ime": "Sead Okanović"
+            },
+            {
+              "redni": 26,
+              "ime": "Ismeta Ajdinović"
+            },
+            {
+              "redni": 27,
+              "ime": "Mevludin Bajrektarević"
+            },
+            {
+              "redni": 28,
+              "ime": "Izeta Abdić"
+            },
+            {
+              "redni": 29,
+              "ime": "Mirsad Sefić"
+            },
+            {
+              "redni": 30,
+              "ime": "Husein Hadžić"
+            }
+          ]
+        },
+        {
+          "redni": 16,
+          "naziv": "NES,PDA - ZA EVROPSKU BIH",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Mustafa Ružnić"
+            },
+            {
+              "redni": 2,
+              "ime": "Emina Sarajlija-Sefić"
+            },
+            {
+              "redni": 3,
+              "ime": "Nijaz Kadirić"
+            },
+            {
+              "redni": 4,
+              "ime": "Samir Ikanović"
+            },
+            {
+              "redni": 5,
+              "ime": "Irma Fatkić"
+            },
+            {
+              "redni": 6,
+              "ime": "Midhad Arnautović"
+            },
+            {
+              "redni": 7,
+              "ime": "Elvir Risović"
+            },
+            {
+              "redni": 8,
+              "ime": "Senita Handukić"
+            },
+            {
+              "redni": 9,
+              "ime": "Tanja Šantić"
+            },
+            {
+              "redni": 10,
+              "ime": "Emir Dautović"
+            },
+            {
+              "redni": 11,
+              "ime": "Sanela Zećirević"
+            },
+            {
+              "redni": 12,
+              "ime": "Ermin Veladžić"
+            },
+            {
+              "redni": 13,
+              "ime": "Nejra Skenderović"
+            },
+            {
+              "redni": 14,
+              "ime": "Suljo Samardžić"
+            },
+            {
+              "redni": 15,
+              "ime": "Izet Sulejmanović"
+            },
+            {
+              "redni": 16,
+              "ime": "Amina Mešić"
+            },
+            {
+              "redni": 17,
+              "ime": "Haris Beširević"
+            },
+            {
+              "redni": 18,
+              "ime": "Dajra Jusić"
+            },
+            {
+              "redni": 19,
+              "ime": "Emir Memić"
+            },
+            {
+              "redni": 20,
+              "ime": "Edvin Odobašić"
+            },
+            {
+              "redni": 21,
+              "ime": "Ervina Hasanović"
+            },
+            {
+              "redni": 22,
+              "ime": "Semir Pehlić"
+            },
+            {
+              "redni": 23,
+              "ime": "Amela Tuzlak"
+            },
+            {
+              "redni": 24,
+              "ime": "Hasan Keškić"
+            },
+            {
+              "redni": 25,
+              "ime": "Jasmin Mešić"
+            },
+            {
+              "redni": 26,
+              "ime": "Nermina Beganović"
+            },
+            {
+              "redni": 27,
+              "ime": "Admir Bajrić"
+            },
+            {
+              "redni": 28,
+              "ime": "Selvedina Beganović"
+            },
+            {
+              "redni": 29,
+              "ime": "Adian Kapić"
+            },
+            {
+              "redni": 30,
+              "ime": "Sanel Draganović"
+            },
+            {
+              "redni": 31,
+              "ime": "Merisa Škrgić"
+            },
+            {
+              "redni": 32,
+              "ime": "Emil Šakanović"
+            },
+            {
+              "redni": 33,
+              "ime": "Abida Hadžipašić"
+            },
+            {
+              "redni": 34,
+              "ime": "Kenan Ćemal"
+            },
+            {
+              "redni": 35,
+              "ime": "Ernad Ćatić"
+            }
+          ]
+        },
+        {
+          "redni": 17,
+          "naziv": "POMAK-POKRET ZA MODERNU I AKTIVNU KRAJINU",
+          "kandidati": [
+            {
+              "redni": 1,
+              "ime": "Elvedin Sedić"
+            },
+            {
+              "redni": 2,
+              "ime": "Maja Uremović"
+            },
+            {
+              "redni": 3,
+              "ime": "Zikrija Duraković"
+            },
+            {
+              "redni": 4,
+              "ime": "Armin Amidžić"
+            },
+            {
+              "redni": 5,
+              "ime": "Erna Begatović Huremagić"
+            },
+            {
+              "redni": 6,
+              "ime": "Jasmin Topić"
+            },
+            {
+              "redni": 7,
+              "ime": "Zlatko Dizdarević"
+            },
+            {
+              "redni": 8,
+              "ime": "Irma Arifović"
+            },
+            {
+              "redni": 9,
+              "ime": "Vildana Alibabić"
+            },
+            {
+              "redni": 10,
+              "ime": "Zlatko Hujić"
+            },
+            {
+              "redni": 11,
+              "ime": "Džana Ramić Kovačević"
+            },
+            {
+              "redni": 12,
+              "ime": "Mujo Salihović"
+            },
+            {
+              "redni": 13,
+              "ime": "Azra Crnčević"
+            },
+            {
+              "redni": 14,
+              "ime": "Ibrahim Prošić"
+            },
+            {
+              "redni": 15,
+              "ime": "Hajrudin Selimović"
+            },
+            {
+              "redni": 16,
+              "ime": "Aldina Alić"
+            },
+            {
+              "redni": 17,
+              "ime": "Denis Burzić"
+            },
+            {
+              "redni": 18,
+              "ime": "Ines Pašić"
+            },
+            {
+              "redni": 19,
+              "ime": "Saša Smiljanić"
+            },
+            {
+              "redni": 20,
+              "ime": "Admir Mirvić"
+            },
+            {
+              "redni": 21,
+              "ime": "Edina Anadolac Liđan"
+            },
+            {
+              "redni": 22,
+              "ime": "Željko Altić"
+            },
+            {
+              "redni": 23,
+              "ime": "Haris Babić"
+            },
+            {
+              "redni": 24,
+              "ime": "Amira Huskić"
+            },
+            {
+              "redni": 25,
+              "ime": "Nađa Memagić"
+            },
+            {
+              "redni": 26,
+              "ime": "Valentino Vuković"
+            },
+            {
+              "redni": 27,
+              "ime": "Vanesa Kurtović"
+            },
+            {
+              "redni": 28,
+              "ime": "Dinko Karabegović"
+            },
+            {
+              "redni": 29,
+              "ime": "Hana Pivić"
+            },
+            {
+              "redni": 30,
+              "ime": "Meho Batić"
+            },
+            {
+              "redni": 31,
+              "ime": "Birsana Kurtović"
+            },
+            {
+              "redni": 32,
+              "ime": "Elvir Šušnjar"
+            },
+            {
+              "redni": 33,
+              "ime": "Dijana Pečenković"
+            },
+            {
+              "redni": 34,
+              "ime": "Aljoša Bobić"
+            },
+            {
+              "redni": 35,
+              "ime": "Hajrudin Havić"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
