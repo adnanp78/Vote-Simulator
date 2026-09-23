@@ -60,6 +60,9 @@
     scroll-margin-top: 8px;
   }
   .race.open { box-shadow: 0 6px 20px rgba(31,111,235,0.15); }
+  /* Trka u kojoj je glas dat — blago plava, da se vidi šta je završeno */
+  .race.done { background: #eef4ff; border-color: #bcd3fb; }
+  .race.done:not(.open) .race-header { background: #eef4ff; }
 
   .race-header {
     display: flex; align-items: center; gap: 12px;
@@ -154,7 +157,6 @@
   .race-picked { padding: 0 16px 14px 60px; margin-top: -6px; cursor: pointer; }
   .race-picked:empty, .race.open .race-picked { display: none; }
   .race-picked .picked-party { font-weight: 600; }
-  .race-picked .picked-party.nomark .mark { color: transparent; }
   .race-picked .picked-cands { padding-left: 22px; }
   .race-picked .picked-col { font-size: 11px; text-transform: uppercase; letter-spacing: .3px; color: var(--c-muted); margin-top: 4px; }
   .race-picked .picked-sub { color: var(--c-muted); font-size: 12px; }
@@ -285,7 +287,7 @@
 </style>
 </head>
 <body>
-<script src="pismo.js?v=13"></script>
+<script src="pismo.js?v=21"></script>
 
 <div class="app">
 
@@ -523,7 +525,15 @@
     const raceId = box.dataset.race;
     const kind   = box.dataset.kind;
 
-    if (isChecked) { box.classList.remove("checked"); return; }
+    if (isChecked) {
+      box.classList.remove("checked");
+      // Bez glasa stranci nema ni glasova kandidatima te stranke
+      if (kind === "party") {
+        document.querySelectorAll(`.check.checked[data-race="${raceId}"][data-kind="cand"][data-party-idx="${box.dataset.partyIdx}"]`)
+          .forEach(b => b.classList.remove("checked"));
+      }
+      return;
+    }
 
     if (kind === "pres") {
       // Predsjedništvo: samo jedan ukupno, bez obzira na kolonu
@@ -554,6 +564,30 @@
     }
 
     box.classList.add("checked");
+    // Glas kandidatu je uvijek i glas njegovoj stranci
+    if (kind === "cand") partyCheck(raceId, box.dataset.partyIdx)?.classList.add("checked");
+
+    // Izbor u trci je gotov → zatvori trku (pregled ostaje ispod naslova), skroluj da se vidi sljedeća:
+    //  • Predsjedništvo / većinski: odmah poslije izbora (bira se samo jedan)
+    //  • Otvorena lista: kad je izabrano koliko se može — min(3, broj kandidata stranke)
+    const finished = kind === "pres" || kind === "vecinski" || (kind === "cand" && (() => {
+      const party = box.closest(".party");
+      const max = Math.min(3, party.querySelectorAll('.check[data-kind="cand"]').length);
+      return party.querySelectorAll('.check.checked[data-kind="cand"]').length === max;
+    })());
+    if (finished) {
+      const party = box.closest(".party");
+      const race  = box.closest(".race");
+      setTimeout(() => {
+        if (party) party.classList.remove("open");
+        race.classList.remove("open");
+        scrollRaceToTop(race);
+      }, 350);
+    }
+  }
+
+  function partyCheck(raceId, partyIdx) {
+    return document.querySelector(`.check[data-race="${raceId}"][data-kind="party"][data-party-idx="${partyIdx}"]`);
   }
 
   /* =========================================================
@@ -597,10 +631,11 @@
         const cands = checks.filter(c => c.dataset.kind === "cand").sort((a, b) => +a.dataset.idx - +b.dataset.idx);
         const ref = party || cands[0];
         html = pickedRow(ref.dataset.partyIdx, party ? party.dataset.label : ref.dataset.partyLabel, "",
-                         "picked-party" + (party ? "" : " nomark")) +
+                         "picked-party") +
                (cands.length ? `<div class="picked-cands">${cands.map(c => pickedRow(c.dataset.idx, c.dataset.label)).join("")}</div>` : "");
       }
       el.innerHTML = html || `<div class="picked-none">Nije izabrano</div>`;
+      el.closest(".race").classList.toggle("done", !!html);
     });
   }
 
@@ -688,6 +723,8 @@
         const box = document.querySelector(sel);
         if (box) box.classList.add("checked");
       });
+      document.querySelectorAll('.check.checked[data-kind="cand"]')
+        .forEach(c => partyCheck(c.dataset.race, c.dataset.partyIdx)?.classList.add("checked"));
       const t = new Date().toLocaleTimeString("bs", {hour:"2-digit", minute:"2-digit"});
       document.getElementById("save-note").textContent = "Učitan sačuvani izbor · " + t;
     } catch(err) {}
@@ -726,7 +763,7 @@
     const file = "data/" + kod + ".json";
     let data;
     try {
-      const resp = await fetch(file);
+      const resp = await fetch(file, { cache: "no-cache" });
       if (!resp.ok) throw new Error("HTTP " + resp.status);
       data = await resp.json();
     } catch (err) {
@@ -775,7 +812,7 @@
   async function simulatorUrl(kod) {
     let base = "";
     try {
-      const r = await fetch("data/config.json", { cache: "no-store" });
+      const r = await fetch("data/config.json", { cache: "no-cache" });
       if (r.ok) base = ((await r.json()).baseUrl || "").trim();
     } catch (e) {}
     if (!base) base = window.location.href.replace(/[^/]*$/, "");
