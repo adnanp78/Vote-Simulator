@@ -687,6 +687,14 @@
     // Glas kandidatu je uvijek i glas njegovoj stranci
     if (kind === "cand") partyCheck(raceId, box.dataset.partyIdx)?.classList.add("checked");
 
+    // Glas stranci → odmah otvori njene kandidate (da se vidi da se mogu birati i kandidati)
+    if (kind === "party") {
+      const party = box.closest(".party");
+      party.closest(".race").querySelectorAll(".party.open").forEach(p => { if (p !== party) p.classList.remove("open"); });
+      party.classList.add("open");
+      delete party.dataset.autoOpen;
+    }
+
     // Izbor u trci je gotov → zatvori trku (pregled ostaje ispod naslova), skroluj da se vidi sljedeća:
     //  • Predsjedništvo / većinski: odmah poslije izbora (bira se samo jedan)
     //  • Otvorena lista: kad je izabrano koliko se može — min(3, broj kandidata stranke)
