@@ -163,6 +163,21 @@
   .race-picked .picked-none { font-size: 12.5px; color: #9aa0a6; font-style: italic; }
   .party-body-inner { padding: 8px 12px 12px; border-top: 1px solid var(--c-border); }
 
+  /* Globalna pretraga — zakačena na vrhu dok se skroluje */
+  .global-search {
+    position: sticky; top: 0; z-index: 5;
+    background: var(--c-bg); padding: 8px 0 10px; margin: -8px 0 4px;
+  }
+  #gsearch {
+    width: 100%; font: inherit; font-size: 15px; padding: 11px 14px;
+    border: 1px solid var(--c-border); border-radius: 12px; background: #fff; outline: none;
+    box-shadow: var(--shadow);
+  }
+  #gsearch:focus { border-color: var(--c-accent); box-shadow: 0 0 0 3px rgba(31,111,235,0.15); }
+  .gsearch-info { font-size: 12.5px; color: var(--c-muted); text-align: center; }
+  .gsearch-info:not(:empty) { padding-top: 6px; }
+  .s-hide { display: none !important; }
+
   .cand-row {
     display: flex; align-items: center; gap: 10px;
     padding: 8px 4px; border-bottom: 1px solid #eee; cursor: pointer;
@@ -192,7 +207,7 @@
     color: #fff;
     border-radius: var(--radius);
     padding: 12px 14px;
-    margin-bottom: 16px;
+    margin: 20px 0 0;
     box-shadow: 0 4px 14px rgba(31,111,235,0.25);
   }
   .install-bar.show { display: flex; }
@@ -222,7 +237,7 @@
     display: none;
     background: #fff; border: 1px solid var(--c-border);
     border-radius: var(--radius); padding: 14px 16px;
-    margin-bottom: 16px; font-size: 13px; line-height: 1.6; color: var(--c-text);
+    margin-top: 20px; font-size: 13px; line-height: 1.6; color: var(--c-text);
     box-shadow: var(--shadow);
   }
   .ios-hint.show { display: block; }
@@ -287,7 +302,7 @@
 </style>
 </head>
 <body>
-<script src="pismo.js?v=21"></script>
+<script src="pismo.js?v=22"></script>
 
 <div class="app">
 
@@ -298,6 +313,24 @@
     <p class="hide-unset">Dodirnite trku da vidite stranke i kandidate</p>
   </header>
 
+  <div data-pismo-choose></div>
+
+  <div class="global-search hide-unset" id="gsearch-wrap">
+    <input type="search" id="gsearch" placeholder="🔍 Traži stranku ili kandidata na cijelom listiću…" autocomplete="off" enterkeyhint="search">
+    <div class="gsearch-info" id="gsearch-info"></div>
+  </div>
+
+  <div id="races" class="hide-unset"></div>
+
+  <div class="choice-bar hide-unset" id="choice-bar">
+    <span class="save-note" id="save-note"></span>
+    <button class="clear-btn" id="clear-all">Poništi sve</button>
+  </div>
+
+  <p class="footer-note hide-unset" id="footer-note"></p>
+  <button class="qr-btn hide-unset" id="qr-btn">🔳 Štampaj QR plakat (A4)</button>
+
+  <!-- "Dodaj na početni ekran" — na dnu, da ne smeta glasanju -->
   <div class="install-bar" id="install-bar">
     <div class="ib-icon">🗳️</div>
     <div class="ib-text">
@@ -315,17 +348,6 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f6feb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M8 8l4-4 4 4"/><path d="M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/></svg>
     </span> <b>Podijeli</b> na dnu, pa <b>"Dodaj na početni ekran"</b> — i listić ti je uvijek nadohvat ruke.
   </div>
-
-  <div data-pismo-choose></div>
-  <div id="races" class="hide-unset"></div>
-
-  <div class="choice-bar hide-unset" id="choice-bar">
-    <span class="save-note" id="save-note"></span>
-    <button class="clear-btn" id="clear-all">Poništi sve</button>
-  </div>
-
-  <p class="footer-note hide-unset" id="footer-note"></p>
-  <button class="qr-btn hide-unset" id="qr-btn">🔳 Štampaj QR plakat (A4)</button>
 
 </div>
 
@@ -410,7 +432,7 @@
       <div class="pres-section">
         <h3>${naslov}</h3>
         ${lista.map(k=>`
-          <div class="pres-cand" data-toggle="check">
+          <div class="pres-cand" data-toggle="check" data-search="${escapeAttr(searchNorm(k.ime + " " + (k.stranka||"")))}">
             <div class="num">${k.redni}.</div>
             <div class="check"
                  data-race="${raceId}" data-kind="pres" data-col="${kolona}"
@@ -429,7 +451,7 @@
     return `
       <div class="pres-section">
         ${lista.map(k=>`
-          <div class="pres-cand" data-toggle="check">
+          <div class="pres-cand" data-toggle="check" data-search="${escapeAttr(searchNorm(k.ime + " " + (k.stranka||"")))}">
             <div class="num">${k.redni}.</div>
             <div class="check"
                  data-race="${raceId}" data-kind="vecinski"
@@ -446,7 +468,7 @@
 
   function renderParties(stranke, raceId) {
     return stranke.map(s=>`
-      <div class="party" data-party data-party-idx="${s.redni}" data-party-name="${escapeAttr(s.naziv)}">
+      <div class="party" data-party data-party-idx="${s.redni}" data-party-name="${escapeAttr(s.naziv)}" data-search="${escapeAttr(searchNorm(s.naziv))}">
         <div class="party-header" data-toggle="party">
           <div class="check"
                data-toggle="check"
@@ -463,7 +485,7 @@
         <div class="party-body">
           <div class="party-body-inner">
             ${s.kandidati.map(k=>`
-              <div class="cand-row" data-toggle="check">
+              <div class="cand-row" data-toggle="check" data-search="${escapeAttr(searchNorm(k.ime))}">
                 <div class="check"
                      data-race="${raceId}" data-kind="cand"
                      data-party-idx="${s.redni}" data-party-label="${escapeAttr(s.naziv)}"
@@ -476,6 +498,95 @@
         </div>
       </div>
     `).join("");
+  }
+
+  /* =========================================================
+     GLOBALNA PRETRAGA — sve trke odjednom
+     Samo sakriva/prikazuje — izbori i pravila glasanja se ne diraju.
+     Bez obzira na velika/mala slova, kvačice (č→c, đ→dj) i pismo (ćirilica→latinica).
+     Trke sa pogocima se otvore, trke bez pogodaka se sakriju.
+     ========================================================= */
+  const SEARCH_MIN = 3;
+  let searchActive = false;
+
+  function searchNorm(s) {
+    return Pismo.toLat(String(s)).toLowerCase()
+      .replace(/đ/g, "dj")
+      .normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+
+  // Filtrira jednu trku; vraća broj pogodaka (stranaka/kandidata)
+  function filterRace(race, q, active) {
+    let shown = 0;
+
+    // Predsjedništvo / većinski: kandidat po imenu ili stranci
+    race.querySelectorAll(".pres-cand").forEach(c => {
+      const hit = !active || c.dataset.search.includes(q);
+      c.classList.toggle("s-hide", !hit);
+      if (active && hit) shown++;
+    });
+    race.querySelectorAll(".pres-section").forEach(sec =>
+      sec.classList.toggle("s-hide", active && !sec.querySelector(".pres-cand:not(.s-hide)")));
+
+    // Otvorena lista
+    race.querySelectorAll(".party").forEach(party => {
+      const cands = party.querySelectorAll(".cand-row");
+      // stranke koje je pretraga otvorila zatvaramo kad se pretraga promijeni
+      if (party.dataset.autoOpen) { party.classList.remove("open"); delete party.dataset.autoOpen; }
+
+      if (!active) {
+        party.classList.remove("s-hide");
+        cands.forEach(c => c.classList.remove("s-hide"));
+        return;
+      }
+      const partyHit = party.dataset.search.includes(q);
+      let candHits = 0;
+      cands.forEach(c => {
+        const hit = partyHit || c.dataset.search.includes(q);
+        c.classList.toggle("s-hide", !hit);
+        if (hit && !partyHit) candHits++;
+      });
+      const visible = partyHit || candHits > 0;
+      party.classList.toggle("s-hide", !visible);
+      if (visible) shown++;
+      // pogodak po kandidatu → otvori stranku da se kandidat odmah vidi
+      if (!partyHit && candHits > 0 && !party.classList.contains("open")) {
+        party.classList.add("open");
+        party.dataset.autoOpen = "1";
+      }
+    });
+
+    return shown;
+  }
+
+  function applyGlobalSearch(raw) {
+    const q = searchNorm(raw.trim());
+    const active = q.length >= SEARCH_MIN;
+    searchActive = active;
+    let racesHit = 0;
+
+    document.querySelectorAll(".race").forEach(race => {
+      // trke koje je pretraga otvorila zatvaramo kad se pretraga promijeni/obriše
+      if (race.dataset.autoOpen) { race.classList.remove("open"); delete race.dataset.autoOpen; }
+      const hits = filterRace(race, q, active);
+      race.classList.toggle("s-hide", active && hits === 0);
+      if (active && hits > 0) {
+        racesHit++;
+        if (!race.classList.contains("open")) { race.classList.add("open"); race.dataset.autoOpen = "1"; }
+      }
+    });
+
+    const n = racesHit, word = n === 1 ? "trci" : (n >= 2 && n <= 4 ? "trke" : "trka");
+    document.getElementById("gsearch-info").textContent = !active ? ""
+      : n ? `Pronađeno u ${n} ${word}` : `Nema stranke ni kandidata za „${raw.trim()}“`;
+  }
+
+  document.getElementById("gsearch").addEventListener("input", e => applyGlobalSearch(e.target.value));
+
+  // Visina zakačene pretrage — da skrolovanje ne sakrije naslov trke ispod nje
+  function stickyOffset() {
+    const el = document.getElementById("gsearch-wrap");
+    return (el && el.offsetParent !== null ? el.offsetHeight : 0) + 8;
   }
 
   /* =========================================================
@@ -504,19 +615,19 @@
       party.classList.toggle("open", opening);
       // Ako se zatvorila duga stranka iznad, otvorena "skoči" gore — vrati je u vidno polje
       if (opening) {
-        const top = party.getBoundingClientRect().top;
-        if (top < 0) window.scrollTo({ top: window.scrollY + top - 8, behavior: "smooth" });
+        const top = party.getBoundingClientRect().top - stickyOffset();
+        if (top < 0) window.scrollTo({ top: window.scrollY + top, behavior: "smooth" });
       }
       return;
     }
     const raceHeader = e.target.closest('[data-toggle="race"]');
     if (raceHeader) {
       const race = raceHeader.closest(".race");
-      document.querySelectorAll(".race.open").forEach(r => { if (r!==race) r.classList.remove("open"); });
+      // dok pretraga radi, više trka može biti otvoreno (sve sa pogocima)
+      if (!searchActive) document.querySelectorAll(".race.open").forEach(r => { if (r!==race) r.classList.remove("open"); });
       race.classList.toggle("open");
-      if (race.classList.contains("open")) {
-        scrollRaceToTop(race);
-      }
+      delete race.dataset.autoOpen;
+      if (race.classList.contains("open")) scrollRaceToTop(race);
     }
   });
 
@@ -579,8 +690,9 @@
       const party = box.closest(".party");
       const race  = box.closest(".race");
       setTimeout(() => {
-        if (party) party.classList.remove("open");
+        if (party) { party.classList.remove("open"); delete party.dataset.autoOpen; }
         race.classList.remove("open");
+        delete race.dataset.autoOpen;   // pretraga ostaje — korisnik nastavlja na sljedeću trku
         scrollRaceToTop(race);
       }, 350);
     }
@@ -663,7 +775,7 @@
   function scrollRaceToTop(race) {
     const body = race.querySelector(".race-body");
     const go = () => {
-      const top = race.getBoundingClientRect().top + window.scrollY - 8;
+      const top = race.getBoundingClientRect().top + window.scrollY - stickyOffset();
       window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
     };
     if (body) {
