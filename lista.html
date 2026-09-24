@@ -49,9 +49,20 @@
   header.page h1 { margin: 0 0 4px 0; font-size: 20px; font-weight: 700; letter-spacing: -0.2px; }
   header.page p  { margin: 0; font-size: 13px; color: var(--c-muted); }
 
+  /* Svaka trka = jedan glasački listić u svojoj boji:
+     --b  puna boja listića (traka lijevo, kružić, okvir kad je popunjen)
+     --bt blaga nijansa za pozadinu (crna slova ostaju čitljiva) */
+  .race[data-ballot="siva"]   { --b: #6b7280; --bt: #f3f4f6; }   /* Predsjedništvo BiH */
+  .race[data-ballot="zuta"]   { --b: #c9980a; --bt: #fdf7e1; }   /* Predsjednik i potpredsjednici RS */
+  .race[data-ballot="plava"]  { --b: #1f6feb; --bt: #edf3fe; }   /* 500 — PS BiH */
+  .race[data-ballot="ljub"]   { --b: #7c3aed; --bt: #f4effd; }   /* 400 — Parlament FBiH */
+  .race[data-ballot="smedja"] { --b: #8b5a2b; --bt: #f6efe7; }   /* 300 — NS RS */
+  .race[data-ballot="bordo"]  { --b: #8e1b3c; --bt: #fbeef2; }   /* 200 — Skupština kantona */
+
   .race {
-    background: var(--c-card);
+    background: var(--bt, var(--c-card));
     border: 1px solid var(--c-border);
+    border-left: 6px solid var(--b, var(--c-border));
     border-radius: var(--radius);
     margin-bottom: 12px;
     box-shadow: var(--shadow);
@@ -59,24 +70,31 @@
     transition: box-shadow 0.2s;
     scroll-margin-top: 8px;
   }
-  .race.open { box-shadow: 0 6px 20px rgba(31,111,235,0.15); }
-  /* Trka u kojoj je glas dat — blago plava, da se vidi šta je završeno */
-  .race.done { background: #eef4ff; border-color: #bcd3fb; }
-  .race.done:not(.open) .race-header { background: #eef4ff; }
+  .race.open { box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  /* Popunjen listić: zelena kvačica umjesto broja + "Popunjeno" + okvir u punoj boji listića */
+  .race.done { border: 2px solid var(--b, var(--c-accent)); border-left-width: 6px; }
+  .race.done .race-num { background: #1a7f37; font-size: 0; }
+  .race.done .race-num::after { content: "✓"; font-size: 18px; }
+  .race-badge {
+    display: none; margin-left: 6px; vertical-align: 2px;
+    font-size: 11px; font-weight: 700; color: #1a7f37;
+    background: #e3f6e8; border-radius: 999px; padding: 2px 8px; white-space: nowrap;
+  }
+  .race.done .race-badge { display: inline-block; }
 
   .race-header {
     display: flex; align-items: center; gap: 12px;
     padding: 16px;
     cursor: pointer; user-select: none;
-    background: var(--c-card);
+    background: transparent;
     transition: background 0.15s;
   }
-  .race-header:active { background: var(--c-accent-soft); }
-  .race.open .race-header { background: var(--c-accent-soft); }
+  .race-header:active { background: rgba(0,0,0,0.04); }
+  .race.open .race-header { background: rgba(0,0,0,0.03); }
 
   .race-num {
     width: 32px; height: 32px; border-radius: 50%;
-    background: var(--c-accent); color: #fff;
+    background: var(--b, var(--c-accent)); color: #fff;
     display: flex; align-items: center; justify-content: center;
     font-weight: 700; font-size: 15px; flex-shrink: 0;
   }
@@ -381,6 +399,17 @@
   let currentNaziv = "";
   const racesContainer = document.getElementById("races");
 
+  // Boja glasačkog listića po vrsti trke (šifrarnik: 200 bordo, 300 smeđe, 400 ljubičasto,
+  // 500 plavo, Predsjednik RS žuto, Predsjedništvo sivo). Trke bez boje (npr. lokalni) ostaju bijele.
+  const BALLOT_COLOR = {
+    "predsjednistvo": "siva",
+    "predsjednik-rs": "zuta",
+    "parlament-bih":  "plava",
+    "parlament-fbih": "ljub",
+    "nsrs":           "smedja",
+    "kanton":         "bordo"
+  };
+
   function renderRaces(trke) {
     appRaces = trke;
     racesContainer.innerHTML = "";
@@ -388,6 +417,8 @@
       const card = document.createElement("div");
       card.className = "race";
       card.dataset.id = race.id;
+      const ballot = BALLOT_COLOR[race.id.replace(/-\d+$/, "")];
+      if (ballot) card.dataset.ballot = ballot;
 
       let bodyHTML;
       if (race.tip === "predsjednistvo") {
@@ -406,7 +437,7 @@
         <div class="race-header" data-toggle="race">
           <div class="race-num">${idx+1}</div>
           <div class="race-title">
-            ${race.naslov}
+            ${race.naslov}<span class="race-badge">✓ Popunjeno</span>
             <div class="race-sub">${race.podnaslov||""}</div>
           </div>
           <div class="chevron"></div>
