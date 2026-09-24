@@ -75,7 +75,7 @@
   }
   .race.open { box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
   /* Popunjen listić: zelena kvačica umjesto broja + oznaka "Popunjeno" */
-  .race.done .race-num { background: #1a7f37; font-size: 0; }
+  .race.done .race-num { background: var(--b, #1a7f37); font-size: 0; }   /* kvačica u boji listića */
   .race.done .race-num::after { content: "✓"; font-size: 18px; }
   .race-badge {
     display: none; margin-left: 6px; vertical-align: 2px;
