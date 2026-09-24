@@ -49,20 +49,23 @@
   header.page h1 { margin: 0 0 4px 0; font-size: 20px; font-weight: 700; letter-spacing: -0.2px; }
   header.page p  { margin: 0; font-size: 13px; color: var(--c-muted); }
 
-  /* Svaka trka = jedan glasački listić u svojoj boji:
-     --b  puna boja listića (traka lijevo, kružić, okvir kad je popunjen)
-     --bt blaga nijansa za pozadinu (crna slova ostaju čitljiva) */
-  .race[data-ballot="siva"]   { --b: #6b7280; --bt: #f3f4f6; }   /* Predsjedništvo BiH */
-  .race[data-ballot="zuta"]   { --b: #c9980a; --bt: #fdf7e1; }   /* Predsjednik i potpredsjednici RS */
-  .race[data-ballot="plava"]  { --b: #1f6feb; --bt: #edf3fe; }   /* 500 — PS BiH */
-  .race[data-ballot="ljub"]   { --b: #7c3aed; --bt: #f4effd; }   /* 400 — Parlament FBiH */
-  .race[data-ballot="smedja"] { --b: #8b5a2b; --bt: #f6efe7; }   /* 300 — NS RS */
-  .race[data-ballot="bordo"]  { --b: #8e1b3c; --bt: #fbeef2; }   /* 200 — Skupština kantona */
+  /* Svaka trka = jedan glasački listić u svojoj boji. Kartica je bijela; boju nose
+     široka traka lijevo, okvir i kružić sa brojem.
+     --b  puna boja listića; --bl boja trake/okvira (žuta svjetlija, da se vidi) */
+  .race[data-ballot="siva"]   { --b: #6b7280; }                 /* Predsjedništvo BiH */
+  .race[data-ballot="zuta"]   { --b: #c9980a; --bl: #f2c430; }  /* Predsjednik i potpredsjednici RS */
+  .race[data-ballot="plava"]  { --b: #1f6feb; }                 /* 500 — PS BiH */
+  .race[data-ballot="ljub"]   { --b: #7c3aed; }                 /* 400 — Parlament FBiH */
+  .race[data-ballot="smedja"] { --b: #8b5a2b; }                 /* 300 — NS RS */
+  .race[data-ballot="bordo"]  { --b: #8e1b3c; }                 /* 200 — Skupština kantona */
+  .race[data-ballot] {
+    border: 2px solid var(--bl, var(--b));
+    border-left: 12px solid var(--bl, var(--b));
+  }
 
   .race {
-    background: var(--bt, var(--c-card));
+    background: var(--c-card);
     border: 1px solid var(--c-border);
-    border-left: 6px solid var(--b, var(--c-border));
     border-radius: var(--radius);
     margin-bottom: 12px;
     box-shadow: var(--shadow);
@@ -71,8 +74,7 @@
     scroll-margin-top: 8px;
   }
   .race.open { box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-  /* Popunjen listić: zelena kvačica umjesto broja + "Popunjeno" + okvir u punoj boji listića */
-  .race.done { border: 2px solid var(--b, var(--c-accent)); border-left-width: 6px; }
+  /* Popunjen listić: zelena kvačica umjesto broja + oznaka "Popunjeno" */
   .race.done .race-num { background: #1a7f37; font-size: 0; }
   .race.done .race-num::after { content: "✓"; font-size: 18px; }
   .race-badge {
@@ -109,7 +111,8 @@
     transition: transform 0.25s;
     flex-shrink: 0; margin-right: 4px; margin-bottom: 4px;
   }
-  .race.open > .race-header .chevron { transform: rotate(-135deg); margin-bottom: -2px; border-color: var(--c-accent); }
+  .race.open > .race-header .chevron { transform: rotate(-135deg); margin-bottom: -2px; border-color: var(--b, var(--c-accent)); }
+
 
   .race-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
   .race.open .race-body { max-height: 100000px; }
@@ -178,7 +181,7 @@
   .race-picked .picked-cands { padding-left: 22px; }
   .race-picked .picked-col { font-size: 11px; text-transform: uppercase; letter-spacing: .3px; color: var(--c-muted); margin-top: 4px; }
   .race-picked .picked-sub { color: var(--c-muted); font-size: 12px; }
-  .race-picked .picked-none { font-size: 12.5px; color: #9aa0a6; font-style: italic; }
+  .race-picked .picked-none { font-size: 12.5px; color: #6b7078; font-style: italic; }
   .party-body-inner { padding: 8px 12px 12px; border-top: 1px solid var(--c-border); }
 
   /* Globalna pretraga — zakačena na vrhu dok se skroluje */
